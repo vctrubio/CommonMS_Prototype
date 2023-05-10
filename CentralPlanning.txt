@@ -1,8 +1,8 @@
-.Do one assignment at a time, I pick Bank.
+.Do one assignment at a time
 	-Create the class, and interface
 	-Implement CRUD
 
-BANK
+NaranjasNaranjas
 -get data CSV
 -record trasnsacion, in a tuple, make it a CSV folder
 

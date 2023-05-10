@@ -1,5 +1,5 @@
 Assignment: To create an in-terminal application mimicking 3 Things
-    -business/bank
+    -business/transactions
     -healthcare/patients
     -games/genre
 
