@@ -1,0 +1,15 @@
+.Do one assignment at a time, I pick Bank.
+	-Create the class, and interface
+	-Implement CRUD
+
+BANK
+-get data CSV
+-record trasnsacion, in a tuple, make it a CSV folder
+
+HEALTH
+-API CALL CLIENT BASE
+
+VIDEOGAME
+-SCRIPTING, DATABASE IS EMPTY, would you like to run a script?
+
+
