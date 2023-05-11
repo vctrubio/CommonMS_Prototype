@@ -80,7 +80,7 @@ Product	*createProduct(Business *bsn)
 
 int main()
 {
-	User	*user = new User("User1");
+	User	*user = new User("Guest123");
 
 	string	businessName;
 
