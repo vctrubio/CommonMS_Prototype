@@ -78,8 +78,6 @@ Product	*createProduct(Business *bsn)
 	return prd;
 }
 
-
-
 int main()
 {
 	User	*user = new User("User1");
