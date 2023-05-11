@@ -13,7 +13,7 @@ class Product
 	string			_name;
 	unsigned int	_price;
 public:
-	Product(Business *business, string name, unsigned int price):_belongs_to(business), _name(name), _price(price){};
+	Product(Business *business, string name, unsigned int price):_belongs_to(business), _name(name), _price(price){ cout << GREEN << "New Product: " << _name << " €" << _price << " :=>" << _belongs_to << ENDC << endl;};
 	~Product(){};
 };
 

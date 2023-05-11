@@ -21,6 +21,7 @@ public:
 
 	void test();
 	string	getName(){return _name;};
+	void	addProduct(Product *ptr){_products.push_back(ptr);};
 };
 
 #endif

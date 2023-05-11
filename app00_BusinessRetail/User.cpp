@@ -8,11 +8,11 @@ void	User::updateBsn(Business *bsn)
 	if (_bsn == nullptr)
 	{
 		_bsn = bsn;
-//		cout << "Business Updated Sucessfully\n";
+		//cout << "Business Updated Sucessfully\n";
 	}
 	else
 		cout << "Sorry, only 1 Business at a time.\n";
-	cout << "(Update Business) to " << _bsn->getName() << endl;
+	//cout << "(Update Business) to " << _bsn->getName() << endl;
 }
 
 
