@@ -4,12 +4,42 @@
 #include "Product.hpp"
 
 
+/* Check for valid name
+ * +3 letters
+ */
+
+void	initBsn()
+{
+	string	input;
+
+	cout << "Welcome to Common Solutions\n";
+	cout << "To begin, please name your Business\n";
+	cout << "ie: Tom's Garage";
+	
+	while(true)
+	{
+		cin >> input;
+		if (input.length() >= 3)
+			break;
+		cout << "For soimplicity, it must be more than 3 characters\nAnd please, be careful(;\n";
+	}
+	
+
+	return input;
+}
+
 int main()
 {
-	User	 v("Victor");
-	Business b(&v, "Toms Garage");
+	User	*user = new User("User1");
 
-	std::cout << "Helloworld\n";
-	b.test();
+	string	businessName();
 
+	businessName = initBsn();
+	cout << "Creating Business: " << businessName << endl;
+
+
+
+	delete user;
+
+	return (1);
 }
