@@ -3,4 +3,8 @@ Now I know using namespace std; is not ideal, but it saves time for the purpose 
 
 11.May
 -Started on app00, 
-	-
+	-Defined Business, Product and User
+-Next define UI, Show products, step into product to delete, update ...
+-Next Next, add clients and add a queue to accept incoming request
+I wanted to log my hours but I forgot to count
+
