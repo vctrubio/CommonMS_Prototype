@@ -1,0 +1,6 @@
+Diary of What I did.
+Now I know using namespace std; is not ideal, but it saves time for the purpose of these exersises.
+
+11.May
+-Started on app00, 
+	-
