@@ -94,7 +94,6 @@ int main()
 	createProduct(bsn);
 
 
-
 	cout << "Entering Loop, please know that you can press 0 anytime to quit\n";
 	string input;
 	while(true)

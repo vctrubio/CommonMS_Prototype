@@ -20,6 +20,8 @@ public:
 	~Product(){};
 
 	void	print(){cout << "[" << _id << "] " << _name << " €" << _price << endl;};
+	int		getPrice(){return _price;};
+	string	getName(){return _name;};
 };
 
 #endif
