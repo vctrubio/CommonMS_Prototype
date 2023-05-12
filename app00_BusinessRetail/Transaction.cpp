@@ -5,7 +5,7 @@ Transaction::Transaction(Business *bsn, Product *product, Client *client):_belon
 {
 	std::chrono::system_clock::time_point refTime = std::chrono::system_clock::now();
 
-	std::time_t today_time = std::chrono::system_clock::to_time_t(today);
+	std::time_t today_time = std::chrono::system_clock::to_time_t(refTime);
 	std::tm* today_tm = std::localtime(&today_time);
 
 	std::ostringstream oss;
@@ -13,5 +13,5 @@ Transaction::Transaction(Business *bsn, Product *product, Client *client):_belon
 	_date = oss.str();
 
 	_log = "Business: " + bsn->getName() + "| Sold: " + product->getName() + " €" + to_string(product->getPrice()) \
-			+ "| to " + client->getName() + "| Date: " _date + "\n";
+			+ "| to " + client->getName() + "| Date: " + _date + "\n";
 }

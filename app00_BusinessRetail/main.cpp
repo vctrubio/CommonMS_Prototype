@@ -2,6 +2,8 @@
 #include "User.hpp"
 #include "Business.hpp"
 #include "Product.hpp"
+#include "Transaction.hpp"
+#include "Client.hpp"
 
 
 /* Check for valid name
@@ -90,10 +92,10 @@ int main()
 	
 	cout << "Now let's start by listing your first product\n";
 
-	Product *product;
-	createProduct(bsn);
+	Product *product = createProduct(bsn);
 
 
+	/*
 	cout << "Entering Loop, please know that you can press 0 anytime to quit\n";
 	string input;
 	while(true)
@@ -102,9 +104,12 @@ int main()
 		cin >> input;
 		if (input == "0")
 			break;
+	} */
 
-	}
+	Client *miguel = new Client("Miguel");
+	Transaction	*t = new Transaction(bsn, product, miguel);
 
+	cout << "HERE: " <<	t->getName();
 
 	delete user;
 	delete bsn;

@@ -17,10 +17,12 @@ class Transaction
 	Product		*_product;
 	Client		*_client;
 	string		_log;
-	time_t		_date;
+	string		_date;
 public:
 	Transaction(Business *bsn, Product *product, Client *client);
 	~Transaction(){};
+
+	string	getName(){return _log;};
 };
 
 #endif
