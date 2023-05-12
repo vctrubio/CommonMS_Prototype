@@ -16,10 +16,14 @@ class Product
 	unsigned int	_price;
 	unsigned int	_id;
 	unsigned int	_sold;
+	vector<string>	_transactions;
 public:
-	Product(Business *business, string name, unsigned int price):_belongs_to(business), _name(name), _price(price), _id(s_counterId++), _sold(0){ cout << GREEN << "New Product: " << _name << " €" << _price << " :=>" << _belongs_to << ENDC << endl;};
+	Product(Business *business, string name, unsigned int price):_belongs_to(business), _name(name), _price(price), _id(s_counterId++), _sold(0){};
 	~Product(){};
 
+	Business		*bsn(){return _belongs_to;};
+	vector<string>	trans(){return _transactions;};
+	void			push_trans(string str){_transactions.push_back(str);};
 	void	print(){cout << "[" << _id << "] " << _name << " €" << _price << endl;};
 	int		getPrice(){return _price;};
 	string	getName(){return _name;};

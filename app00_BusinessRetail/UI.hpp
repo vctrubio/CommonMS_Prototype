@@ -4,6 +4,8 @@
 #include "Transaction.hpp"
 #include "User.hpp"
 
+void	uiBsn(Business *bsn);
+
 void	clear()
 {
 	#ifdef _WIN32
@@ -13,7 +15,34 @@ void	clear()
     #endif
 }
 
-void	uiProduct(Business *bsn)
+void	uiProduct(Product *prd)
+{
+	string input;
+
+	clear();
+	cout << GREEN << prd->getName() << ENDC << " €" << to_string(prd->getPrice()) << endl;
+	cout << "Total Sales[" << prd->trans().size() << "]\n";
+	cout << "Total Revenue " << prd->getSold() << endl;
+
+	for (auto i : prd->trans())
+		cout << i;
+	
+	while (42)
+	{
+		cout << ">";
+		cin >> input;
+		if (input == "0" || input == "exit")
+			return ;
+		if (input == "back")
+		{
+			uiBsn(prd->bsn());
+			break;
+		}
+		cout << "Sorry no cmds found.\n0/exit\nback\n";
+	}
+}
+
+void	uiBsn(Business *bsn)
 {
 	string input;
 
@@ -26,12 +55,10 @@ void	uiProduct(Business *bsn)
 		for (auto i : bsn->products())
 			i->print();
 	}
-	cout << BLUE << "----------\n---Type---\n" << ENDC << "ID# to see specific product\n'new' to add product\n" << BLUE << "----------\n" << ENDC;
 
 	cin >> input;
 	if (input == "0" || input == "exit")
 		return ;
-	//if input == id of product for into product name: 
 	else if (input == "new")
 		bsn->createProduct();
 	else
@@ -40,9 +67,10 @@ void	uiProduct(Business *bsn)
 		{
 			if (input == i->getId())
 			{
-				cout << "FOUND --- " << input << "\n";
+				uiProduct(i);
+				return ;
 			}
 		}
 	}
-	uiProduct(bsn);
+	uiBsn(bsn);
 }

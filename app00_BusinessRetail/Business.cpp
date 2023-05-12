@@ -27,6 +27,7 @@ void	Business::createProduct()
 	string	input;
 	string	name;
 	int		price;
+	static int		s_int = 0;
 
 	cout << "To create a Product for: " << getName() << endl;
 	cout << "Tell us what you want to sell:\n>";
@@ -35,7 +36,8 @@ void	Business::createProduct()
 		getline(cin, name);
 		if (name.length() >= 3)
 			break;
-		cout << "For soimplicity, it must be more than 3 characters\n>";
+		if (s_int++ == 0)
+			cout << "For simplicity, it must be more than 3 characters\n>";
 	}
 
 	cout << "Great, now at what price €/unit:\n>";
@@ -55,7 +57,7 @@ void	Business::createProduct()
 				break;
 			}
 		}
-		cout << "Price(INT) between 0 and A Million\n>";
+		cout << "Price(INT) between A Euro and A Million\n>";
 	}
 
 	Product	*prd = new Product(this, name, (unsigned int)price);

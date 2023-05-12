@@ -14,4 +14,6 @@ Transaction::Transaction(Business *bsn, Product *product, Client *client):_belon
 
 	_log = "Business: " + bsn->getName() + "| Sold: " + product->getName() + " €" + to_string(product->getPrice()) \
 			+ "| to " + client->getName() + "| Date: " + _date + "\n";
+
+	product->push_trans(_log);
 }

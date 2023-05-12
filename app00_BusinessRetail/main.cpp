@@ -30,6 +30,33 @@ cout << "ie: Tom's Garage\n>";
 }
 
 
+void	initInstruction()
+{
+	cout << "Entering Program |-> Instructions\nType:\n\tID# to see specific product\n\t'new' to add product\n\t0 or 'exit' to exit\n\t'back' to go back\n\t'open' to open your shop for business!\n";
+	/*
+	usleep(900000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	cout << ".........\n";
+	usleep(800000);
+	*/
+	//must do thread so no user input is send...
+}
+
 int main()
 {
 	User	*user = new User("Guest123");
@@ -40,24 +67,11 @@ int main()
 	cout << GREEN << "Creating Business: " << businessName << ENDC << endl;
 	Business *bsn = new Business(user, businessName);
 	
-	cout << "Now let's start by listing your first product\n";
-
+	cout << "................\nNow let's start by listing your first product\n";
 	bsn->createProduct();
-	
 
-
-	/*
-	cout << "Entering Loop, please know that you can press 0 anytime to quit\n";
-	string input;
-	while(true)
-	{
-		cout << "blablabla mssg: Index of products\n";
-		cin >> input;
-		if (input == "0")
-			break;
-	} */
-
-	uiProduct(bsn);
+	initInstruction();
+	uiBsn(bsn);
 
 	delete user;
 	delete bsn;
