@@ -2,6 +2,7 @@
 #define BUSINESS_HPP
 
 #include "../Headers.hpp"
+#include "Utils.hpp"
 #include "User.hpp"
 #include "Product.hpp"
 
@@ -20,8 +21,11 @@ public:
 	~Business(){};
 
 	void test();
-	string	getName(){return _name;};
-	void	addProduct(Product *ptr){_products.push_back(ptr);};
+	string				getName(){return _name;};
+	void				addProduct(Product *ptr){_products.push_back(ptr);};
+	vector<Product*>	products(){return _products;};
+	string				revenue(){return to_string(_revenue);};
+	void				createProduct();
 };
 
 #endif

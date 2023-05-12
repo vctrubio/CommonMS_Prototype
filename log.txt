@@ -8,3 +8,7 @@ Now I know using namespace std; is not ideal, but it saves time for the purpose 
 -Next Next, add clients and add a queue to accept incoming request
 I wanted to log my hours but I forgot to count
 
+
+12.May
+-problem with duplicate in compilation, so for now isNumeric1 and isNumeric will hold
+-defined transaction and clients, need to create interface and then store transaction in csv file log
