@@ -30,6 +30,9 @@ public:
 	string	getBsn();
 	string	getId(){return to_string(_id);};
 	string	getSold(){return to_string(_sold);};
+
+	void	updateName(string name){_name = name;};
+	void	updatePrice(unsigned int price){_price = price;}; //needs validation
 };
 
 #endif
