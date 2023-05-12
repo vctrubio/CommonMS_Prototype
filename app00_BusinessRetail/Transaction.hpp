@@ -24,5 +24,5 @@ public:
 
 	string	getName(){return _log;};
 };
-
+//memory leaks, need to keep note somewhere
 #endif

@@ -23,16 +23,16 @@ public:
 
 	Business		*bsn(){return _belongs_to;};
 	vector<string>	trans(){return _transactions;};
-	void			push_trans(string str){_transactions.push_back(str);};
-	void	print(){cout << "[" << _id << "] " << _name << " €" << _price << endl;};
-	int		getPrice(){return _price;};
-	string	getName(){return _name;};
-	string	getBsn();
-	string	getId(){return to_string(_id);};
-	string	getSold(){return to_string(_sold);};
+	void			push_trans(string str){_transactions.push_back(str);_sold++;};
+	void			print(){cout << "[" << _id << "] " << _name << " €" << _price << endl;};
+	int				getPrice(){return _price;};
+	string			getName(){return _name;};
+	string			getBsn();
+	string			getId(){return to_string(_id);};
+	string			getSold(){return to_string(_sold);};
 
-	void	updateName(string name){_name = name;};
-	void	updatePrice(unsigned int price){_price = price;}; //needs validation
+	void			updateName(string name){_name = name;};
+	void			updatePrice(unsigned int price){_price = price;}; //needs validation
 };
 
 #endif

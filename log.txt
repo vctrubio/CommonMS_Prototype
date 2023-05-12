@@ -12,3 +12,6 @@ I wanted to log my hours but I forgot to count
 12.May
 -problem with duplicate in compilation, so for now isNumeric1 and isNumeric will hold
 -defined transaction and clients, need to create interface and then store transaction in csv file log
+-create a thread also.
+-[more fun than i expected]
+-Next algorithms to transactions

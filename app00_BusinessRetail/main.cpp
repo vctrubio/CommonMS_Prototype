@@ -11,6 +11,8 @@
  * +3 letters
  */
 
+std::mutex queueMutex; 
+
 string	initBsn()
 {
 	string	input;
@@ -33,7 +35,6 @@ cout << "ie: Tom's Garage\n>";
 void	initInstruction()
 {
 	cout << "Entering Program |-> Instructions\nType:\n\tID# to see specific product\n\t'new' to add product\n\t0 or 'exit' to exit\n\t'back' to go back\n\t'open' to open your shop for business!\n";
-	/*
 	usleep(900000);
 	cout << ".........\n";
 	usleep(800000);
@@ -53,8 +54,6 @@ void	initInstruction()
 	usleep(800000);
 	cout << ".........\n";
 	usleep(800000);
-	*/
-	//must do thread so no user input is send...
 }
 
 int main()
@@ -70,7 +69,9 @@ int main()
 	cout << "................\nNow let's start by listing your first product\n";
 	bsn->createProduct();
 
-	initInstruction();
+	// thread t(&initInstruction);
+	// t.join();
+
 	uiBsn(bsn);
 
 	delete user;

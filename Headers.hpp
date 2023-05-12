@@ -24,6 +24,9 @@
 #include <unistd.h>
 #include <signal.h>
 #include <sstream>
+#include <thread>
+#include <queue>
+#include <mutex>
 
 #include <stdexcept>
 #include <exception>
