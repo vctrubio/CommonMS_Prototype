@@ -35,6 +35,7 @@ public:
 	void					popQueue(){_queue.erase(_queue.begin());};
 	void					threading();
 	void					addInvoice(Client *client);
+	Product					*rtnRandomProduct();
 };
 
 #endif

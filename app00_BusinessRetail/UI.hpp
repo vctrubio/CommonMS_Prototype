@@ -8,11 +8,11 @@ void	uiBsn(Business *bsn);
 
 void	clear()
 {
-	#ifdef _WIN32
-        std::system("cls");
-    #else
-        std::system("clear");
-    #endif
+#ifdef _WIN32
+	std::system("cls");
+#else
+	std::system("clear");
+#endif
 }
 
 void	uiProduct(Product *prd)
@@ -29,7 +29,7 @@ void	uiProduct(Product *prd)
 
 	for (auto i : prd->trans())
 		cout << i;
-	
+
 	while (42)
 	{
 		cout << ">";
@@ -57,49 +57,43 @@ void	uiProduct(Product *prd)
 			uiProduct(prd);
 			return ;
 		}
-		cout << "Sorry no cmds found.\n0/exit\nback\nuprice to update the price\nuname to update the name\n";
+		else if (input == "archive")
+		{
+			prd->toggleArchive();
+			return ;
+		}
+		cout << "Sorry no cmds found.\n0/exit\nback\nuprice to update the price\nuname to update the name\narchive to remove it from stock || archive to re-stock it\n";
 	}
 }
 
-void	testing(Business *bsn)
-{
-//create a thread
-//+create a pipe;
-//that creates a queue, 
-//that finds a client and adds it to the quee to request to buy a product.
-//
-//post message of 'Client: Maria wants to purchase X' 'Press 1 to accept'
-//
-//
-//
-//close to close.
-//back to go back.
-//exit to exit 
-
-cout << "People are lining up...\n";
-for (int i = 0; i < 5; i++)
-{
-	bsn->addQueue(new Client("Stranger" +to_string(i)));
-	this_thread::sleep_for(chrono::seconds(1));
-}
-cout << "Check you queue(;";
-}
-
-
 void	uiQueue(Business *bsn)
 {
-	string input;
-
+	string 	input;
+	int		count = 1;
 	clear();
 	cout << GREEN << bsn->getName() << ENDC << endl;
 	cout << "Queue size: " << bsn->queue().size() << endl;
 	cout << "Type 'checkout' to check everyone out\n";
+	
+	for (auto i : bsn->queue())
+	{
+		cout << count++ << ": " << i->getName() << endl;
+		for (auto j : i->products())
+			cout << "\t:" << j->getName() << endl;	
+	}
+
 	cin >> input;
 	if (input == "checkout")
 	{
 		for (auto i : bsn->queue())
-			cout << "checkouting.\n";
+		{
+			bsn->addInvoice(bsn->queue().front());
+			bsn->popQueue();
+		}
 	}
+	else
+		cout << "Sorry cmd not found, returning to HOME\n";
+	uiBsn(bsn);
 }
 
 void	uiBsn(Business *bsn)
@@ -108,6 +102,11 @@ void	uiBsn(Business *bsn)
 
 	clear();
 	cout << "Welcome to " << GREEN << bsn->getName() << ENDC << " STOCK [" << bsn->products().size() << "]" << " TOTAL REVENUE = €" << bsn->revenue() << endl;
+	
+	//if open/closed
+	cout << YELLOW << "Your Queue is: " << bsn->queue().size() << ENDC << endl;
+
+
 	if (bsn->products().empty())
 		cout << RED << "No Products to show, type 'new' to create one" << ENDC << endl;
 	else
@@ -125,11 +124,10 @@ void	uiBsn(Business *bsn)
 	else if (input == "new")
 	{
 		bsn->createProduct();
-		return ;
 	}
 	else if (input == "open")
 	{
-        std::thread threadObj(&Business::threading, bsn); // Create a thread for bsn->threading()
+		std::thread threadObj(&Business::threading, bsn); // Create a thread for bsn->threading()
 		threadObj.detach(); // Detach the thread and allow it to run independently
 		for (int i = 0; i < 10; i++)
 		{
@@ -137,14 +135,15 @@ void	uiBsn(Business *bsn)
 			std::this_thread::sleep_for(std::chrono::seconds(2));
 		}
 		/*
-		Please note that detaching a thread means that you are no longer synchronizing it with the main thread. The detached thread will continue to run even if the main thread exits. Also, make sure to handle any synchronization or thread safety concerns when accessing shared data structures like the bsn->queue() in the bsn->threading() function.
-		*/
+		   Please note that detaching a thread means that you are no longer synchronizing it with the main thread. The detached thread will continue to run even if the main thread exits. Also, make sure to handle any synchronization or thread safety concerns when accessing shared data structures like the bsn->queue() in the bsn->threading() function.
+		   */
+		cout << "GOT THIS FAR NOWW WHART\n";
 	}
 	else if (input == "queue")
 	{
 		cout << "Displaying Queue... " << bsn->queue().size() << endl;
 		this_thread::sleep_for(chrono::seconds(1));
-
+		uiQueue(bsn);
 	}
 	else
 	{

@@ -7,12 +7,24 @@ Business::Business(User *user, string name):_belongs_to(user), _name(name), _rev
 
 bool isNumeric1(const std::string& str)
 {
-    for (char c : str) {
-        if (!std::isdigit(c)) {
+    for (char c : str)
+	{
+        if (!std::isdigit(c)) 
             return false;
-        }
     }
     return true;
+}
+
+Product	*Business::rtnRandomProduct()
+{
+	if (_products.empty())
+		return nullptr; 
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<size_t> dist(0, _products.size() - 1);
+	size_t randomIndex = dist(gen);
+
+	return _products[randomIndex];
 }
 
 void	Business::threading()
@@ -20,8 +32,11 @@ void	Business::threading()
 	int i = 0;
 	while (true)
 	{
-		_queue.push_back(new Client("Maria" + to_string(i++)));
-		cout << "Looped thread.\n";
+		Client 	*ptr = new Client("Maria" + to_string(i++));
+		Product	*prd = rtnRandomProduct();
+		ptr->addToCart(prd);
+		_queue.push_back(ptr);
+		cout << GREEN << "!" << ENDC << ptr->getName() << " added to her cart: " << prd->getName() << endl;
 		std::this_thread::sleep_for(std::chrono::seconds(1));
 		if (i >8)
 			break;
@@ -86,6 +101,6 @@ void	Business::addInvoice(Client *client)
 		}
 		_invoice = make_tuple(product, client, new Transaction(this, product, client));
 		_revenue += product->getPrice();
-		cout << "Transaction Succesfull.\n";
+		cout << GREEN << "+" << ENDC << client->getName() << " checked-out\n" << endl;
 	}
 }
