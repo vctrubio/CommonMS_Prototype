@@ -15,3 +15,10 @@ I wanted to log my hours but I forgot to count
 -create a thread also.
 -[more fun than i expected]
 -Next algorithms to transactions
+
+
+13.May
+-problem of duplicated not looked into.... for last
+-transactions accomplished, can make CSV file later today....
+-threads are working, just need to stop user input so doesnt interfere with UI
+--NEED to work on, better UI, but im not a front end dev.

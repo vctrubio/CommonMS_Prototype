@@ -27,8 +27,12 @@ void	uiProduct(Product *prd)
 	if (prd->archive())
 		cout << RED << "DELETED/REMOVED from Stock\n" << ENDC;
 
+	if (prd->trans().size() > 0)
+		cout << "--------------------TRANSACTIONS-------------------\n";
 	for (auto i : prd->trans())
 		cout << i;
+	if (prd->trans().size() > 0)
+		cout << "---------------------------------------------------\n";
 
 	while (42)
 	{
@@ -60,6 +64,7 @@ void	uiProduct(Product *prd)
 		else if (input == "archive")
 		{
 			prd->toggleArchive();
+			uiProduct(prd);
 			return ;
 		}
 		cout << "Sorry no cmds found.\n0/exit\nback\nuprice to update the price\nuname to update the name\narchive to remove it from stock || archive to re-stock it\n";
