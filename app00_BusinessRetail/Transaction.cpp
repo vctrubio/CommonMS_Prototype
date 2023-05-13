@@ -16,4 +16,5 @@ Transaction::Transaction(Business *bsn, Product *product, Client *client):_belon
 			+ "| to " + client->getName() + "| Date: " + _date + "\n";
 
 	product->push_trans(_log);
+	client->subtract(product->getPrice());
 }

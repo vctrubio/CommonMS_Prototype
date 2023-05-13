@@ -72,7 +72,20 @@ int main()
 	// thread t(&initInstruction);
 	// t.join();
 
-	uiBsn(bsn);
+	// uiBsn(bsn);
+
+	Client *miguel = new Client ("Miguel");
+
+	miguel->addToCart(bsn->products().front());	
+	miguel->addToCart(bsn->products().front());	
+	miguel->addToCart(bsn->products().front());	
+
+	bsn->addQueue(miguel);
+	while (!bsn->queue().empty())
+	{
+		bsn->addInvoice(bsn->queue().front());
+		bsn->popQueue();
+	}
 
 	delete user;
 	delete bsn;

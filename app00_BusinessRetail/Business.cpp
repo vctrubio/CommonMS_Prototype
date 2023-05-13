@@ -50,7 +50,7 @@ void	Business::createProduct()
 	while(true)
 	{
 		getline(cin, input);
-		if (input.length() > 0 && input.length() <= 9 && isNumeric1(input))
+		if (input.length() > 0 && input.length() <= 8 && isNumeric1(input))
 		{
 			price = stoi(input);
 			if (price > 0)
@@ -70,3 +70,22 @@ void	Business::createProduct()
 	_products.push_back(prd);
 }
 
+void	Business::addInvoice(Client *client)
+{
+	cout << "Hello from addInvoice. on " << client->getName() << endl;
+
+	Product	*product;
+	while ((product = client->getProduct()) != NULL)
+	{
+		if (product->getPrice() > client->getPrice())
+		{
+			cout << "Not enough in " << RED << client->getName() << ENDC << " wallet.\n";
+			cout << "Transaction not accepted... Removing _cart\n";
+			client->products().clear();
+			return ; 
+		}
+		_invoice = make_tuple(product, client, new Transaction(this, product, client));
+		_revenue += product->getPrice();
+		cout << "Transaction Succesfull.\n";
+	}
+}

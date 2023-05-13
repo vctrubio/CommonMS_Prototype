@@ -6,31 +6,35 @@
 #include "User.hpp"
 #include "Product.hpp"
 #include "Client.hpp"
+#include "Transaction.hpp"
 
 
 class User;
 class Product;
+class Transaction;
 
 class Business
 {
-	User				*_belongs_to;
-	string				_name;
-	int					_revenue;
-	vector<Product*>	_products;
-	vector<Client*>		_queue;
+	User									*_belongs_to;
+	string									_name;
+	int										_revenue;
+	vector<Product*>						_products;
+	vector<Client*>							_queue;
+	tuple<Product*,Client*, Transaction*>	_invoice;
 public:
 	Business(User *user, string name); 
 	~Business(){};
 
-	string				getName(){return _name;};
-	void				addProduct(Product *ptr){_products.push_back(ptr);};
-	vector<Product*>	products(){return _products;};
-	string				revenue(){return to_string(_revenue);};
-	void				createProduct();
-	void				addQueue(Client *client){_queue.push_back(client);};
-	vector<Client*>		queue(){return _queue;};
-	void				threading();
-	//needs to be a tuple of client, and product.
+	string					getName(){return _name;};
+	void					addProduct(Product *ptr){_products.push_back(ptr);};
+	vector<Product*>		products(){return _products;};
+	string					revenue(){return to_string(_revenue);};
+	void					createProduct();
+	void					addQueue(Client *client){_queue.push_back(client);};
+	vector<Client*>			queue(){return _queue;};
+	void					popQueue(){_queue.erase(_queue.begin());};
+	void					threading();
+	void					addInvoice(Client *client);
 };
 
 #endif
