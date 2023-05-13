@@ -13,11 +13,14 @@ class Client;
 
 class Transaction
 {
-	Business	*_belongs_to;
-	Product		*_product;
-	Client		*_client;
-	string		_log;
-	string		_date;
+	static unsigned int s_counterId;
+
+	unsigned int	_id;
+	Business		*_belongs_to;
+	Product			*_product;
+	Client			*_client;
+	string			_log;
+	string			_date;
 public:
 	Transaction(Business *bsn, Product *product, Client *client);
 	~Transaction(){};

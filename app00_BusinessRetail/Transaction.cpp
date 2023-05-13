@@ -1,7 +1,8 @@
 #include "Transaction.hpp"
 
+unsigned int Transaction::s_counterId = 1;
 
-Transaction::Transaction(Business *bsn, Product *product, Client *client):_belongs_to(bsn), _product(product), _client(client)
+Transaction::Transaction(Business *bsn, Product *product, Client *client):_belongs_to(bsn), _product(product), _client(client), _id(s_counterId++)
 {
 	std::chrono::system_clock::time_point refTime = std::chrono::system_clock::now();
 
@@ -12,7 +13,7 @@ Transaction::Transaction(Business *bsn, Product *product, Client *client):_belon
 	oss << std::put_time(today_tm, "%Y-%m-%d");
 	_date = oss.str();
 
-	_log = "Business: " + bsn->getName() + "| Sold: " + product->getName() + " €" + to_string(product->getPrice()) \
+	_log = "ID: " + to_string(_id) + "| Business: " + bsn->getName() + "| Sold: " + product->getName() + " €" + to_string(product->getPrice()) \
 			+ "| to " + client->getName() + "| Date: " + _date + "\n";
 
 	product->push_trans(_log);

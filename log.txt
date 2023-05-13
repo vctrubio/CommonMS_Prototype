@@ -24,5 +24,7 @@ I wanted to log my hours but I forgot to count
 --NEED to work on, better UI, but im not a front end dev.
 
 -UI is better√
+-csv ok
 -thread stopping input of text,
 -open and close business, + thread handling
+
