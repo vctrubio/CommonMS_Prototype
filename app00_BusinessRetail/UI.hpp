@@ -24,6 +24,9 @@ void	uiProduct(Product *prd)
 	cout << "Total Sales[" << prd->trans().size() << "]\n";
 	cout << "Total Revenue " << prd->getSold() << endl;
 
+	if (prd->archive())
+		cout << RED << "DELETED/REMOVED from Stock\n" << ENDC;
+
 	for (auto i : prd->trans())
 		cout << i;
 	
@@ -110,7 +113,10 @@ void	uiBsn(Business *bsn)
 	else
 	{
 		for (auto i : bsn->products())
-			i->print();
+		{
+			if (!i->archive())
+				i->print();
+		}
 	}
 
 	cin >> input;
