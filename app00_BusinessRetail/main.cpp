@@ -31,31 +31,6 @@ cout << "ie: Tom's Garage\n>";
 	return input;
 }
 
-
-void	initInstruction()
-{
-	cout << "Entering Program |-> Instructions\nType:\n\tID# to see specific product\n\t'new' to add product\n\t0 or 'exit' to exit\n\t'back' to go back\n\t'open' to open your shop for business!\n";
-	usleep(900000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-	cout << ".........\n";
-	usleep(800000);
-}
-
 int main()
 {
 	User	*user = new User("Guest123");
@@ -69,10 +44,6 @@ int main()
 	cout << "................\nNow let's start by listing your first product\n";
 	bsn->createProduct();
 
-	// thread t(&initInstruction);
-	// t.join();
-
-
 	Client *miguel = new Client ("Miguel");
 
 	miguel->addToCart(bsn->products().front());	
@@ -80,17 +51,8 @@ int main()
 	miguel->addToCart(bsn->products().front());	
 
 	bsn->addQueue(miguel);
-	uiBsn(bsn);
+	uiBsn(bsn, 0);
 
-	/*
-	while (!bsn->queue().empty())
-	{
-		bsn->addInvoice(bsn->queue().front());
-		bsn->popQueue();
-	}
-*/
-	delete user;
 	delete bsn;
-
 	return (1);
 }

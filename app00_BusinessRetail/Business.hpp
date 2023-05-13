@@ -20,10 +20,11 @@ class Business
 	int										_revenue;
 	vector<Product*>						_products;
 	vector<Client*>							_queue;
-	tuple<Product*,Client*, Transaction*>	_invoice;
+	vector<tuple<Product*,Client*, Transaction*>>	_invoice;
+
 public:
 	Business(User *user, string name); 
-	~Business(){};
+	~Business();
 
 	string					getName(){return _name;};
 	void					addProduct(Product *ptr){_products.push_back(ptr);};

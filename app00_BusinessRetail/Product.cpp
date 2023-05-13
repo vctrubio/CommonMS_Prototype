@@ -16,3 +16,21 @@ bool isNumeric(const std::string& str)
     }
     return true;
 }
+
+Product::~Product()
+{
+	if (!_transactions.empty())
+	{
+		string	filename = "CSV_LOG FOR BUSINESSES: " + _belongs_to->getName() + " |Product: " + _name;
+		/*
+		ostream file(filename);
+		if (!file)
+		{
+			cout << RED << "Error in creating " << filename << ENDC << endl;
+			return ;
+		}
+		//for (auto t : t
+*/
+	}
+
+}

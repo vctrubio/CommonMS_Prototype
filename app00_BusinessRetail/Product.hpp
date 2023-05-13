@@ -20,7 +20,7 @@ class Product
 	bool			_archive;
 public:
 	Product(Business *business, string name, unsigned int price):_belongs_to(business), _name(name), _price(price), _id(s_counterId++), _sold(0), _archive(false){};
-	~Product(){};
+	~Product();
 
 	Business		*bsn(){return _belongs_to;};
 	vector<string>	trans(){return _transactions;};

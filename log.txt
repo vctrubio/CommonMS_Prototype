@@ -22,3 +22,7 @@ I wanted to log my hours but I forgot to count
 -transactions accomplished, can make CSV file later today....
 -threads are working, just need to stop user input so doesnt interfere with UI
 --NEED to work on, better UI, but im not a front end dev.
+
+-UI is better√
+-thread stopping input of text,
+-open and close business, + thread handling

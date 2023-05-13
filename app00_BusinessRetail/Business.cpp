@@ -5,6 +5,30 @@ Business::Business(User *user, string name):_belongs_to(user), _name(name), _rev
 	_belongs_to->updateBsn(this);
 }
 
+Business::~Business()
+{
+	vector<Transaction*>	transaction;
+	vector<Client*>			clients;
+
+	for (auto product : _products)
+		delete product;
+	for (auto i : _invoice)
+	{
+		Client *client = get<1>(i);
+		clients.push_back(client);
+	}
+	if (clients.size() > 0)
+	{
+		sort(clients.begin(), clients.end());
+		auto uniq = std::unique(clients.begin(), clients.end());
+		clients.erase(uniq, clients.end());
+		for (auto client : clients)
+			delete client;
+	}
+	delete _belongs_to;
+}
+
+
 bool isNumeric1(const std::string& str)
 {
     for (char c : str)
@@ -87,7 +111,7 @@ void	Business::createProduct()
 
 void	Business::addInvoice(Client *client)
 {
-	cout << "Hello from addInvoice. on " << client->getName() << endl;
+	cout << GREEN << "Hello from addInvoice. on " << client->getName() << ENDC << endl;
 
 	Product	*product;
 	while ((product = client->getProduct()) != NULL)
@@ -99,8 +123,8 @@ void	Business::addInvoice(Client *client)
 			client->products().clear();
 			return ; 
 		}
-		_invoice = make_tuple(product, client, new Transaction(this, product, client));
+		_invoice.push_back(make_tuple(product, client, new Transaction(this, product, client)));
 		_revenue += product->getPrice();
-		cout << GREEN << "+" << ENDC << client->getName() << " checked-out\n" << endl;
+		cout << GREEN << "+" << ENDC << client->getName() << " checked-out: " << product->getName() << endl;
 	}
 }
