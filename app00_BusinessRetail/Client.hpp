@@ -13,7 +13,7 @@ class Client
 	vector<Product*>	_cart;
 public:
 	Client(string name):_name(name), _cash(999){};
-	~Client(){};
+	~Client(){cout << RED << _name << ENDC << " :Deconstructed -- for_debug_purposes\n";}; //fdp
 
 	string				getName(){return _name;};
 	int					getPrice(){return _cash;};

@@ -28,6 +28,7 @@ public:
 	~Business();
 
 	string					getName(){return _name;};
+	int						stock();
 	void					addProduct(Product *ptr){_products.push_back(ptr);};
 	vector<Product*>		products(){return _products;};
 	string					revenue(){return to_string(_revenue);};

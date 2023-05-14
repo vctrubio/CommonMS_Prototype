@@ -12,7 +12,7 @@ void    displayBarBsnHelp()
 	cout << " -----------------------------------" << endl;
 	cout << " Different Commands--" << endl;
 	cout << "-ID# '1' to jump into product ID#1\n";
-	cout << "-open to open to the public!\n"; //close must do
+	cout << "-open to open to the public!\n";
 	cout << "-new to add a new product \n";
 	cout << "-0 or exit to stop and save \n";
 	cout << " -----------------------------------" << endl;

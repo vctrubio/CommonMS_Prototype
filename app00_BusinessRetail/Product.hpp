@@ -36,7 +36,6 @@ public:
 	void			toggleArchive(){_archive = !_archive;};
 	void			updateName(string name){_name = name;};
 	void			updatePrice(unsigned int price){_price = price;}; //needs validation
-
 };
 
 #endif

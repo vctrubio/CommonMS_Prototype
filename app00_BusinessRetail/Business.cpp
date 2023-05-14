@@ -33,7 +33,6 @@ Business::~Business()
 	delete _belongs_to;
 }
 
-
 bool isNumeric1(const std::string& str)
 {
     for (char c : str)
@@ -61,16 +60,30 @@ void	Business::threading()
 	int i = 0;
 	std::unique_lock<std::mutex> lock(mtx);
 
-	while (true) //Fetch ...
+	if (stock() != 0)
 	{
-		Client 	*ptr = new Client("Maria" + to_string(s_int++));
-		Product	*prd = rtnRandomProduct();
-		ptr->addToCart(prd);
-		_queue.push_back(ptr);
-		cout << GREEN << "!" << ENDC << ptr->getName() << " added to her cart: " << prd->getName() << endl;
-		std::this_thread::sleep_for(chrono::milliseconds(200));
-		if (i++ >8)
-			break;
+		while (true) //Fetch ... todo-api
+		{
+			Client 	*ptr = new Client("Maria" + to_string(s_int++));
+			Product	*prd = rtnRandomProduct();
+			ptr->addToCart(prd);
+			_queue.push_back(ptr);
+			cout << GREEN << "!" << ENDC << ptr->getName() << " added to her cart: " << prd->getName() << endl;
+			std::this_thread::sleep_for(chrono::milliseconds(200));
+			if (i++ >8)
+				break;
+		}
+	}
+	else
+	{
+		cout << RED << "Sorry. " << ENDC << "Nothing in stock atm.\n";
+		std::this_thread::sleep_for(chrono::milliseconds(300));
+		cout << "...\n";
+		std::this_thread::sleep_for(chrono::milliseconds(300));
+		cout << "......\n";
+		std::this_thread::sleep_for(chrono::milliseconds(300));
+		cout << ".........\n";
+		std::this_thread::sleep_for(chrono::milliseconds(300));
 	}
 	cv.notify_all();
 	threadSignal = true; 
@@ -90,7 +103,7 @@ void	Business::createProduct()
 		if (name.length() >= 3)
 			break;
 		else
-			cout << RED << "For simplicity" << ENDC " it must be more than 3 characters\n>";
+			cout << "For simplicity: it must be more than 3 characters\n>";
 	}
 
 	cout << "Great, now at what price €/unit:\n>";
@@ -119,9 +132,8 @@ void	Business::createProduct()
 
 void	Business::addInvoice(Client *client)
 {
-	cout << GREEN << "Hello from addInvoice. on " << client->getName() << ENDC << endl;
-
 	Product	*product;
+
 	while ((product = client->getProduct()) != NULL)
 	{
 		if (product->getPrice() > client->getPrice())
@@ -131,8 +143,25 @@ void	Business::addInvoice(Client *client)
 			client->products().clear();
 			return ; 
 		}
-		_invoice.push_back(make_tuple(product, client, new Transaction(this, product, client)));
-		_revenue += product->getPrice();
-		cout << GREEN << "+" << ENDC << client->getName() << " checked-out: " << product->getName() << endl;
+		if (!product->archive())
+		{
+			_invoice.push_back(make_tuple(product, client, new Transaction(this, product, client)));
+			_revenue += product->getPrice();
+			cout << GREEN << "+" << ENDC << client->getName() << " checked-out: " << product->getName() << endl;
+		}
+		else
+			cout << RED << "SORRY. " << ENDC << product->getName() << " is out of stock atm.\n";
 	}
+}
+
+int		Business::stock()
+{
+	int count = 0;
+	for (auto i : _products)
+	{
+		if (!i->archive())
+			count++;
+	}
+	cout << "I is :" << count << endl;
+	return count;
 }

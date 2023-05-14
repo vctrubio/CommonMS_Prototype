@@ -12,6 +12,7 @@ void	uiProduct(Product *prd)
 	string input;
 
 	clear();
+	displayBarProduct();
 	cout << GREEN << prd->getName() << ENDC << " €" << to_string(prd->getPrice()) << endl;
 	cout << "Total Sales[" << prd->trans().size() << "]\n";
 	cout << "Total Revenue " << prd->getSold() << endl;
@@ -26,10 +27,7 @@ void	uiProduct(Product *prd)
 	if (prd->trans().size() > 0)
 		cout << "---------------------------------------------------\n";
 
-	cout << endl;
-	displayBarProduct();
-	cout << endl;
-	
+	cout << endl;	
 	while (42)
 	{
 		cout << ">";
@@ -74,11 +72,12 @@ void	uiQueue(Business *bsn, int flag)
 
 	if (!flag)
 		clear();
-	else
-		cout << "-----------CHECKOUT√----------------\n";
+
+	displayBarQueue();
+	if (flag == 1)
+		cout << "|-----------CHECKED-OUT√-----------|\n";
 	cout << GREEN << bsn->getName() << ENDC << endl;
 	cout << "Queue size: " << bsn->queue().size() << endl;
-	displayBarQueue();
 
 	for (auto i : bsn->queue())
 	{
@@ -86,6 +85,8 @@ void	uiQueue(Business *bsn, int flag)
 		for (auto j : i->products())
 			cout << "\t:" << j->getName() << endl;	
 	}
+
+	cout << endl;	
 	cout << ">";
 	cin >> input;
 	if (input == "checkout")
@@ -111,15 +112,13 @@ void	uiBsn(Business *bsn, int flag)
 	string input;
 
 	clear();
-
-	cout << "Welcome to " << GREEN << bsn->getName() << ENDC << " STOCK [" << bsn->products().size() << "]" << " TOTAL REVENUE = €" << bsn->revenue() << endl;
-	
-	cout << YELLOW << "Your Queue is: " << bsn->queue().size() << ENDC << endl;
-
 	if (!flag)
 		displayBarBsn();
 	else 
 		displayBarBsnHelp();
+
+	cout << "Welcome to " << GREEN << bsn->getName() << ENDC << " STOCK [" << bsn->products().size() << "]" << " TOTAL REVENUE = €" << bsn->revenue() << endl;
+	cout << YELLOW << "Your Queue is: " << bsn->queue().size() << ENDC << endl;
 
 	for (auto i : bsn->products())
 	{
@@ -128,7 +127,8 @@ void	uiBsn(Business *bsn, int flag)
 		i->print();
 		cout << ENDC;
 	}
-	
+
+	cout << endl;
 	cout << ">";
 	cin >> input;
 	if (input == "help")
@@ -145,15 +145,13 @@ void	uiBsn(Business *bsn, int flag)
 	else if (input == "open")
 	{
 		std::unique_lock<std::mutex> lock(mtx);
-		std::thread threadObj(&Business::threading, bsn); // Create a thread for bsn->threading()
+		std::thread threadObj(&Business::threading, bsn);
 		cv.wait(lock, [] { return threadSignal; });
 		threadObj.join();
 		threadSignal = false;
 	}
 	else if (input == "queue")
 	{
-		cout << "Displaying Queue... Size .... " << bsn->queue().size() << endl;
-		this_thread::sleep_for(chrono::seconds(1));
 		uiQueue(bsn, 0);
 		return ;
 	}
@@ -168,6 +166,5 @@ void	uiBsn(Business *bsn, int flag)
 			}
 		}
 	}
-	cout << "FININISHED.\n";
 	uiBsn(bsn, 0);
 }

@@ -27,5 +27,8 @@ public:
 
 	string	getName(){return _log;};
 };
-//memory leaks, need to keep note somewhere
+
+/* IMPORTANT
+--memory leaks, need to keep note somewhere of clients not creating transaction, but being removed from queue
+*/
 #endif
