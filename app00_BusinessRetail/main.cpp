@@ -5,13 +5,8 @@
 #include "Transaction.hpp"
 #include "Client.hpp"
 #include "UI.hpp"
+#include "Utils.hpp"
 
-
-/* Check for valid name
- * +3 letters
- */
-
-std::mutex queueMutex; 
 
 string	initBsn()
 {

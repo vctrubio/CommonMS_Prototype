@@ -28,3 +28,7 @@ I wanted to log my hours but I forgot to count
 -thread stopping input of text,
 -open and close business, + thread handling
 
+14.May
+-THRead mutex added, stopping input of text while waiting for 'open' cmd
+-close bsn not implement, problem would be dealing with memory 'delete' becuase no transaction would be created and client would be lost 
+-another good moring.

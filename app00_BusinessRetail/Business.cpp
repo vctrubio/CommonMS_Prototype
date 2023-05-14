@@ -1,5 +1,10 @@
 #include "Business.hpp"
 
+int Business::s_int = 0;
+std::mutex              mtx;
+std::condition_variable cv;
+bool                    threadSignal = false;
+
 Business::Business(User *user, string name):_belongs_to(user), _name(name), _revenue(0)
 {
 	_belongs_to->updateBsn(this);
@@ -54,17 +59,21 @@ Product	*Business::rtnRandomProduct()
 void	Business::threading()
 {
 	int i = 0;
-	while (true)
+	std::unique_lock<std::mutex> lock(mtx);
+
+	while (true) //Fetch ...
 	{
-		Client 	*ptr = new Client("Maria" + to_string(i++));
+		Client 	*ptr = new Client("Maria" + to_string(s_int++));
 		Product	*prd = rtnRandomProduct();
 		ptr->addToCart(prd);
 		_queue.push_back(ptr);
 		cout << GREEN << "!" << ENDC << ptr->getName() << " added to her cart: " << prd->getName() << endl;
-		std::this_thread::sleep_for(std::chrono::seconds(1));
-		if (i >8)
+		std::this_thread::sleep_for(chrono::milliseconds(200));
+		if (i++ >8)
 			break;
 	}
+	cv.notify_all();
+	threadSignal = true; 
 }
 
 void	Business::createProduct()
@@ -72,17 +81,16 @@ void	Business::createProduct()
 	string	input;
 	string	name;
 	int		price;
-	static int		s_int = 0;
 
-	cout << "To create a Product for: " << getName() << endl;
+	cout << "To create a Product for: " << GREEN << getName() << ENDC << endl;
 	cout << "Tell us what you want to sell:\n>";
 	while(true)
 	{
 		getline(cin, name);
 		if (name.length() >= 3)
 			break;
-		if (s_int++ == 0)
-			cout << "For simplicity, it must be more than 3 characters\n>";
+		else
+			cout << RED << "For simplicity" << ENDC " it must be more than 3 characters\n>";
 	}
 
 	cout << "Great, now at what price €/unit:\n>";
@@ -94,9 +102,9 @@ void	Business::createProduct()
 			price = stoi(input);
 			if (price > 0)
 			{
-				if (price >= 1000000)
+				if (price > 1000000)
 				{
-					cout << "Really!? More than a million bucks?\nSorry we dont sell bitcoins.\n";
+					cout << RED << "Really!?" << ENDC << " More than a million bucks?\nSorry we dont sell bitcoins.\n";
 					continue;
 				}
 				break;

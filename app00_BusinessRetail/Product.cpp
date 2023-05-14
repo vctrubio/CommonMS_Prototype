@@ -25,7 +25,7 @@ Product::~Product()
 	{
 		if (chdir("logsCSV") == -1)
 		{
-			if (mkdir("logsCSV", 0777) == -1)
+			if (mkdir("logsCSV", 0744) == -1)
 			{
 				cerr << "Error in mkdir (CSV)\n";
 				return;

@@ -15,6 +15,7 @@ class Transaction;
 
 class Business
 {
+	static int								s_int;
 	User									*_belongs_to;
 	string									_name;
 	int										_revenue;
