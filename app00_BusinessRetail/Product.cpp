@@ -25,16 +25,10 @@ Product::~Product()
 	{
 		if (chdir("logsCSV") == -1)
 		{
-			if (mkdir("logsCSV", 0744) == -1)
-			{
-				cerr << "Error in mkdir (CSV)\n";
+			
+			cerr << "Error in chdir (CSV)\n";
 				return;
-			}
-			if ((chdir("logsCSV") == -1))
-			{
-				cerr << "Error in chdir (CSV)\n";
-				return;
-			}
+		
 		}
 
 		string filename = "CSV_LOG FOR Business: " + _belongs_to->getName() + " => Product: " + _name;

@@ -12,22 +12,16 @@ Business::Business(User *user, string name):_belongs_to(user), _name(name), _rev
 
 Business::~Business()
 {
-	vector<Transaction*>	transaction;
 	vector<Client*>			clients;
 
 	for (auto product : _products)
 		delete product;
-	for (auto i : _invoice)
+	if (_allClients.size() > 0)
 	{
-		Client *client = get<1>(i);
-		clients.push_back(client);
-	}
-	if (clients.size() > 0)
-	{
-		sort(clients.begin(), clients.end());
-		auto uniq = std::unique(clients.begin(), clients.end());
-		clients.erase(uniq, clients.end());
-		for (auto client : clients)
+		sort(_allClients.begin(), _allClients.end());
+		auto uniq = std::unique(_allClients.begin(), _allClients.end());
+		_allClients.erase(uniq, _allClients.end());
+		for (auto client : _allClients)
 			delete client;
 	}
 	delete _belongs_to;
@@ -67,7 +61,7 @@ void	Business::threading()
 			Client 	*ptr = new Client("Maria" + to_string(s_int++));
 			Product	*prd = rtnRandomProduct();
 			ptr->addToCart(prd);
-			_queue.push_back(ptr);
+			addQueue(ptr);
 			cout << GREEN << "!" << ENDC << ptr->getName() << " added to her cart: " << prd->getName() << endl;
 			std::this_thread::sleep_for(chrono::milliseconds(200));
 			if (i++ >8)
@@ -162,6 +156,5 @@ int		Business::stock()
 		if (!i->archive())
 			count++;
 	}
-	cout << "I is :" << count << endl;
 	return count;
 }

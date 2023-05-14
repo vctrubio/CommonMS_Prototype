@@ -15,7 +15,7 @@ string	initBsn()
 	cout << "Welcome to Common Solutions\n";
 	cout << "To begin, please name your Business\n";
 	cout << "ie: Tom's Garage\n>";
-	
+
 	while(true)
 	{
 		getline(cin, input);
@@ -26,10 +26,19 @@ string	initBsn()
 	return input;
 }
 
+void	initAQueue(Business *bsn)
+{
+	Client *miguel = new Client ("Miguel");
+	miguel->addToCart(bsn->products().front());
+	bsn->addQueue(miguel);
+}
+
 int main()
 {
 	User	*user = new User("Guest123");
 	string	businessName;
+
+	mkdir("logsCSV", 0744);
 
 	businessName = initBsn();
 	cout << GREEN << "Creating Business: " << businessName << ENDC << endl;
@@ -38,9 +47,7 @@ int main()
 	cout << "................\nNow let's start by listing your first product\n";
 	bsn->createProduct();
 
-	Client *miguel = new Client ("Miguel");
-	miguel->addToCart(bsn->products().front());	
-	bsn->addQueue(miguel);
+	initAQueue(bsn);
 
 	uiBsn(bsn, 0);
 
