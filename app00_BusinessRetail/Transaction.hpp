@@ -6,7 +6,6 @@
 #include "Product.hpp"
 #include "Client.hpp"
 
-//param- business, product, client
 class Business;
 class Product;
 class Client;

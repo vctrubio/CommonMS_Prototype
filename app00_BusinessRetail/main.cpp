@@ -7,7 +7,6 @@
 #include "UI.hpp"
 #include "Utils.hpp"
 
-
 string	initBsn()
 {
 	string	input;
