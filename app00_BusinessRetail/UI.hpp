@@ -91,6 +91,7 @@ void	uiQueue(Business *bsn, int flag)
 	cin >> input;
 	if (input == "checkout")
 	{
+		clear();
 		for (auto i : bsn->queue())
 		{
 			bsn->addInvoice(bsn->queue().front());
