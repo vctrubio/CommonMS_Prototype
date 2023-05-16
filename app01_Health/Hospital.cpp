@@ -9,8 +9,8 @@ Doctor	*Hospital::idDoctor(int id, string name)
 			if (i->name() == name)
 				return i;
 			else
-				cout << RED << "ERROR: " << ENDC << " Doctor credentials ≠\n";
-			break;
+				cout << RED << "ERROR: " << ENDC << " Doctor credentials: " << name << " ≠ " << i->name() << endl;
+			return nullptr;
 		}
 	}
 	cout << RED << "ERROR: " << ENDC << " Doctor with " << id << " not found.\n";
@@ -52,6 +52,7 @@ void	Hospital::addPatient(string name)
 
 void	Hospital::addPatient(Patient *p)
 {
+	cout << "ADDING.\n" << p->name() << endl;
 	_patients.push_back(p);
 }
 

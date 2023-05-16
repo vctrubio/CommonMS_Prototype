@@ -42,7 +42,7 @@ Doctor		*initDoctor(string id, Hospital *hospital)
 	{
 		if (input.length() > 0)
 		{
-			return (hospital->idDoctor(idSearch));	
+			return (hospital->idDoctor(idSearch, input));	
 			break;
 		}
 		cout << ">";
@@ -68,7 +68,8 @@ void		uiDoctor(Hospital *hospital)
 			}
 			catch(runtime_error &e)
 			{
-				cout << RED << "Sorry " << ENDC << e.what() << " does NOT work here.\n Talk to admin if you believe there is a problem by typing ./healthcare admin request_to_work_here <your_name>" << endl;
+				cout << RED << "Sorry " << ENDC << e.what() << "\nIt appears you do NOT work here.\n Talk to admin if you believe there is a problem by typing ./healthcare admin request_to_work_here <your_name>" << endl;
+				return ;
 			}
 		}
 		cout << ">";
@@ -84,7 +85,6 @@ int main(int ac, char **av)
 {
 	ModeUI		input;
 	Hospital	hospital;
-	User		*user;
 	Doctor		*doctor = new Doctor("billy", &hospital);
 
 
@@ -104,6 +104,7 @@ int main(int ac, char **av)
 		}
 	}
 
+	User		*user;
 	if (input == PATIENT) 
 		user = initUserPatient(av[1]);
 	if (user) // if user not found in DB //if user 'iopdafasfasd' throws bus/segfault.......
