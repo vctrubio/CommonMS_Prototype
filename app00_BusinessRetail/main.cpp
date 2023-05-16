@@ -34,6 +34,7 @@ void	initAQueue(Business *bsn)
 
 int main()
 {
+	clear();
 	User	*user = new User("Guest123");
 	string	businessName;
 

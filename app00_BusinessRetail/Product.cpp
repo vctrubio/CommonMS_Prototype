@@ -7,7 +7,7 @@ string Product::getBsn()
 	return _belongs_to->getName();
 }
 
-bool isNumeric(const std::string &str)
+bool isNumeric(const string &str)
 {
 	for (char c : str)
 	{

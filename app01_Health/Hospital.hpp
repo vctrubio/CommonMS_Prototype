@@ -26,6 +26,7 @@ public:
 	//void	dUDoctor(Doctor *d);
 
 	void	addPatient(string name);
+	void	addPatient(Patient *p);
 	void	dPatient(Patient *p){p->_archived = true;};
 	void	dUPatient(Patient *p){p->_archived = false;};
 

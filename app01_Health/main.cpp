@@ -2,30 +2,96 @@
 #include <curl/curl.h>
 
 #include "Hospital.hpp"
+#include "User.hpp"
+#include "UIMsg.hpp"
 
 
 //if av = patient, init patient
 //admin = hospital (password under git ignore.GNL to recieve PASSWORD="underground"
 //doctor = Name && ID
 
+enum ModeUI {
+	ERROR = -1,
+	ADMIN = 1,
+	DOCTOR = 2,
+	PATIENT = 3
+};
+
+ModeUI		init(char **av)
+{
+	if (strcmp(*av, "admin") == 0)
+		return ADMIN;
+	if (strcmp(*av, "doctor") == 0)
+		return DOCTOR;
+	if (strcmp(*av, "patient") == 0)
+		return PATIENT;
+	return ERROR;
+}
+
+Doctor		*initDoctor(string nameParam, Hospital *hospital)
+{
+
+	return new Doctor(nameParam, hospital);
+}
+
+void		uiDoctor(Hospital *hospital)
+{
+	Doctor	*doctor;
+	string	input;
+
+	cout << "I see... So you think you work here.\n";
+	cout << "Please provide your #id.\n>";
+	while (cin >> input)
+	{
+		if (input.length() > 0)
+		{
+			try 
+			{
+				initDoctor(input, hospital);
+			}
+			catch(runtime_error &e)
+			{
+				cout << RED << "Sorry " << ENDC << e.what() << " does NOT work here.\n Talk to admin if you believe there is a problem by typing ./healthcare admin request_to_work_here <your_name>" << endl;
+			}
+		}
+		cout << ">";
+	}
+
+	//find doctor
+	//UI MSG interface
+}
+
 int main(int ac, char **av)
 {
+	ModeUI		input;
 	Hospital	*hospital = new Hospital();
+	User		*user;
 
-	hospital->addPatient("Miguel");
+	if (ac <= 1)
+	{
+		msgErrorArgumentCount();
+		return -1;
+	}
+	else
+	{
+		input = init(++av);
+		if (input < 0)
+		{
+			cerr << RED << "Initialization Error.\n" << ENDC;
+			cout << "'admin' 'patient' or 'doctor' not recieved as an argument.\n\n";
+			return -1;
+		}
+	}
 
+	if (input == PATIENT) 
+		user initPatient(av[1]);
+	if (user) // if user not found in DB
+		hospital->addPatient(user);
 
-	Doctor		*dc = new Doctor("Booby", hospital);
-
-
-	hospital->printPatients();
-	hospital->printDoctors();
-
-
-  Appointment *app = new Appointment(dc,new Patient("ass"));
+	if (input == DOCTOR)
+		uiDoctor(hospital);
 
 	delete hospital;
-	cout << GREEN << "FINITO\n";
 	return 1;
 }
 
@@ -36,43 +102,11 @@ int main(int ac, char **av)
 
 
 
-/*
-int mainFORLATER() {
-  CURL *curl;
-  CURLcode res;
 
-  // Initialize the cURL session
-  curl = curl_easy_init();
-  if (curl) {
-    // Set the API endpoint URL
-    const char *url = "https://api.openai.com/v1/engines/text-davinci-003/completions";
 
-    // Set the request payload
-    const char *payload = "{\"model\":\"text-davinci-003\",\"prompt\":\"Make a list of astronomical observatories:\"}";
 
-    // Set the request headers
-    struct curl_slist *headers = NULL;
-    headers = curl_slist_append(headers, "Content-Type: application/json");
-    headers = curl_slist_append(headers, "Authorization: Bearer YOUR_API_KEY");
 
-    // Set the cURL options
-    curl_easy_setopt(curl, CURLOPT_URL, url);
-    curl_easy_setopt(curl, CURLOPT_POST, 1);
-    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, payload);
-    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
 
-    // Perform the request
-    res = curl_easy_perform(curl);
 
-    // Check for errors
-    if (res != CURLE_OK)
-      std::cerr << "cURL request failed: " << curl_easy_strerror(res) << std::endl;
 
-    // Cleanup
-    curl_easy_cleanup(curl);
-    curl_slist_free_all(headers);
-  }
 
-  return 0;
-}
-*/
