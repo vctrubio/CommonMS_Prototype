@@ -14,6 +14,13 @@ int main(int ac, char **av)
 
 	hospital->addPatient("Miguel");
 
+
+	Doctor		*dc = new Doctor("Booby", hospital);
+
+
+	hospital->printPatients();
+
+
 	delete hospital;
 	cout << GREEN << "FINITO\n";
 	return 1;

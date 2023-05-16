@@ -6,6 +6,11 @@ void	Hospital::addPatient(string name)
 	_patients.push_back(p);
 }
 
+void	Hospital::dDoctor(Doctor *d)
+{
+	d->archive();
+}
+
 Hospital::~Hospital()
 {
 	//before deleting, must store database.....
