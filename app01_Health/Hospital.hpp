@@ -21,6 +21,10 @@ public:
 	Hospital(){cout << "Hospital created\n";};
 	~Hospital();
 
+	Doctor	*idDoctor(int id);
+	Doctor	*idDoctor(int id, string name);
+	Doctor	*idDoctor(string name);
+	
 	void	addDoctor(Doctor *d){_doctors.push_back(d);};
 	void	dDoctor(Doctor *d);
 	//void	dUDoctor(Doctor *d);

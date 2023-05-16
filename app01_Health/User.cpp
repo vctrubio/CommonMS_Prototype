@@ -1,6 +1,6 @@
 #include "User.hpp"
 
-static bool isNumeric(const string &str)
+bool isNumeric(const string &str)
 {
 	for (char c : str)
 	{
@@ -8,11 +8,10 @@ static bool isNumeric(const string &str)
 			return false;
 	}
 	return true;
-}
-
+};
 
 //search for user if av in database, by ID.
-User		*initUser(char *av)
+static User		*initUser(char *av)
 {
 	User	*ptr;
 	int 	idSearch;
@@ -31,7 +30,7 @@ User		*initUser(char *av)
 	return ptr;
 }
 
-User		*initUser()
+static User		*initUser()
 {
 	string input;
 
@@ -42,19 +41,20 @@ User		*initUser()
 	return (new User(input));
 }
 
-User		*initPatient(char *av)
+User		*initUserPatient(char *av)
 {
+	User	*user;
 	try
 	{
 		if (av)
-			return (initUser(av));
+			user = (initUser(av));
 		else
-			return (initUser());
+			user = (initUser());
 	}
 	catch (runtime_error &e)
 	{
 		cerr << RED << "Sorry " << ENDC << "User with ID "<< e.what() << " not found\n";
 	}
-	return nullptr;
+	return user;
 }
 

@@ -28,10 +28,26 @@ ModeUI		init(char **av)
 	return ERROR;
 }
 
-Doctor		*initDoctor(string nameParam, Hospital *hospital)
+Doctor		*initDoctor(string id, Hospital *hospital)
 {
+	string	input;
+	int		idSearch;
 
-	return new Doctor(nameParam, hospital);
+	if (!isNumeric(id))
+			throw runtime_error(id + " not valid.");
+
+	idSearch = stoi(id);
+	cout << "What is your Full Name.\n>";
+	while (getline(cin, input))
+	{
+		if (input.length() > 0)
+		{
+			return (hospital->idDoctor(idSearch));	
+			break;
+		}
+		cout << ">";
+	}
+	return nullptr;
 }
 
 void		uiDoctor(Hospital *hospital)
@@ -39,15 +55,16 @@ void		uiDoctor(Hospital *hospital)
 	Doctor	*doctor;
 	string	input;
 
-	cout << "I see... So you think you work here.\n";
+	cout << "I see... So... you think you work here.\n";
 	cout << "Please provide your #id.\n>";
-	while (cin >> input)
+	while (getline(cin, input))
 	{
 		if (input.length() > 0)
 		{
 			try 
 			{
-				initDoctor(input, hospital);
+				doctor = initDoctor(input, hospital);
+				break ;
 			}
 			catch(runtime_error &e)
 			{
@@ -57,15 +74,19 @@ void		uiDoctor(Hospital *hospital)
 		cout << ">";
 	}
 
-	//find doctor
-	//UI MSG interface
+	//find doctor OK
+	if (doctor)
+		cout << GREEN << doctor->name() << ENDC << " Welcome back... notification upcoming...\n";
+
 }
 
 int main(int ac, char **av)
 {
 	ModeUI		input;
-	Hospital	*hospital = new Hospital();
+	Hospital	hospital;
 	User		*user;
+	Doctor		*doctor = new Doctor("billy", &hospital);
+
 
 	if (ac <= 1)
 	{
@@ -84,14 +105,12 @@ int main(int ac, char **av)
 	}
 
 	if (input == PATIENT) 
-		user initPatient(av[1]);
-	if (user) // if user not found in DB
-		hospital->addPatient(user);
+		user = initUserPatient(av[1]);
+	if (user) // if user not found in DB //if user 'iopdafasfasd' throws bus/segfault.......
+		hospital.addPatient(user);
 
 	if (input == DOCTOR)
-		uiDoctor(hospital);
-
-	delete hospital;
+		uiDoctor(&hospital);
 	return 1;
 }
 

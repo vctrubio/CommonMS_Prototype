@@ -12,6 +12,10 @@ class User : public Patient
 public:
 	User(string name):Patient(name){};
 	~User(){};
+
+	//equal operator to compate one to another.
 };
 
+User		*initUserPatient(char *av);
+bool 		isNumeric(const string &str);
 #endif

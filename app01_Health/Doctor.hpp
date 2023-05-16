@@ -33,6 +33,9 @@ public:
 	void					archive(){_archive = true;};
 	void					uArchive(){_archive = false;};
 
+	int						id(){return _id;};
+	string					name(){return _name;};
+
     friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor)
     {
         os << "Doctor ID: " << doctor._id << "\n";
