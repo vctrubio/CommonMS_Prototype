@@ -10,3 +10,8 @@ Doctor::Doctor(string name, Hospital *h):_name(name)
 	h->addDoctor(this);
 }
 
+Doctor::Doctor(unsigned int id, string name, speciality spc, bool archived, Hospital *h):
+_id(id), _name(name), _spc(spc), _archive(archived)
+{
+	h->addDoctor(this);
+}

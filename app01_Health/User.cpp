@@ -4,7 +4,7 @@ bool isNumeric(const string &str)
 {
 	for (char c : str)
 	{
-		if (!std::isdigit(c))
+		if (!isdigit(c))
 			return false;
 	}
 	return true;

@@ -24,10 +24,11 @@ class Doctor
 	unsigned int			_id;
 	string					_name;
 	enum speciality			_spc;	
-	
 	bool					_archive;
+	
 public:
 	Doctor(string name, Hospital *h);
+	Doctor(unsigned int id, string name, speciality spc, bool archived, Hospital *h);
 	~Doctor(){};
 
 	void					archive(){_archive = true;};
@@ -35,7 +36,7 @@ public:
 
 	int						id(){return _id;};
 	string					name(){return _name;};
-
+	// friend	Hospital		updateDCount(int size){s_count = size;};
     friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor)
     {
         os << "Doctor ID: " << doctor._id << "\n";

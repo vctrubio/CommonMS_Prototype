@@ -14,11 +14,11 @@ class Appoitment;
 
 class Hospital
 {
-	vector<Patient*>	_patients;
+	map<int, Patient*>	_patients;
 	vector<Doctor*>		_doctors;
 	//how to define appointments, tuple? map? vector?
 public:
-	Hospital(){cout << "Hospital created\n";};
+	Hospital();
 	~Hospital();
 
 	Doctor	*idDoctor(int id);
@@ -29,7 +29,9 @@ public:
 	void	dDoctor(Doctor *d);
 	//void	dUDoctor(Doctor *d);
 
+	void	updateCount();
 	void	addPatient(string name);
+	void	addPatient(vector<string> name);
 	void	addPatient(Patient *p);
 	void	dPatient(Patient *p){p->_archived = true;};
 	void	dUPatient(Patient *p){p->_archived = false;};
@@ -37,7 +39,7 @@ public:
 	void	upPatient(Patient *p){p->_ingr = true;};
 	void	downPatient(Patient *p){p->_ingr = false;};
 
-	void	printPatients(){cout << "Printing ALL Patients\n-----------------\n"; for (auto i : _patients){cout << *i;}; cout << "-----------------\n";};
+	void	printPatients(){cout << "Printing ALL Patients\n-----------------\n"; for (auto i : _patients){cout << *i.second ;}; cout << "-----------------\n";};
 	void	printDoctors(){cout << "Printing ALL Doctors\n-------------------\n"; for (auto i : _doctors){cout << i;}; cout << "------------------\n";};
 };
 

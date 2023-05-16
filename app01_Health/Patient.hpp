@@ -5,9 +5,9 @@
 
 class Patient
 {
+	static unsigned int		s_count;
 	friend class Hospital;
 
-	static unsigned int		s_count;
 	unsigned int			_id;
 	string					_name;
 	//history ...
@@ -15,9 +15,12 @@ class Patient
 	bool					_archived;
 public:
 	Patient(string name):_name(name){_archived = false; _ingr = true; cout << "P " << _name << " added\n";};
+	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr; cout << "P2 " << _name << " added\n";};
 	virtual ~Patient(){cout << "P deleteed\n";};
 
 	string	name(){return _name;};
+	string	rtnCsv();
+
 	friend std::ostream& operator<<(std::ostream& os, const Patient& patient)
 	{
 		os << "Patient ID: " << patient._id << "\n";

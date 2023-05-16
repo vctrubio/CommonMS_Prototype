@@ -77,7 +77,9 @@ void		uiDoctor(Hospital *hospital)
 
 	//find doctor OK
 	if (doctor)
-		cout << GREEN << doctor->name() << ENDC << " Welcome back... notification upcoming...\n";
+		cout << GREEN << doctor->name() << ENDC << " Welcome back... notification upcoming...UI....\n";
+
+	//what to do. implement uiDoctorLoop
 
 }
 
@@ -112,6 +114,9 @@ int main(int ac, char **av)
 
 	if (input == DOCTOR)
 		uiDoctor(&hospital);
+
+	//if admin()
+
 	return 1;
 }
 
