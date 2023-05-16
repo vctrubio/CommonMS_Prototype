@@ -40,3 +40,9 @@ I wanted to log my hours but I forgot to count
 -Fixed minor bugs on app00, now can say fininshed
 -Brainstorming for app01- Hospital. 
 Stay tuned.
+
+16.May
+NOW After lunch break, so far,
+-added classes constructor ect.
+-working on UI this afternoon (before it gets serious)
+
