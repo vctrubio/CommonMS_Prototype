@@ -19,7 +19,15 @@ class Hospital
 	//how to define appointments, tuple? map? vector?
 public:
 	Hospital(){};
-	~Hospital(){};
+	~Hospital();
+
+	void	addPatient(string name);
+	void	dPatient(Patient *p){p->_archived = true;};
+	void	dUPatient(Patient *p){p->_archived = false;};
+
+	void	upPatient(Patient *p){p->_ingr = true;};
+	void	downPatient(Patient *p){p->_ingr = false;};
+
 };
 
 #endif

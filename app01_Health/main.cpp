@@ -12,7 +12,10 @@ int main(int ac, char **av)
 {
 	Hospital	*hospital = new Hospital();
 
-	cout << "We are inside a hospital.,.,\n";
+	hospital->addPatient("Miguel");
+
+	delete hospital;
+	cout << GREEN << "FINITO\n";
 	return 1;
 }
 

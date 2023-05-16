@@ -5,14 +5,19 @@
 
 class Patient
 {
-	unsigned int	_id;
-	string			_name;
+	friend class Hospital;
+
+	static unsigned int		s_count;
+	unsigned int			_id;
+	string					_name;
 	//history ...
-	//alta? baja?? 
-	bool			_state;
+	bool					_ingr; //ingresado
+	bool					_archived;
 public:
-	Patient(){};
-	~Patient(){};
+	Patient(string name):_name(name){_archived = false; _ingr = true; cout << "P added\n";};
+	~Patient(){cout << "P deleteed\n";};
+
 };
 
+//FRIENDS because i want to give hospital/admin full control to private. And not accesible to outsiders...
 #endif
