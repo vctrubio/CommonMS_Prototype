@@ -1,8 +1,30 @@
 #include "TestingApiChatGpt.hpp"
 #include <curl/curl.h>
 
+#include "Hospital.hpp"
 
-int main() {
+
+//if av = patient, init patient
+//admin = hospital (password under git ignore.GNL to recieve PASSWORD="underground"
+//doctor = Name && ID
+
+int main(int ac, char **av)
+{
+	Hospital	*hospital = new Hospital();
+
+	cout << "We are inside a hospital.,.,\n";
+	return 1;
+}
+
+
+
+
+
+
+
+
+/*
+int mainFORLATER() {
   CURL *curl;
   CURLcode res;
 
@@ -40,3 +62,4 @@ int main() {
 
   return 0;
 }
+*/

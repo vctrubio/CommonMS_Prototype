@@ -32,3 +32,11 @@ I wanted to log my hours but I forgot to count
 -THRead mutex added, stopping input of text while waiting for 'open' cmd
 -close bsn not implement, problem would be dealing with memory 'delete' becuase no transaction would be created and client would be lost 
 -another good moring.
+
+15.May
+-Long 8hr drive.
+-Testing on linux, my binary makeClass does not run..... 
+-Learning CMake
+-Fixed minor bugs on app00, now can say fininshed
+-Brainstorming for app01- Hospital. 
+Stay tuned.

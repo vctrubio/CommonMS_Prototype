@@ -5,7 +5,23 @@
 5. Modules contains pre-defined functionality for common tasks. (ie. include || find package)
 6. Configuration, build options through variables ('option' '-D')
 
+1. LEvELs
+2. Projects
+3. Requirements
+
 
 
 Once the build files are generated, you can use a build tool (such as make on Unix or cmake --build command)
 
+Tell it where your srcs is , where your built dir is.
+Dont make it in same dir
+
+
+OK::::: SO:
+cmake generates a CMakeCach
+CMakeFiles
+CmakeInstall
+MAKEFILE
+
+it is a config file....
+cmake -S . -B .
