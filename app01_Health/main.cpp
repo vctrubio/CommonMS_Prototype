@@ -115,6 +115,8 @@ int main(int ac, char **av)
 	if (input == DOCTOR)
 		uiDoctor(&hospital);
 
+	if (input == ADMIN)
+		hospital.loop();
 	//if admin()
 
 	return 1;

@@ -41,6 +41,8 @@ public:
 
 	void	printPatients(){cout << "Printing ALL Patients\n-----------------\n"; for (auto i : _patients){cout << *i.second ;}; cout << "-----------------\n";};
 	void	printDoctors(){cout << "Printing ALL Doctors\n-------------------\n"; for (auto i : _doctors){cout << i;}; cout << "------------------\n";};
+
+	void	loop();
 };
 
 #endif

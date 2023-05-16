@@ -7,6 +7,35 @@ static bool	strToBool(string b)
 	return true;
 }
 
+
+
+void		Hospital::loop()
+{
+	string	input;
+
+	system("clear");
+	cout << "UI To SHOW....\n";
+
+	cout << ">";
+	while (getline(cin, input))
+	{
+		if (input == "break")
+			break;
+		cout << ">";
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 Doctor	*Hospital::idDoctor(int id, string name)
 {
 	for (auto i : _doctors)
