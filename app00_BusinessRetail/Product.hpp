@@ -19,6 +19,7 @@ class Product
 	vector<string>	_transactions;
 	bool			_archive;
 public:
+	debugger
 	Product(Business *business, string name, unsigned int price):_belongs_to(business), _name(name), _price(price), _id(s_counterId++), _sold(0), _archive(false){};
 	~Product();
 

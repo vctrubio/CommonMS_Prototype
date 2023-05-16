@@ -19,7 +19,10 @@ int main(int ac, char **av)
 
 
 	hospital->printPatients();
+	hospital->printDoctors();
 
+
+  Appointment *app = new Appointment(dc,new Patient("ass"));
 
 	delete hospital;
 	cout << GREEN << "FINITO\n";
