@@ -14,8 +14,8 @@ class Appoitment;
 
 class Hospital
 {
-	map<int, Patient*>	_patients;
-	vector<Doctor*>		_doctors;
+	map<int, Patient*>			_patients;
+	vector<Doctor*>				_doctors;
 	//how to define appointments, tuple? map? vector?
 public:
 	Hospital();
@@ -24,6 +24,9 @@ public:
 	Doctor	*idDoctor(int id);
 	Doctor	*idDoctor(int id, string name);
 	Doctor	*idDoctor(string name);
+
+	bool	archivePatient(int id);
+	bool	archiveDoctor(int id);
 	
 	void	addDoctor(Doctor *d){_doctors.push_back(d);};
 	void	dDoctor(Doctor *d);
@@ -45,6 +48,9 @@ public:
 	void	printDoctors(){cout << "Printing ALL Doctors\n-------------------\n"; for (auto i : _doctors){cout << i;}; cout << "------------------\n";};
 
 	void	loop();
+	void	runloop(vector<string> cmds);
+	void	uCreatePatient();
+	void	uCreateDoctor();
 };
 
 #endif

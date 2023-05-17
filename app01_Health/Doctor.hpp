@@ -29,7 +29,7 @@ class Doctor
 public:
 	Doctor(string name, Hospital *h);
 	Doctor(unsigned int id, string name, int spc, bool archived, Hospital *h);
-	~Doctor(){};
+	~Doctor(){cout << RED << "-1" << ENDC " Doctor: " << _name << endl;};
 
 	void					updateDCount(unsigned int i){s_count = i;};
 	void					archive(){_archive = true;};

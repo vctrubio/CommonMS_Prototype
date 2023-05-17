@@ -43,7 +43,7 @@ Appointment::Appointment(Doctor *doctor, Patient *patient):_doctor(doctor), _pat
     int choice;
     while (42)
     {
-        std::cin >> choice;
+        cin >> choice;
         if (choice <= 4 && choice >= 1)
             break;
         cout << RED << "ERROR" << ENDC << " 1 2 3 or 4 \n";

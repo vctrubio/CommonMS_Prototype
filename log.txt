@@ -46,3 +46,6 @@ NOW After lunch break, so far,
 -added classes constructor ect.
 -working on UI this afternoon (before it gets serious)
 
+17.May
+Today it got messy
+-Ui is long, but its there and working. admin can do all, patient needs to connect to doctor.

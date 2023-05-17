@@ -19,13 +19,18 @@ class Patient
 
 	vector<Appointment*>		_appointments;
 public:
-	Patient(string name):_id(s_count++),_name(name){_archived = false; _ingr = true;};
+	Patient(string name):_id(s_count++),_name(name){_archived = false; _ingr = true; cout << GREEN << "+1" << ENDC " Patient: " << _name << endl;};
 	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr;};
-	virtual ~Patient(){};
+	virtual ~Patient(){cout << RED << "-1" << ENDC " Patient: " << _name << endl;};
 
-	string	name(){return _name;};
+	string			name(){return _name;};
 	unsigned int	id(){return _id;};
-	string	rtnCsv();
+	bool			ingr(){return _ingr;};
+	string			rtnCsv();
+
+	void			archive(){_archived = true;};
+	void			uArchive(){_archived = false;};
+	vector<Appointment*>	appointments;
 
 	friend std::ostream& operator<<(std::ostream& os, const Patient& patient)
 	{

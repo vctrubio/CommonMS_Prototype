@@ -8,27 +8,197 @@ static bool	strToBool(string b)
 	return true;
 }
 
+static void	uiAdmin()
+{
+	cout << "------------------------\n";
+	cout << "| Admin Menu | TYPE CMD |\n";
+	cout << "------------------------\n";
+	cout << "|'all patients/doctor'  |\n";
+	cout << "|'new patient/doctor'   |\n";
+	cout << "|'#ID patients'         |\n";
+	cout << "|'archive #id patient'  |\n";
+	// cout << "|'IN #id patient'       |\n";
+	// cout << "|'Out #id patient'      |\n";
+	// cout << "|'APP #patiant #doctor' |\n";
+	// cout << "|'APP all'              |\n";
+	cout << "------------------------\n";
+
+}
+//////////////////////////////////////////////////////////////////////////////////////
+
+bool	Hospital::archivePatient(int id)
+{
+	if (_patients[id] != 0)
+	{
+		_patients[id]->archive();
+		return true;
+	}
+	return false;
+	
+}
+
+bool	Hospital::archiveDoctor(int id)
+{
+	for (auto i : _doctors)
+	{
+		if (i->id() == id)
+		{
+			i->archive();
+			return true;
+		}
+	}
+	return false;
+}
+
+void	Hospital::uCreatePatient()
+{
+	string	input;
+
+	cout << YELLOW << "NEW" << ENDC << " Patient.\n";
+	cout << "Name> ";
+
+	while(getline(cin, input))
+	{
+		if (input.length() > 0)
+		{
+			Patient *ptr = new Patient(input);
+			_patients[ptr->id()] = ptr;
+			return ;
+		}
+		cout << ".....>";
+	}
+}
+
+void	Hospital::uCreateDoctor()
+{
+	string	input;
+
+	cout << YELLOW << "NEW" << ENDC << " Doctor.\n";
+	cout << "Name> ";
+	while(getline(cin, input))
+	{
+		if (input.length() > 0)
+		{
+			Doctor *ptr = new Doctor(input, this);
+			cout << GREEN << "+1" << ENDC " Doctor: " << ptr->name() << endl;
+			return ;
+		}
+		cout << ".....>";
+	}
+	
+}
+
+void	Hospital::runloop(vector<string> cmds)
+{
+	for (auto it = cmds.begin(); it != cmds.end(); ++it)
+	{
+		if (*it == "clear")
+		{
+			loop();
+			return ;
+		}
+		else if (*it == "exit" || *it == "0" || *it == "back")
+			return ;
+		else if (*it == "new")
+		{
+			if (++it == cmds.end())
+				break;
+			if (*it == "patient")
+				uCreatePatient();
+			if (*it == "doctor")
+				uCreateDoctor();
+			break;
+		}
+		else if (*it == "all")
+		{
+			if (++it == cmds.end())
+				break;
+			if (*it == "patients")
+			{
+				cout << "Patients [" << _patients.size() << "]\n";
+				cout << "--------------------------------------\n";
+				for (auto i : _patients)
+					cout << *i.second << "--------------------------------------\n";
+			}
+			if (*it == "doctors")
+			{
+				cout << "Doctors [" << _doctors.size() << "]\n";
+				cout << "--------------------------------------\n";
+				for (auto i : _doctors)
+					cout << *i << "--------------------------------------\n";
+			}
+		}
+		else if (*it == "#")
+		{
+			if (++it == cmds.end())
+				break;
+			if (*it == "patients")
+			{
+				cout << "Patients [" << _patients.size() << "]\n";
+				cout << "--------------------------------------\n";
+				for (auto i : _patients)
+					cout << *i.second << "--------------------------------------\n";
+			}
+			if (*it == "doctors")
+			{
+				cout << "Doctors [" << _doctors.size() << "]\n";
+				cout << "--------------------------------------\n";
+				for (auto i : _doctors)
+					cout << *i << "--------------------------------------\n";
+			}
+		}
+		else if (*it == "archive")
+		{
+			if (++it == cmds.end())
+				break;
+			int id = stoi(*it);
+			if (++it == cmds.end())
+				break;
+			if (*it == "patient" && !archivePatient(id))
+				cout << RED << "Error: " << ENDC << " no patient #id " << id << endl;
+			if (*it == "doctor" && !archiveDoctor(id))
+				cout << RED << "Error: " << ENDC << " no doctor #id " << id << endl;
+		}
+		// else if (*it == "IN")
+		// {
+		// 	if (++it == cmds.end())
+		// 		break;
+		// 	int id = stoi(*it);
+		// 	if (++it == cmds.end())
+		// 		break;
+		// 	if (*it == "patient" && )
+		// 	// if (*it == "doctor")
+		// }
+		// if (*it == "IN" && it != cmds.end())
+	}
+	
+}
+
 void		Hospital::loop()
 {
 	string	input;
 
 	system("clear");
-	cout << "UI To SHOW....\n";
-
+	uiAdmin();
 	cout << ">";
 	while (getline(cin, input))
 	{
-		if (input == "break")
+		if (input == "break" || input == "exit" || input == "0")
 			break;
+		if (input.length() > 0)
+		{
+			vector<string> cmds;
+			stringstream	ss(input);
+			string			tmp;
+			while(getline(ss, tmp, ' '))
+				cmds.push_back(tmp);
+			runloop(cmds);
+			tmp.clear();
+		}
 		cout << ">";
 	}
 
 }
-
-
-
-
-
 
 
 
