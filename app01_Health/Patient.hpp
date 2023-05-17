@@ -2,6 +2,9 @@
 #define PATIENT_HPP
 
 #include "../Headers.hpp"
+// #include "Appointment.hpp"
+
+class Appointment;
 
 class Patient
 {
@@ -13,12 +16,15 @@ class Patient
 	//history ...
 	bool					_ingr; //ingresado
 	bool					_archived;
+
+	vector<Appointment*>		_appointments;
 public:
-	Patient(string name):_name(name){_archived = false; _ingr = true; cout << "P " << _name << " added\n";};
-	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr; cout << "P2 " << _name << " added\n";};
-	virtual ~Patient(){cout << "P deleteed\n";};
+	Patient(string name):_id(s_count++),_name(name){_archived = false; _ingr = true;};
+	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr;};
+	virtual ~Patient(){};
 
 	string	name(){return _name;};
+	unsigned int	id(){return _id;};
 	string	rtnCsv();
 
 	friend std::ostream& operator<<(std::ostream& os, const Patient& patient)

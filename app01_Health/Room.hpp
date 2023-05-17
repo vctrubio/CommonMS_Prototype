@@ -2,21 +2,22 @@
 #define ROOM_HPP
 
 #include "../Headers.hpp"
-#include "Patient.hpp"
-#include "Doctor.hpp"
+#include "Appointment.hpp"
 
-class Patient;
-class Doctor;
+
+class Appointment;
 
 class Room
 {
-	int		_nb;
-	bool	_available;
-	Patient	*_patient;
-	Doctor	*_doctor;
+	int			_nb;
+	bool		_available;
+	Appointment	*_appointment;
 public:
 	Room(int n):_nb(n), _available(true){};
-	Room(int n, Patient *p, Doctor *d):_nb(n), _available(false), _patient(p), _doctor(d){};
+	Room(int n, Appointment *app):_nb(n), _available(false), _appointment(app){};
+
+
+	void	toggle(){_available = !_available;};
 	~Room(){};
 };
 

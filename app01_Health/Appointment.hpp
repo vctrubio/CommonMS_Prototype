@@ -30,6 +30,8 @@ public:
     Doctor	*getDoctor(){return _doctor;};
     Patient	*getPatient(){return _patient;};
 	string	getTime(){return dateTimeStr;};
+
+	string	csv();
 };
 
 #endif

@@ -28,6 +28,12 @@ vector<time_t>      generateRandomTimes()
     return randomTimes;
 }
 
+string	Appointment::csv()
+{
+	string str = to_string(_patient->id()) + "," + to_string(_doctor->id());
+	return str;
+}
+
 Appointment::Appointment(Doctor *doctor, Patient *patient):_doctor(doctor), _patient(patient)
 {
     _status = false;

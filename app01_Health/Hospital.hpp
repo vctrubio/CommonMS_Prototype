@@ -28,8 +28,10 @@ public:
 	void	addDoctor(Doctor *d){_doctors.push_back(d);};
 	void	dDoctor(Doctor *d);
 	//void	dUDoctor(Doctor *d);
+	
+	bool	doctorIdExist(int id);
 
-	void	updateCount();
+	void	updatePCount();
 	void	addPatient(string name);
 	void	addPatient(vector<string> name);
 	void	addPatient(Patient *p);
@@ -39,7 +41,7 @@ public:
 	void	upPatient(Patient *p){p->_ingr = true;};
 	void	downPatient(Patient *p){p->_ingr = false;};
 
-	void	printPatients(){cout << "Printing ALL Patients\n-----------------\n"; for (auto i : _patients){cout << *i.second ;}; cout << "-----------------\n";};
+	void	printPatients(){cout << "Printing ALL Patients\n-----------------\n"; for (auto i : _patients){cout << *(i.second) ;}; cout << "-----------------\n";};
 	void	printDoctors(){cout << "Printing ALL Doctors\n-------------------\n"; for (auto i : _doctors){cout << i;}; cout << "------------------\n";};
 
 	void	loop();

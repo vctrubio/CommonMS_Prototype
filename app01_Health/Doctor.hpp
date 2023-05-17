@@ -28,14 +28,16 @@ class Doctor
 	
 public:
 	Doctor(string name, Hospital *h);
-	Doctor(unsigned int id, string name, speciality spc, bool archived, Hospital *h);
+	Doctor(unsigned int id, string name, int spc, bool archived, Hospital *h);
 	~Doctor(){};
 
+	void					updateDCount(unsigned int i){s_count = i;};
 	void					archive(){_archive = true;};
 	void					uArchive(){_archive = false;};
-
+	
 	int						id(){return _id;};
 	string					name(){return _name;};
+	string					rtnCsv();
 	// friend	Hospital		updateDCount(int size){s_count = size;};
     friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor)
     {

@@ -1,3 +1,20 @@
+// vector<string>	fileToVector(ifstream file)
+// {
+// 	vector<string>	tmp;
+// 	if (file.is_open())
+// 	{
+// 		string line;
+// 		while (getline(file, line))
+// 		{
+// 			stringstream	ss(line);
+// 			string			data;
+// 			while (getline(ss, data, ','))
+// 				tmp.push_back(data);
+// 		}
+// 		file.close();
+// 	}
+// 	return tmp;
+// }
 
 
 

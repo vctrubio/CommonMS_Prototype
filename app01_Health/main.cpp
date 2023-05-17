@@ -4,6 +4,7 @@
 #include "Hospital.hpp"
 #include "User.hpp"
 #include "UIMsg.hpp"
+#include "Appointment.hpp"
 
 
 //if av = patient, init patient
@@ -87,7 +88,7 @@ int main(int ac, char **av)
 {
 	ModeUI		input;
 	Hospital	hospital;
-	Doctor		*doctor = new Doctor("billy", &hospital);
+	// Doctor		*doctor = new Doctor("billy", &hospital);
 
 
 	if (ac <= 1)
@@ -106,7 +107,7 @@ int main(int ac, char **av)
 		}
 	}
 
-	User		*user;
+	User		*user = nullptr;
 	if (input == PATIENT) 
 		user = initUserPatient(av[1]);
 	if (user) // if user not found in DB //if user 'iopdafasfasd' throws bus/segfault.......
