@@ -30,6 +30,9 @@ public:
 
 	void			archive(){_archived = true;};
 	void			uArchive(){_archived = false;};
+
+	void			alta(){_ingr = false;};
+	void			baja(){_ingr = true;};
 	vector<Appointment*>	appointments;
 
 	friend std::ostream& operator<<(std::ostream& os, const Patient& patient)
@@ -41,6 +44,8 @@ public:
 		return os;
 	}
 };
+
+void	uiPatient(Patient *ptr);
 
 //FRIENDS because i want to give hospital/admin full control to private. And not accesible to outsiders...
 #endif

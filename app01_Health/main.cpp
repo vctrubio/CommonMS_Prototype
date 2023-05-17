@@ -51,7 +51,7 @@ Doctor		*initDoctor(string id, Hospital *hospital)
 	return nullptr;
 }
 
-void		uiDoctor(Hospital *hospital)
+void		uiADoctor(Hospital *hospital)
 {
 	Doctor	*doctor;
 	string	input;
@@ -75,13 +75,7 @@ void		uiDoctor(Hospital *hospital)
 		}
 		cout << ">";
 	}
-
-	//find doctor OK
-	if (doctor)
-		cout << GREEN << doctor->name() << ENDC << " Welcome back... notification upcoming...UI....\n";
-
-	//what to do. implement uiDoctorLoop
-
+	doctor->loop(hospital);
 }
 
 int main(int ac, char **av)
@@ -108,17 +102,21 @@ int main(int ac, char **av)
 	}
 
 	User		*user = nullptr;
-	if (input == PATIENT) 
-		user = initUserPatient(av[1]);
-	if (user) // if user not found in DB //if user 'iopdafasfasd' throws bus/segfault.......
+	if (input == PATIENT)
+	{
+		Patient *ptr = hospital.idPatient(stoi(av[1]));
+		if (ptr)
+			cout << "Hello...." << ptr->name();
+		// user = initUser();
+	}
+	if (user)
 		hospital.addPatient(user);
 
 	if (input == DOCTOR)
-		uiDoctor(&hospital);
-
+		uiADoctor(&hospital);
 	if (input == ADMIN)
 		hospital.loop();
-	//if admin()
+
 
 	return 1;
 }

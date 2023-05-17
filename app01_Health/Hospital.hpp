@@ -25,6 +25,7 @@ public:
 	Doctor	*idDoctor(int id, string name);
 	Doctor	*idDoctor(string name);
 
+	Patient	*idPatient(int id);
 	bool	archivePatient(int id);
 	bool	archiveDoctor(int id);
 	

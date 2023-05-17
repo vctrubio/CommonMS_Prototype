@@ -16,6 +16,6 @@ public:
 	//equal operator to compate one to another.
 };
 
-User		*initUserPatient(char *av);
+User		*initUser();
 bool 		isNumeric(const string &str);
 #endif

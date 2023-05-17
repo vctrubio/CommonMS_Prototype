@@ -8,6 +8,24 @@ static bool	strToBool(string b)
 	return true;
 }
 
+Patient	*Hospital::idPatient(int id)
+{
+	Patient *ptr = nullptr;
+	try
+	{
+		ptr = _patients[id];
+		
+	}
+	catch (const std::out_of_range& e)
+	{
+		// Handle the case when the patient with the given id is not found
+		std::cerr << "Patient with ID " << id << " not found." << std::endl;
+		return nullptr;  // or throw an exception or handle the error accordingly
+	}
+	return ptr;
+}
+
+
 static void	uiAdmin()
 {
 	cout << "------------------------\n";
@@ -15,7 +33,7 @@ static void	uiAdmin()
 	cout << "------------------------\n";
 	cout << "|'all patients/doctor'  |\n";
 	cout << "|'new patient/doctor'   |\n";
-	cout << "|'#ID patients'         |\n";
+	cout << "|'#ID patient/doctor'   |\n";
 	cout << "|'archive #id patient'  |\n";
 	// cout << "|'IN #id patient'       |\n";
 	// cout << "|'Out #id patient'      |\n";
@@ -31,6 +49,7 @@ bool	Hospital::archivePatient(int id)
 	if (_patients[id] != 0)
 	{
 		_patients[id]->archive();
+		cout << GREEN << "Success: "<< ENDC << _patients[id]->name() << endl;
 		return true;
 	}
 	return false;
@@ -44,6 +63,7 @@ bool	Hospital::archiveDoctor(int id)
 		if (i->id() == id)
 		{
 			i->archive();
+			cout << GREEN << "Success: "<< ENDC << i->name() << endl;
 			return true;
 		}
 	}
@@ -132,20 +152,13 @@ void	Hospital::runloop(vector<string> cmds)
 		{
 			if (++it == cmds.end())
 				break;
-			if (*it == "patients")
-			{
-				cout << "Patients [" << _patients.size() << "]\n";
-				cout << "--------------------------------------\n";
-				for (auto i : _patients)
-					cout << *i.second << "--------------------------------------\n";
-			}
-			if (*it == "doctors")
-			{
-				cout << "Doctors [" << _doctors.size() << "]\n";
-				cout << "--------------------------------------\n";
-				for (auto i : _doctors)
-					cout << *i << "--------------------------------------\n";
-			}
+			int id = stoi(*it);
+			if (++it == cmds.end())
+				break;	
+			if (*it == "patient")
+				uiPatient(_patients[id]);
+			if (*it == "doctor")
+				uiADoctor(idDoctor(id));
 		}
 		else if (*it == "archive")
 		{

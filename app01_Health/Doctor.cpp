@@ -2,6 +2,57 @@
 
 unsigned int Doctor::s_count = 1;
 
+
+void		uiADoctor(Doctor *ptr)
+{
+   string input;
+
+    if (!ptr)
+        return;
+    cout << ptr;
+    cout << "------------------------------------------n>";
+    cout << "CMDS: archive, unarchive,\n>";
+
+    while (getline(cin, input))
+    {
+        if (input.length() > 0)
+        {
+            if (input == "archive")
+                ptr->archive();
+            if (input == "unarchive")
+				ptr->uArchive();
+            break;
+        }
+        else
+            cout << ">";
+    }
+}
+
+void	Doctor::loop(Hospital *h)
+{
+	cout << "-------------------------------\n";
+	cout << "| Welcome Dct. " << _name << "\n";
+	cout << "| You have X pending request |\n";
+	cout << "------------------------------\n";
+	cout << "|'exit' to leave             |\n";
+	cout << "-----------------------------\n";
+
+	string input;
+	cout << ">";
+	while (getline(cin, input))
+	{   
+		if (input.length() > 0)
+        {
+            
+        }
+        else
+            cout << ">";
+	}
+}
+
+
+
+
 Doctor::Doctor(string name, Hospital *h):_name(name)
 {
 	_archive = false;

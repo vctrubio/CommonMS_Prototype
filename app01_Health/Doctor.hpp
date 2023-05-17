@@ -4,9 +4,6 @@
 #include "../Headers.hpp"
 #include "Hospital.hpp"
 
-
-//define enum for speciality.
-
 enum	speciality
 {
 	UNKNOWN = 0,
@@ -47,7 +44,9 @@ public:
         os << "Archive: " << (doctor._archive ? "Yes" : "No") << "\n";
         return os;
     }
+	void					loop(Hospital *h);
 };
 
+void		uiADoctor(Doctor *ptr);
 
 #endif

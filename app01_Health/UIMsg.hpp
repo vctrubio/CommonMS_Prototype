@@ -17,36 +17,26 @@ void	msgErrorArgumentCount()
 	cout << "Thank you and try again.\n\n";
 };
 
-
-void	uiPatient(Patient *p)
-{
-	string alta = p->ingr()? "alta" : "baja";
+// void	uiPatient(Patient *p)
+// {
+// 	string alta = p->ingr()? "alta" : "baja";
 	
-	cout << "-----------------------------\n";
-	cout << "| " << p->id() << " | " << p->name() << " | ";
-	cout << alta << " | History [" << p->appointments.size() << "] \n";
-	cout << " - - - - - - - - - - - - - - \n";
-	cout << "|'new' for a new appointment|\n";
-	cout << "|'chat' to talk to a doctor |\n";
-	cout << "|'exit' to leave            |\n";
-	cout << "----------------------------\n";
+// 	cout << "-----------------------------\n";
+// 	cout << "| " << p->id() << " | " << p->name() << " | ";
+// 	cout << alta << " | History [" << p->appointments.size() << "] \n";
+// 	cout << " - - - - - - - - - - - - - - \n";
+// 	cout << "|'new' for a new appointment|\n";
+// 	cout << "|'chat' to talk to a doctor |\n";
+// 	cout << "|'exit' to leave            |\n";
+// 	cout << "----------------------------\n";
 
 
-	if (p->ingr())
-	{
-		cout << ":Currently in Room X\n";
-	}
-}
+// 	if (p->ingr())
+// 	{
+// 		cout << ":Currently in Room X\n";
+// 	}
+// }
 
-void	uiDoctor(Doctor *d)
-{
-	cout << "-------------------------------\n";
-	cout << "| Welcome Dct. " << d->name() << "         |\n";
-	cout << "| You have X pending request |\n";
-	cout << "------------------------------\n";
-
-
-}
 
 
 #endif
