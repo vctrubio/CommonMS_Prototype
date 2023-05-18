@@ -23,11 +23,11 @@ void	User::uiUserPannel()
 	cout << "|'new' for new appointment        |\n";
 	cout << "|'histoy' for appointment history |\n";
 	cout << "- - - - - - - - - - - - - - - - - - \n";
-	cout << "[" << appointments.size() << "]  Appointments                  |\n";
+	cout << "[" << appointments().size() << "]  Appointments                  |\n";
 
 	int count = 0;
 	vector<Appointment*> ptr;
-	for (auto i : appointments)
+	for (auto i : appointments())
 	{
 		if (!i->status())
 			ptr.push_back(i);

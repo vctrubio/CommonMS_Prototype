@@ -8,9 +8,14 @@ void uiPatient(Patient *ptr) //this should be a typedef<T> so its compatible wit
 
     if (!ptr)
         return;
-    cout << ptr;
-    cout << "------------------------------------------n>";
-    cout << "CMDS: archive, alta, baja, history, back\n>";
+    if (ptr->ingr())
+        cout << RED;
+    else
+        cout << GREEN;
+    cout << ptr->name() << ENDC << " |'archive', 'alta', 'baja', 'back'\n";
+    for (auto& appointment : ptr->appointments())
+        cout << appointment << endl;
+    cout << "\n";
 
     while (getline(cin, input))
     {

@@ -18,8 +18,8 @@ public:
 	int		nb(){return _nb;};
 	bool	available(){return _available;};
 	void	toggle(){_available = !_available;};
-	void	addApp(Appointment *app){_appointment = app;};
-	
+	void	addApp(Appointment *app){_appointment = app; _available = false;};
+
 	string	info();
 	Appointment	*appointment(){return _appointment;};
 	~Room(){

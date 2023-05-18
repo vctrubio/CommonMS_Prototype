@@ -138,10 +138,7 @@ int		Hospital::askID(int mode)
 				continue;
 			}
 			if (input == "back" || input == "exit")
-			{
-				cout << "HEREEEE.\n";
 				return -1;
-			}
 			try
 			{
 				rtn = (stoi(input));
@@ -173,9 +170,15 @@ void	Hospital::uiApp(vector<string>::iterator it)
 		while (getline(cin, input))
 		{
 			if (input == "back" || input == "exit")
-				return ;
+			{
+				loop();
+				return;
+			}
 			if (input == "show")
+			{
 				cout << "Nothing to show>";
+				continue;
+			}
 			else if (input == "new")
 			{
 				int patient = askID(1);
@@ -323,8 +326,7 @@ void		Hospital::loop()
 			runloop();
 			cmds.clear();
 		}
-
-		cout << GREEN <<  "…" << ENDC ">";
+			cout << GREEN <<  "…" << ENDC ">";
 	}
 
 }

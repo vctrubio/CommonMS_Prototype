@@ -54,9 +54,8 @@ Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(d
     times.clear();
 
     patient->addApp(this);
-    room->toggle();
+    room->addApp(this);
 	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : " << doctor->name() << " : " << dateTimeStr << endl;
-
 }
 
 
