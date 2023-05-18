@@ -17,6 +17,7 @@ class Hospital
 	map<int, Patient*>			_patients;
 	vector<Doctor*>				_doctors;
 	array<Room*, 40>			_rooms; //1-20 is for rest, 21-40 is for appointments
+	vector<string>				cmds;
 public:
 	Hospital();
 	~Hospital();
@@ -24,8 +25,19 @@ public:
 	Doctor	*idDoctor(int id);
 	Doctor	*idDoctor(int id, string name);
 	Doctor	*idDoctor(string name);
-
 	Patient	*idPatient(int id);
+	Doctor	*rtnDoctor(){
+		try
+		{
+			return _doctors.front();
+		}
+		catch(const std::exception& e)
+		{
+			cout << RED << "Error: " << ENDC << e.what() << endl;
+		}
+		return nullptr;
+	};
+
 	bool	archivePatient(int id);
 	bool	archiveDoctor(int id);
 	
@@ -49,14 +61,15 @@ public:
 	void	printDoctors();
 	
 	void	loop();
-	void	runloop(vector<string> cmds);
+	void	runloop();
 	void	uCreatePatient();
 	void	uCreateDoctor();
 	
 	Room	*availableRoom();
-
 	void	appCreate(Hospital *h, Doctor *d, Patient *p);
-
+	void	uiApp(vector<string>::iterator it);
+	
+	
 	void	appComplete(Appointment *app);
 
 };

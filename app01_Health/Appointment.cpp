@@ -36,11 +36,12 @@ string	Appointment::csv()
 
 Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(doctor), _patient(patient)
 {
+    if (!doctor || !patient || !room)
+        return ;
     _status = false;
-
+    int choice;
     vector<time_t>  times = generateRandomTimes();
 
-    int choice;
     while (42)
     {
         cin >> choice;
@@ -51,5 +52,18 @@ Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(d
     _dateTime = times[choice - 1];
     dateTimeStr = dateToString(_dateTime);
     times.clear();
+
+    patient->addApp(this);
+    room->toggle();
 	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : " << doctor->name() << " : " << dateTimeStr << endl;
+
+}
+
+
+std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
+    os << "Patient: " << appointment.getPatient()->name() << std::endl;
+    os << "Doctor: " << appointment.getDoctor()->name() << std::endl;
+    os << "Time: " << appointment.getTime() << std::endl;
+    os << "Status: " << (appointment.status() ? "Completed" : "Upcoming") << std::endl;
+    return os;
 }

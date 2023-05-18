@@ -7,18 +7,17 @@ class Appointment;
 
 class Patient
 {
-	static unsigned int		s_count;
 	friend class Hospital;
 
+	static unsigned int		s_count;
 	unsigned int			_id;
 	string					_name;
-	//history ...
 	bool					_ingr; //ingresado
 	bool					_archived;
 
-	vector<Appointment*>		_appointments;
+	vector<Appointment*>	_appointments;
 public:
-	Patient(string name):_id(s_count++),_name(name){_archived = false; _ingr = true; cout << GREEN << "+1" << ENDC " Patient: " << _name << endl;};
+	Patient(string name):_id(s_count++),_name(name){_archived = false; _ingr = false; cout << GREEN << "+1" << ENDC " Patient: " << _name << endl;};
 	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr;};
 	virtual ~Patient(){cout << RED << "-1" << ENDC " Patient: " << _name << endl;};
 
@@ -46,7 +45,5 @@ public:
 	void			addApp(Appointment *p){_appointments.push_back(p);};
 };
 
-void	uiPatient(Patient *ptr);
-
-//FRIENDS because i want to give hospital/admin full control to private. And not accesible to outsiders...
+	void			uiPatient(Patient *ptr);
 #endif

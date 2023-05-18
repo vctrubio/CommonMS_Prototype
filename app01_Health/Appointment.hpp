@@ -5,7 +5,9 @@
 #include "Patient.hpp"
 #include "Doctor.hpp"
 #include "Room.hpp"
+#include "Surgery.hpp"
 
+class Surgery;
 class Doctor;
 class Patient;
 class Room;
@@ -18,6 +20,8 @@ class Appointment
 	bool	_status;
 	string 	dateTimeStr;
 	time_t	_dateTime; //possible of 4 slots.
+
+	Surgery	*_surgery;
 public:
 	Appointment(Doctor *doctor, Patient *patient, Room *room);
 	~Appointment(){};
@@ -31,6 +35,8 @@ public:
 
 	string	csv();
 };
+
+std::ostream& operator<<(std::ostream& os, Appointment& appointment);
 
 //there needs to be an inheritance of appointment 
 //- one for checkup- no dado de baja

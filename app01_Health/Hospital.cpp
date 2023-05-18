@@ -62,8 +62,8 @@ Hospital::Hospital()
 		_doctors.front()->updateDCount(_doctors.size());
 
 	//Create rooms
-	for (int i = 1; i <= 40; i++)
-		_rooms[i] = new Room(i);
+	for (int i = 0; i < 40; i++)
+		_rooms[i] = new Room(i + 1);
 }
 
 Hospital::~Hospital()
@@ -96,29 +96,111 @@ static bool	strToBool(string b)
 
 static void	uiAdmin()
 {
-	cout << "------------------------\n";
-	cout << "| Admin Menu | TYPE CMD |\n";
-	cout << "------------------------\n";
-	cout << "|'all patients/doctor'  |\n";
-	cout << "|'new patient/doctor'   |\n";
-	cout << "|'# <ID> patient/doctor'|\n";
-	cout << "|'archive #id patient'  |\n";
-	// cout << "|'ROOMS'      |\n";
-	cout << "|APP # patiant # doctor'|\n";
-	cout << "|APP for app Managment  |\n";
-	cout << "------------------------\n";
+	cout << "---------------------------\n";
+	cout << "| Admin Menu | TYPE CMD   |\n";
+	cout << "---------------------------\n";
+	cout << "|'all patients/doctor'    |\n";
+	cout << "|'new patient/doctor'     |\n";
+	cout << "|'# <ID> patient/doctor'  |\n";
+	cout << "|'archive #id patient'    |\n";
+	cout << "|'rooms' to see all       |\n";
+	cout << "|app #IDpatiant #IDdoctor'|\n";
+	cout << "|app for app Managment    |\n";
+	cout << "---------------------------\n";
 
 }
 //////////////////////////////////////////////////////////////////////////////////////
+void	Hospital::uiApp(vector<string>::iterator it)
+{
+	if (it == cmds.end())
+	{
+		string input;
+		cout << "--------------------------\n";
+		cout << "| 'back' | 'new' | 'show' |\n";
+		cout << "--------------------------\n>";
+		while (getline(cin, input))
+		{
+			if (input == "back" || input == "exit")
+				return ;
+			else if (input == "new")
+			{
+				Patient *patient;
+				Doctor 	*doctor;
+				cout << "What Patient #ID> ";
+				while(getline(cin, input))
+				{
+					if (input.length() > 0)
+					{
 
-void	Hospital::runloop(vector<string> cmds)
+					cout << "OK......" << input << endl;
+					if (input == "show")
+					{
+						printPatients();
+						cout << "So. What Patient #ID> ";
+					}
+						if (input == "back" || "exit")
+							return ;
+					
+							cout << "i see.ºn .....\n";
+							// patient = idPatient(stoi(input));
+					
+					}
+					cout << "breaking.\n";
+					break;
+				}
+				cout << "What Doctor #ID> ";
+				while(getline(cin, input))
+				{
+					if (input == "show")
+					{
+						printDoctors();
+						cout << "So. What Doctor #ID> ";
+					}
+					else if (input == "back" || "exit")
+						return;
+					else
+					{
+						try
+						{
+							doctor = idDoctor(stoi(input));
+						}
+						catch(const std::exception& e)
+						{
+							std::cerr << e.what() << '\n';
+						}
+					}	
+				}
+				new Appointment(doctor, patient, availableRoom());
+				return ;
+			}
+			else
+				cout << "...>";
+		}
+	}
+	else
+	{
+		try
+		{
+			Patient *p = idPatient(stoi(*it++));
+			Doctor	*d = idDoctor(stoi(*it++));
+			if (it == cmds.end())
+				appCreate(this, d, p);
+			else
+				cout << RED << "SORRY" << ENDC << " too many cmds.\n";
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
+
+}
+
+void	Hospital::runloop()
 {
 	for (auto it = cmds.begin(); it != cmds.end(); ++it)
 	{
-		cout << "--------" << *it << endl;
-		if (*it == "clear")
-			system("clear");
-		else if (*it == "exit" || *it == "0" || *it == "back")
+		if (*it == "exit" || *it == "0" || *it == "back")
 			return ;
 		else if (*it == "new")
 		{
@@ -158,7 +240,6 @@ void	Hospital::runloop(vector<string> cmds)
 				{
 					cout << RED << "Error: " << ENDC << e.what() << endl;
 				}
-				
 			}
 		}
 		else if (*it == "archive")
@@ -184,6 +265,13 @@ void	Hospital::runloop(vector<string> cmds)
 				}
 			}
 		}
+		else if (*it == "rooms")
+		{
+			for (auto it : _rooms)
+				cout << it->info() << "-----------------\n";
+		}
+		else if (*it == "app")
+			uiApp(++it);
 		return ;
 	}
 }
@@ -199,19 +287,29 @@ void		Hospital::loop()
 	{
 		if (input == "break" || input == "exit" || input == "0")
 			return ;
-		if (input.length() > 0)
+		if (input == "clear")
 		{
-			vector<string> cmds;
+			loop();
+			return ;
+		}
+		else if (input.length() > 0)
+		{
 			stringstream	ss(input);
 			string			tmp;
 			while(getline(ss, tmp, ' '))
 				cmds.push_back(tmp);
-			runloop(cmds);
+			runloop();
+			cmds.clear();
 		}
-		cout << ">";
+		cout << "oo>";
 	}
 
 }
+
+
+
+
+
 
 //////////////////////////////////////////////////////////////////////////
 bool	Hospital::archivePatient(int id)
@@ -277,6 +375,28 @@ void	Hospital::uCreateDoctor()
 	
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //DOCTOR MAN
 Doctor	*Hospital::idDoctor(int id, string name)
 {
@@ -312,10 +432,7 @@ Doctor	*Hospital::idDoctor(int id)
 	for (auto i : _doctors)
 	{
 		if (i->id() == id)
-		{
-			cout << "TESTING FOUND : " << i->id() << " : " << id << " NAME : " << i->name() << endl;
 			return i;
-		}
 	}
 	cout << RED << "ERROR: " << ENDC << " Doctor with " << id << " not found.\n";
 	return nullptr;

@@ -20,6 +20,8 @@ public:
 	void	toggle(){_available = !_available;};
 	void	addApp(Appointment *app){_appointment = app;};
 	
+	string	info();
+	Appointment	*appointment(){return _appointment;};
 	~Room(){
 		/*if (_appointment)
 		{
@@ -27,5 +29,6 @@ public:
 		}*/
 	};
 };
+
 
 #endif

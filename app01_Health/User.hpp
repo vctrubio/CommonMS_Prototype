@@ -6,8 +6,11 @@
 #include "Patient.hpp"
 #include "Hospital.hpp"
 
+#include "Appointment.hpp"
+
 class Patient;
 class Hospital;
+class Appointment;
 
 class User : public Patient
 {
@@ -15,9 +18,12 @@ public:
 	User(string name):Patient(name){};
 	~User(){};
 
-	void	ui(Hospital *h);
+	void	ui(Hospital *h, int start);
+
+void		uiUserPannel();
 };
 User		*initUser();
 User		*initUser(string av, Hospital *h);
 
+bool 		isNumeric(const string &str);
 #endif

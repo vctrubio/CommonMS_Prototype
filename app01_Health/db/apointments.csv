@@ -1,1 +1,1 @@
-idpatient, iddoctor, date, status
+idpatient, iddoctor, date, room, completed?

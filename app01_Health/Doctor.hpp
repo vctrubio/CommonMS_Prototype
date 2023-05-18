@@ -35,7 +35,9 @@ public:
 	int						id(){return _id;};
 	string					name(){return _name;};
 	string					rtnCsv();
-	// friend	Hospital		updateDCount(int size){s_count = size;};
+	
+	void					loop(Hospital *h);
+
     friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor)
     {
         os << "Doctor ID: " << doctor._id << "\n";
@@ -44,7 +46,6 @@ public:
         os << "Archive: " << (doctor._archive ? "Yes" : "No") << "\n";
         return os;
     }
-	void					loop(Hospital *h);
 };
 
 void		uiADoctor(Doctor *ptr);

@@ -85,8 +85,6 @@ int main(int ac, char **av)
 {
 	ModeUI		input;
 	Hospital	hospital;
-	// Doctor		*doctor = new Doctor("billy", &hospital);
-
 
 	if (ac <= 1)
 	{
@@ -104,25 +102,27 @@ int main(int ac, char **av)
 		}
 	}
 
-	User		*user = nullptr;
+	User *user = nullptr;
 	if (input == PATIENT)
+	{
 		user = initUser();
-	if (user)
-	{
-		hospital.addPatient(user);
-		user->ui(&hospital);
+		if (user)
+		{
+			hospital.addPatient(user);
+			user->ui(&hospital, 1);
+		}
 	}
-
-	if (input == IDPATIENT)
+	else if (input == IDPATIENT)
 	{
-		initUser(av[1], &hospital);
-		user->ui(&hospital);
+		user = initUser(av[1], &hospital);
+		if (!user)
+			return -1;
+		user->ui(&hospital, 1);
 	}
-	if (input == DOCTOR)
+	else if (input == DOCTOR)
 		uiADoctor(&hospital);
-	if (input == ADMIN)
+	else if (input == ADMIN)
 		hospital.loop();
-
 
 	return 1;
 }

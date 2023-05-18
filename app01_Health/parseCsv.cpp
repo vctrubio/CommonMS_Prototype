@@ -2,6 +2,8 @@
 
 void	addtoCSV(int id, Doctor *d)
 {
+	if (!d)
+		return ;
 	ifstream	fileD("doctors.csv");
 	vector<int>	tmp;
 
@@ -39,6 +41,8 @@ void	addtoCSV(int id, Doctor *d)
 
 void	addtoCSV(int id, Patient *p)
 {
+	if (!p)
+		return ;
 	ifstream	fileP("patients.csv");
 	vector<int>	tmp;
 
