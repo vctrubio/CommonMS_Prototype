@@ -3,6 +3,8 @@
 
 #include "../Headers.hpp"
 
+#include "Appointment.hpp"
+
 class Appointment;
 
 class Patient
