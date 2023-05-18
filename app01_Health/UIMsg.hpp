@@ -2,11 +2,6 @@
 #define UIMSG_HPP
 
 #include "../Headers.hpp"
-#include "Patient.hpp"
-#include "Doctor.hpp"
-
-class Patient;
-class Doctor;
 
 void	msgErrorArgumentCount()
 {

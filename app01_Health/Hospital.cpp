@@ -78,7 +78,7 @@ Hospital::Hospital()
 	if (!_patients.empty())
 		updatePCount();
 	if (!_doctors.empty())
-		_doctors.front()->updateDCount(_doctors.size());
+		_doctors.front()->updateDCount(this);
 
 	for (int i = 0; i < 40; i++)
 		_rooms[i] = new Room(i + 1);
@@ -329,9 +329,7 @@ void	Hospital::runloop()
 			for (auto it : _rooms)
 			{
 				cout << it->info();
-				//+ appointment info...
 				cout << "-----------------\n";
-
 			}
 		}
 		else if (*it == "app")
@@ -369,10 +367,6 @@ void		Hospital::loop()
 	}
 
 }
-
-
-
-
 
 
 //////////////////////////////////////////////////////////////////////////
@@ -439,20 +433,7 @@ void	Hospital::uCreateDoctor()
 	
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 //DOCTOR MAN
-
 Doctor	*Hospital::rtnDoctor()
 {
 	if (_doctors.empty())
@@ -647,4 +628,4 @@ Room	*Hospital::availableRoom()
 		cerr << e.what() << '\n';
 	}
 	return nullptr;
-};
+}

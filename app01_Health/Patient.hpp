@@ -12,7 +12,7 @@ class Patient
 	static unsigned int		s_count;
 	unsigned int			_id;
 	string					_name;
-	bool					_ingr; //ingresado
+	bool					_ingr;
 	bool					_archived;
 
 	vector<Appointment*>	_appointments;

@@ -27,7 +27,7 @@ public:
 	Doctor(unsigned int id, string name, int spc, bool archived, Hospital *h);
 	~Doctor(){cout << RED << "-1" << ENDC " Doctor: " << _name << endl;};
 
-	void					updateDCount(unsigned int i){s_count = i;};
+	void					updateDCount(Hospital *h);
 	void					archive(){_archive = true;};
 	void					uArchive(){_archive = false;};
 	bool					isArchive(){return _archive;};

@@ -114,8 +114,6 @@ void	User::ui(Hospital *h, int start)
 	}
 }
 
-
-
 User		*initUser()
 {
 	string input;
@@ -148,4 +146,3 @@ User		*initUser(string av, Hospital *h)
 
 	return ptr;
 }
-

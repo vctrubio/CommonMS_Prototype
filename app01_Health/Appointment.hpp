@@ -2,7 +2,6 @@
 #define APPOINTMENT_HPP
 
 #include "../Headers.hpp"
-// #include "Patient.hpp"
 #include "Doctor.hpp"
 #include "Room.hpp"
 #include "Surgery.hpp"

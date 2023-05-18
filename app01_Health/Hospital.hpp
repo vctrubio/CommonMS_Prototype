@@ -20,21 +20,19 @@ public:
 	Hospital();
 	~Hospital();
 
-	Doctor	*idDoctor(int id);
-	Doctor	*idDoctor(int id, string name);
-	Doctor	*idDoctor(string name);
-	Patient	*idPatient(int id);
-	Doctor	*rtnDoctor();
+	Doctor			*idDoctor(int id);
+	Doctor			*idDoctor(int id, string name);
+	Doctor			*idDoctor(string name);
+	Patient			*idPatient(int id);
+	Doctor			*rtnDoctor();
+	vector<Doctor*>	allDoctors(){return _doctors;};
 
 	bool	archivePatient(int id);
 	bool	archiveDoctor(int id);
-	
 	void	addDoctor(Doctor *d){_doctors.push_back(d);};
 	void	dDoctor(Doctor *d);
-	//void	dUDoctor(Doctor *d);
-	
 	bool	doctorIdExist(int id);
-
+	
 	void	updatePCount();
 	void	addPatient(string name);
 	void	addPatient(vector<string> name);
@@ -59,8 +57,7 @@ public:
 	
 	int		askID(int mode);
 
-
-	void	appComplete(Appointment *app);
+	void	appComplete(Appointment *app){app->complete();};
 };
 
 bool	validatePatient(vector<string> data);

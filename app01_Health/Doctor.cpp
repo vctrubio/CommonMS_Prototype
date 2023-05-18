@@ -2,7 +2,6 @@
 
 unsigned int Doctor::s_count = 1;
 
-
 void		uiADoctor(Doctor *ptr)
 {
    string input;
@@ -59,9 +58,6 @@ void	Doctor::loop(Hospital *h)
 	}
 }
 
-
-
-
 Doctor::Doctor(string name, Hospital *h):_name(name)
 {
 	_archive = false;
@@ -86,6 +82,17 @@ string	Doctor::rtnCsv()
 	str += (_archive? "true" : "false");
 	str += "\n";
 	return str;
+}
+
+void	Doctor::updateDCount(Hospital *h)
+{
+	int big = _id;
+	for (auto i : h->allDoctors())
+	{
+		if (i->id() > big)
+			big = i->id();
+	}
+	s_count = big + 1;
 }
 
 bool	validateDoctor(vector<string> data)

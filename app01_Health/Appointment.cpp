@@ -76,7 +76,6 @@ Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(d
 	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : DR." << doctor->name() << " : " << dateTimeStr << endl;
 }
 
-
 std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
     os << "Patient: " << appointment.getPatient()->name() << std::endl;
     os << "Doctor: " << appointment.getDoctor()->name() << std::endl;
@@ -84,7 +83,6 @@ std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
     os << "Status: " << (appointment.status() ? "Completed" : "Upcoming") << std::endl;
     return os;
 }
-
 
 bool surgeryPro() {
     std::random_device rd;
