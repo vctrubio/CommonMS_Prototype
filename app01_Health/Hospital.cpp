@@ -569,7 +569,7 @@ void	Hospital::printPatients()
 			continue;
 		cout << *(it->second);
 		cout << "- - - - - - - - - - -\n";
-	} 
+	}
 	cout << "--------------------------------------\n";
 }
 

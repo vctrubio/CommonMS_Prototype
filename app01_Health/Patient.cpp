@@ -2,7 +2,7 @@
 
 unsigned int Patient::s_count = 1;
 
-void uiPatient(Patient *ptr) //this should be a typedef<T> so its compatible with Doctor
+void uiPatient(Patient *ptr)
 {
     string input;
 
@@ -15,7 +15,7 @@ void uiPatient(Patient *ptr) //this should be a typedef<T> so its compatible wit
         cout << GREEN;
     cout << ptr->name() << ENDC << " |'archive', 'alta', 'baja', 'back'\n";
     for (auto *appointment : ptr->appointments())
-        cout << appointment << endl;
+        cout << appointment << endl; //cannot dereference.
     cout << "\n>";
 
     while (getline(cin, input))
