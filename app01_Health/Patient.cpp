@@ -2,7 +2,7 @@
 
 unsigned int Patient::s_count = 1;
 
-void uiPatient(Patient *ptr)
+void uiPatient(Patient *ptr) //this should be a typedef<T> so its compatible with Doctor
 {
     string input;
 
@@ -10,13 +10,15 @@ void uiPatient(Patient *ptr)
         return;
     cout << ptr;
     cout << "------------------------------------------n>";
-    cout << "CMDS: archive, alta, baja, history\n>";
+    cout << "CMDS: archive, alta, baja, history, back\n>";
 
     while (getline(cin, input))
     {
         if (input.length() > 0)
         {
-            if (input == "archive")
+            if (input == "back")
+                break;
+            else if (input == "archive")
                 ptr->archive();
             else if (input == "alta")
                 ptr->alta();
@@ -31,10 +33,9 @@ void uiPatient(Patient *ptr)
                 //     //for now....
                 // }
             }
-            break;
         }
         else
-            cout << ">";
+            cout << ptr->name() << "|>";
     }
 }
 

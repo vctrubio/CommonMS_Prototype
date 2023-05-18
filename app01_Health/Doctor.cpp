@@ -11,20 +11,21 @@ void		uiADoctor(Doctor *ptr)
         return;
     cout << ptr;
     cout << "------------------------------------------n>";
-    cout << "CMDS: archive, unarchive,\n>";
+    cout << "CMDS: archive, unarchive, back\n>";
 
     while (getline(cin, input))
     {
         if (input.length() > 0)
         {
+			if (input == "back")
+                break;
             if (input == "archive")
                 ptr->archive();
             if (input == "unarchive")
 				ptr->uArchive();
-            break;
         }
         else
-            cout << ">";
+            cout << ptr->name() << "|>";
     }
 }
 
@@ -43,7 +44,7 @@ void	Doctor::loop(Hospital *h)
 	{   
 		if (input.length() > 0)
         {
-            
+			cout << ".....kl\n";
         }
         else
             cout << ">";

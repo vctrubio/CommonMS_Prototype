@@ -1,30 +1,91 @@
 #include "Hospital.hpp"
 #include "parseCsv.hpp"
 
+Hospital::Hospital()
+{
+	string	rootDir = "db";
+	string	patienFile = "patients.csv";
+	string	doctorFile = "doctors.csv";
+	
+	mkdir(rootDir.c_str(), 0744);
+	filesystem::current_path(rootDir);
+
+	ifstream fileP(patienFile);
+	if (fileP.is_open())
+	{
+		string line;
+		// int i = 0;
+		while (getline(fileP, line))
+		{
+			// if (i++ == 0)
+			// 	continue;
+			vector<string>	tmp;
+			stringstream	ss(line);
+			string			data;
+			while (getline(ss, data, ','))
+				tmp.push_back(data);
+			if (validatePatient(tmp))
+				addPatient(tmp);
+			tmp.clear();
+		}
+		fileP.close();
+	}
+	else
+		cout << RED << "ERROR" << ENDC << " not able to parse patientCSV\n";
+
+	ifstream fileD(doctorFile);
+	if (fileD.is_open())
+	{
+		string line;
+		// int i = 0; //later for header CSV
+		while (getline(fileD, line))
+		{
+			// if (i++ == 0)
+			// 	continue;
+			vector<string>	tmp;
+			stringstream	ss(line);
+			string			data;
+			while (getline(ss, data, ','))
+				tmp.push_back(data);
+			if (validateDoctor(tmp))
+			 	new Doctor((unsigned int)stoi(tmp[0]), tmp[1] , tmp[2][0], false, this); //OH FK
+			tmp.clear();
+		}
+		fileD.close();
+	}
+	else
+		cout << RED << "ERROR" << ENDC << " not able to parse doctorCSV\n";
+
+	if (!_patients.empty())
+		updatePCount();
+	if (!_doctors.empty())
+		_doctors.front()->updateDCount(_doctors.size());
+}
+
+Hospital::~Hospital()
+{
+	cout << RED << "DECONGTRUCT: " << ENDC << "patient size = " << _patients.size() << endl;
+	cout << RED << "DECONGTRUCT: " << ENDC << "Doctor size = " << _doctors.size() << endl;
+	for (auto it = _patients.begin(); it != _patients.end(); ++it)
+	{
+		addtoCSV(it->first, it->second);
+		delete it->second;
+	}
+	for (auto i : _doctors)
+	{
+		addtoCSV(i->id(), i);
+		delete i;
+	}
+	_patients.clear();
+	_doctors.clear();
+}
+
 static bool	strToBool(string b)
 {
 	if (b == "false")
 		return false;
 	return true;
 }
-
-Patient	*Hospital::idPatient(int id)
-{
-	Patient *ptr = nullptr;
-	try
-	{
-		ptr = _patients[id];
-		
-	}
-	catch (const std::out_of_range& e)
-	{
-		// Handle the case when the patient with the given id is not found
-		std::cerr << "Patient with ID " << id << " not found." << std::endl;
-		return nullptr;  // or throw an exception or handle the error accordingly
-	}
-	return ptr;
-}
-
 
 static void	uiAdmin()
 {
@@ -33,7 +94,7 @@ static void	uiAdmin()
 	cout << "------------------------\n";
 	cout << "|'all patients/doctor'  |\n";
 	cout << "|'new patient/doctor'   |\n";
-	cout << "|'#ID patient/doctor'   |\n";
+	cout << "|'# <ID> patient/doctor'|\n";
 	cout << "|'archive #id patient'  |\n";
 	// cout << "|'IN #id patient'       |\n";
 	// cout << "|'Out #id patient'      |\n";
@@ -44,16 +105,118 @@ static void	uiAdmin()
 }
 //////////////////////////////////////////////////////////////////////////////////////
 
+void	Hospital::runloop(vector<string> cmds)
+{
+	for (auto it = cmds.begin(); it != cmds.end(); ++it)
+	{
+		cout << "--------" << *it << endl;
+		if (*it == "clear")
+			system("clear");
+		else if (*it == "exit" || *it == "0" || *it == "back")
+			return ;
+		else if (*it == "new")
+		{
+			if (++it == cmds.end())
+				break;
+			if (*it == "patient")
+				uCreatePatient();
+			if (*it == "doctor")
+				uCreateDoctor();
+		}
+		else if (*it == "all")
+		{
+			if (++it != cmds.end())
+			{
+				if (*it == "patients")
+					printPatients();
+				else if (*it == "doctors")
+					printDoctors();
+			}
+		}
+		else if (*it == "#")
+		{
+			if (++it != cmds.end())
+			{
+				try
+				{
+					int id = stoi(*it);
+					if (++it != cmds.end())
+					{
+						if (*it == "patient")
+							uiPatient(_patients[id]);
+						else if (*it == "doctor")
+							uiADoctor(idDoctor(id));
+					}
+				}
+				catch(const std::exception& e)
+				{
+					cout << RED << "Error: " << ENDC << e.what() << endl;
+				}
+				
+			}
+		}
+		else if (*it == "archive")
+		{
+			if (++it != cmds.end())
+			{
+				try
+				{
+					int id = stoi(*it);
+					if (++it != cmds.end())
+					{
+						if (*it == "patient" && !archivePatient(id))
+						{
+							cout << RED << "Error: " << ENDC << " no patient #id " << id << endl;
+						}
+						else if (*it == "doctor" && !archiveDoctor(id))
+							cout << RED << "Error: " << ENDC << " no doctor #id " << id << endl;
+					}
+				}
+				catch (const std::exception& e)
+				{
+					cout << RED << "Error2: " << ENDC << e.what() << endl;
+				}
+			}
+		}
+		return ;
+	}
+}
+
+void		Hospital::loop()
+{
+	string	input;
+
+	system("clear");
+	uiAdmin();
+	cout << ">";
+	while (getline(cin, input))
+	{
+		if (input == "break" || input == "exit" || input == "0")
+			return ;
+		if (input.length() > 0)
+		{
+			vector<string> cmds;
+			stringstream	ss(input);
+			string			tmp;
+			while(getline(ss, tmp, ' '))
+				cmds.push_back(tmp);
+			runloop(cmds);
+		}
+		cout << ">";
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////
 bool	Hospital::archivePatient(int id)
 {
-	if (_patients[id] != 0)
+	if (_patients.count(id) > 0)
 	{
 		_patients[id]->archive();
 		cout << GREEN << "Success: "<< ENDC << _patients[id]->name() << endl;
 		return true;
 	}
 	return false;
-	
 }
 
 bool	Hospital::archiveDoctor(int id)
@@ -107,113 +270,6 @@ void	Hospital::uCreateDoctor()
 	}
 	
 }
-
-void	Hospital::runloop(vector<string> cmds)
-{
-	for (auto it = cmds.begin(); it != cmds.end(); ++it)
-	{
-		if (*it == "clear")
-		{
-			loop();
-			return ;
-		}
-		else if (*it == "exit" || *it == "0" || *it == "back")
-			return ;
-		else if (*it == "new")
-		{
-			if (++it == cmds.end())
-				break;
-			if (*it == "patient")
-				uCreatePatient();
-			if (*it == "doctor")
-				uCreateDoctor();
-			break;
-		}
-		else if (*it == "all")
-		{
-			if (++it == cmds.end())
-				break;
-			if (*it == "patients")
-			{
-				cout << "Patients [" << _patients.size() << "]\n";
-				cout << "--------------------------------------\n";
-				for (auto i : _patients)
-					cout << *i.second << "--------------------------------------\n";
-			}
-			if (*it == "doctors")
-			{
-				cout << "Doctors [" << _doctors.size() << "]\n";
-				cout << "--------------------------------------\n";
-				for (auto i : _doctors)
-					cout << *i << "--------------------------------------\n";
-			}
-		}
-		else if (*it == "#")
-		{
-			if (++it == cmds.end())
-				break;
-			int id = stoi(*it);
-			if (++it == cmds.end())
-				break;	
-			if (*it == "patient")
-				uiPatient(_patients[id]);
-			if (*it == "doctor")
-				uiADoctor(idDoctor(id));
-		}
-		else if (*it == "archive")
-		{
-			if (++it == cmds.end())
-				break;
-			int id = stoi(*it);
-			if (++it == cmds.end())
-				break;
-			if (*it == "patient" && !archivePatient(id))
-				cout << RED << "Error: " << ENDC << " no patient #id " << id << endl;
-			if (*it == "doctor" && !archiveDoctor(id))
-				cout << RED << "Error: " << ENDC << " no doctor #id " << id << endl;
-		}
-		// else if (*it == "IN")
-		// {
-		// 	if (++it == cmds.end())
-		// 		break;
-		// 	int id = stoi(*it);
-		// 	if (++it == cmds.end())
-		// 		break;
-		// 	if (*it == "patient" && )
-		// 	// if (*it == "doctor")
-		// }
-		// if (*it == "IN" && it != cmds.end())
-	}
-	
-}
-
-void		Hospital::loop()
-{
-	string	input;
-
-	system("clear");
-	uiAdmin();
-	cout << ">";
-	while (getline(cin, input))
-	{
-		if (input == "break" || input == "exit" || input == "0")
-			break;
-		if (input.length() > 0)
-		{
-			vector<string> cmds;
-			stringstream	ss(input);
-			string			tmp;
-			while(getline(ss, tmp, ' '))
-				cmds.push_back(tmp);
-			runloop(cmds);
-			tmp.clear();
-		}
-		cout << ">";
-	}
-
-}
-
-
 
 //DOCTOR MAN
 Doctor	*Hospital::idDoctor(int id, string name)
@@ -330,81 +386,42 @@ bool	Hospital::doctorIdExist(int id)
 	}
 	return true;
 }
-Hospital::Hospital()
+
+Patient	*Hospital::idPatient(int id)
 {
-	string	rootDir = "db";
-	string	patienFile = "patients.csv";
-	string	doctorFile = "doctors.csv";
-	
-	mkdir(rootDir.c_str(), 0744);
-	filesystem::current_path(rootDir);
-
-	ifstream fileP(patienFile);
-	if (fileP.is_open())
+	Patient *ptr = nullptr;
+	try
 	{
-		string line;
-		// int i = 0;
-		while (getline(fileP, line))
-		{
-			// if (i++ == 0)
-			// 	continue;
-			vector<string>	tmp;
-			stringstream	ss(line);
-			string			data;
-			while (getline(ss, data, ','))
-				tmp.push_back(data);
-			if (validatePatient(tmp))
-				addPatient(tmp);
-			tmp.clear();
-		}
-		fileP.close();
+		ptr = _patients[id];
+		
 	}
-	else
-		cout << RED << "ERROR" << ENDC << " not able to parse patientCSV\n";
-
-	ifstream fileD(doctorFile);
-	if (fileD.is_open())
+	catch (const std::out_of_range& e)
 	{
-		string line;
-		// int i = 0; //later for header CSV
-		while (getline(fileD, line))
-		{
-			// if (i++ == 0)
-			// 	continue;
-			vector<string>	tmp;
-			stringstream	ss(line);
-			string			data;
-			while (getline(ss, data, ','))
-				tmp.push_back(data);
-			if (validateDoctor(tmp))
-			 	new Doctor((unsigned int)stoi(tmp[0]), tmp[1] , tmp[2][0], false, this); //OH FK
-			tmp.clear();
-		}
-		fileD.close();
+		std::cerr << "Patient with ID " << id << " not found." << std::endl;
+		return nullptr;
 	}
-	else
-		cout << RED << "ERROR" << ENDC << " not able to parse doctorCSV\n";
-
-	if (!_patients.empty())
-		updatePCount();
-	if (!_doctors.empty())
-		_doctors.front()->updateDCount(_doctors.size());
+	return ptr;
 }
 
-Hospital::~Hospital()
+void	Hospital::printPatients()
 {
-	cout << RED << "DECONGTRUCT: " << ENDC << "patient size = " << _patients.size() << endl;
-	cout << RED << "DECONGTRUCT: " << ENDC << "Doctor size = " << _doctors.size() << endl;
-	for (auto it = _patients.begin(); it != _patients.end(); ++it)
+	cout << "Patients [" << GREEN << _patients.size() << ENDC << "]\n";
+	cout << "--------------------------------------\n";
+	for (std::map<int, Patient*>::iterator it = _patients.begin(); it != _patients.end(); ++it)
 	{
-		addtoCSV(it->first, it->second);
-		delete it->second;
-	}
+		cout << *(it->second);
+		cout << "- - - - - - - - - - -\n";
+	} 
+	cout << "--------------------------------------\n";
+}
+
+void	Hospital::printDoctors()
+{
+	cout << "Doctors [" << GREEN << _doctors.size() << ENDC << "]\n";
 	for (auto i : _doctors)
 	{
-		addtoCSV(i->id(), i);
-		delete i;
+		cout << *i;
+		cout << "- - - - - - - - - - -\n";
 	}
-	_patients.clear();
-	_doctors.clear();
+	cout << "--------------------------------------\n";
 }

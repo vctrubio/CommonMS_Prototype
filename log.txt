@@ -49,3 +49,9 @@ NOW After lunch break, so far,
 17.May
 Today it got messy
 -Ui is long, but its there and working. admin can do all, patient needs to connect to doctor.
+
+18.May
+Thursday monring, looking back at the code, things to/can improve but overall it works. Especially for a one man team.
+-Need to implement the final touches of Appointment, Rooms and Patient/Doctor connection
+-End of day, if finished project, can look into Cmake
+-Friday/Saterday/sunday for last project.

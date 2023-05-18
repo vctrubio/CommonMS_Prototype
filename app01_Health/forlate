@@ -58,3 +58,16 @@ int mainFORLATER() {
   return 0;
 }
 */
+
+
+		// else if (*it == "IN")
+		// {
+		// 	if (++it == cmds.end())
+		// 		break;
+		// 	int id = stoi(*it);
+		// 	if (++it == cmds.end())
+		// 		break;
+		// 	if (*it == "patient" && )
+		// 	// if (*it == "doctor")
+		// }
+		// if (*it == "IN" && it != cmds.end())

@@ -45,9 +45,9 @@ public:
 	void	upPatient(Patient *p){p->_ingr = true;};
 	void	downPatient(Patient *p){p->_ingr = false;};
 
-	void	printPatients(){cout << "Printing ALL Patients\n-----------------\n"; for (auto i : _patients){cout << *(i.second) ;}; cout << "-----------------\n";};
-	void	printDoctors(){cout << "Printing ALL Doctors\n-------------------\n"; for (auto i : _doctors){cout << i;}; cout << "------------------\n";};
-
+	void	printPatients();
+	void	printDoctors();
+	
 	void	loop();
 	void	runloop(vector<string> cmds);
 	void	uCreatePatient();
