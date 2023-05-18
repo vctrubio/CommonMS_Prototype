@@ -60,6 +60,10 @@ Hospital::Hospital()
 		updatePCount();
 	if (!_doctors.empty())
 		_doctors.front()->updateDCount(_doctors.size());
+
+	//Create rooms
+	for (int i = 1; i <= 40; i++)
+		_rooms[i] = new Room(i);
 }
 
 Hospital::~Hospital()
@@ -76,8 +80,11 @@ Hospital::~Hospital()
 		addtoCSV(i->id(), i);
 		delete i;
 	}
+	for (auto i : _rooms)
+		delete i;
 	_patients.clear();
 	_doctors.clear();
+	//_rooms.clear();
 }
 
 static bool	strToBool(string b)
@@ -96,10 +103,9 @@ static void	uiAdmin()
 	cout << "|'new patient/doctor'   |\n";
 	cout << "|'# <ID> patient/doctor'|\n";
 	cout << "|'archive #id patient'  |\n";
-	// cout << "|'IN #id patient'       |\n";
-	// cout << "|'Out #id patient'      |\n";
-	// cout << "|'APP #patiant #doctor' |\n";
-	// cout << "|'APP all'              |\n";
+	// cout << "|'ROOMS'      |\n";
+	cout << "|APP # patiant # doctor'|\n";
+	cout << "|APP for app Managment  |\n";
 	cout << "------------------------\n";
 
 }
@@ -425,3 +431,32 @@ void	Hospital::printDoctors()
 	}
 	cout << "--------------------------------------\n";
 }
+
+/////////////////////ROOMS & APPOINTMENT
+void	Hospital::appCreate(Hospital *h, Doctor *d, Patient *p)
+{
+	p->addApp(new Appointment(d, p, availableRoom()));
+}
+
+void	appComplete(Appointment *app)
+{
+	app->complete();
+}
+
+Room	*Hospital::availableRoom()
+{
+	try
+	{
+		for (auto i : _rooms)
+		{
+			if (i->available())
+				return i;
+		}
+		throw overflow_error("Hospital at FULL capacity.\n");
+	}
+	catch(const std::exception& e)
+	{
+		cerr << e.what() << '\n';
+	}
+	return nullptr;
+};

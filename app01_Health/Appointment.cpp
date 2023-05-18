@@ -34,7 +34,7 @@ string	Appointment::csv()
 	return str;
 }
 
-Appointment::Appointment(Doctor *doctor, Patient *patient):_doctor(doctor), _patient(patient)
+Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(doctor), _patient(patient)
 {
     _status = false;
 
@@ -51,4 +51,5 @@ Appointment::Appointment(Doctor *doctor, Patient *patient):_doctor(doctor), _pat
     _dateTime = times[choice - 1];
     dateTimeStr = dateToString(_dateTime);
     times.clear();
+	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : " << doctor->name() << " : " << dateTimeStr << endl;
 }

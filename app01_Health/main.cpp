@@ -15,7 +15,8 @@ enum ModeUI {
 	ERROR = -1,
 	ADMIN = 1,
 	DOCTOR = 2,
-	PATIENT = 3
+	PATIENT = 3,
+	IDPATIENT = 4
 };
 
 ModeUI		init(char **av)
@@ -24,8 +25,10 @@ ModeUI		init(char **av)
 		return ADMIN;
 	if (strcmp(*av, "doctor") == 0)
 		return DOCTOR;
-	if (strcmp(*av, "patient") == 0)
+	if (strcmp(*av, "patient") == 0 && !(*(av + 1)))
 		return PATIENT;
+	if (strcmp(*av, "patient") == 0)
+		return IDPATIENT;
 	return ERROR;
 }
 
@@ -103,15 +106,18 @@ int main(int ac, char **av)
 
 	User		*user = nullptr;
 	if (input == PATIENT)
-	{
-		Patient *ptr = hospital.idPatient(stoi(av[1]));
-		if (ptr)
-			cout << "Hello...." << ptr->name();
-		// user = initUser();
-	}
+		user = initUser();
 	if (user)
+	{
 		hospital.addPatient(user);
+		user->ui(&hospital);
+	}
 
+	if (input == IDPATIENT)
+	{
+		initUser(av[1], &hospital);
+		user->ui(&hospital);
+	}
 	if (input == DOCTOR)
 		uiADoctor(&hospital);
 	if (input == ADMIN)

@@ -1,31 +1,47 @@
 #include "User.hpp"
 
-bool isNumeric(const string &str)
+
+// void	uiPatient(Patient *p)
+// {
+// 	string alta = p->ingr()? "alta" : "baja";
+	
+// 	cout << "-----------------------------\n";
+// 	cout << "| " << p->id() << " | " << p->name() << " | ";
+// 	cout << alta << " | History [" << p->appointments.size() << "] \n";
+// 	cout << " - - - - - - - - - - - - - - \n";
+// 	cout << "|'new' for a new appointment|\n";
+// 	cout << "|'chat' to talk to a doctor |\n";
+// 	cout << "|'exit' to leave            |\n";
+// 	cout << "----------------------------\n";
+
+
+// 	if (p->ingr())
+// 	{
+// 		cout << ":Currently in Room X\n";
+// 	}
+// }
+
+
+void	uiUser()
 {
-	for (char c : str)
-	{
-		if (!isdigit(c))
-			return false;
-	}
-	return true;
-};
 
-//search for user if av in database, by ID.
-static User		*initUser(char *av)
-{
-	User	*ptr;
-	int 	idSearch;
-
-
-	if (idSearch)
-
-		cout << "YELLLOOW--ºn TODO MAPPING\n";
-	else
-		throw runtime_error(string(av));
-
-	ptr = new User("Guest.123"); //should return guest MAPPED
-	return ptr;
 }
+
+void	User::ui(Hospital *h)
+{
+	string input;
+
+	cout << ">>";
+	while(getline(cin, input))
+	{
+		if (input == "back" || input == "exit" || input == "0")
+			return ;
+		
+		cout << ">>";
+	}
+}
+
+
 
 User		*initUser()
 {
@@ -36,5 +52,23 @@ User		*initUser()
 
 	cin >> input; //varify input..
 	return (new User(input));
+}
+
+User		*initUser(string av, Hospital *h)
+{
+	User	*ptr;
+	int 	idSearch;
+
+	try
+	{
+		idSearch = stoi(av);
+		ptr = static_cast<User*>(h->idPatient(idSearch));
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << "ERROR: " << ENDC << e.what() << '\n';
+	}
+
+	return ptr;
 }
 

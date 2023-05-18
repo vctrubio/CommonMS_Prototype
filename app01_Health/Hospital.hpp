@@ -16,7 +16,7 @@ class Hospital
 {
 	map<int, Patient*>			_patients;
 	vector<Doctor*>				_doctors;
-	//how to define appointments, tuple? map? vector?
+	array<Room*, 40>			_rooms; //1-20 is for rest, 21-40 is for appointments
 public:
 	Hospital();
 	~Hospital();
@@ -52,6 +52,14 @@ public:
 	void	runloop(vector<string> cmds);
 	void	uCreatePatient();
 	void	uCreateDoctor();
+	
+	Room	*availableRoom();
+
+	void	appCreate(Hospital *h, Doctor *d, Patient *p);
+
+	void	appComplete(Appointment *app);
+
 };
 
+bool	validatePatient(vector<string> data);
 #endif

@@ -2,7 +2,6 @@
 #define PATIENT_HPP
 
 #include "../Headers.hpp"
-// #include "Appointment.hpp"
 
 class Appointment;
 
@@ -43,6 +42,8 @@ public:
 		os << "Archived: " << (patient._archived ? "Yes" : "No") << "\n";
 		return os;
 	}
+
+	void			addApp(Appointment *p){_appointments.push_back(p);};
 };
 
 void	uiPatient(Patient *ptr);

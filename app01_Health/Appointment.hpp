@@ -4,12 +4,11 @@
 #include "../Headers.hpp"
 #include "Patient.hpp"
 #include "Doctor.hpp"
-
-//belongs to a hospital obvs.....
-//rooms later implementation
+#include "Room.hpp"
 
 class Doctor;
 class Patient;
+class Room;
 
 class Appointment
 {
@@ -18,9 +17,9 @@ class Appointment
 
 	bool	_status;
 	string 	dateTimeStr;
-	time_t	_dateTime; //possible of 4 slots. 
+	time_t	_dateTime; //possible of 4 slots.
 public:
-	Appointment(Doctor *doctor, Patient *patient);
+	Appointment(Doctor *doctor, Patient *patient, Room *room);
 	~Appointment(){};
 
 	void	complete(){_status = true;};
@@ -33,4 +32,7 @@ public:
 	string	csv();
 };
 
+//there needs to be an inheritance of appointment 
+//- one for checkup- no dado de baja
+//- one for surgery- si dado de bajo
 #endif

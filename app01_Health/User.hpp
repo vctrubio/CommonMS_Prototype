@@ -4,8 +4,10 @@
 #include "../Headers.hpp"
 
 #include "Patient.hpp"
+#include "Hospital.hpp"
 
 class Patient;
+class Hospital;
 
 class User : public Patient
 {
@@ -13,9 +15,9 @@ public:
 	User(string name):Patient(name){};
 	~User(){};
 
-	//equal operator to compate one to another.
+	void	ui(Hospital *h);
 };
-
 User		*initUser();
-bool 		isNumeric(const string &str);
+User		*initUser(string av, Hospital *h);
+
 #endif

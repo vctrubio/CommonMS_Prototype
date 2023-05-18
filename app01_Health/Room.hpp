@@ -4,7 +4,6 @@
 #include "../Headers.hpp"
 #include "Appointment.hpp"
 
-
 class Appointment;
 
 class Room
@@ -13,12 +12,20 @@ class Room
 	bool		_available;
 	Appointment	*_appointment;
 public:
-	Room(int n):_nb(n), _available(true){};
-	Room(int n, Appointment *app):_nb(n), _available(false), _appointment(app){};
+	Room(int n):_nb(n), _available(true),_appointment(nullptr){};
+	//Room(int n, Appointment *app):_nb(n), _available(false), _appointment(app){};
 
-
+	int		nb(){return _nb;};
+	bool	available(){return _available;};
 	void	toggle(){_available = !_available;};
-	~Room(){};
+	void	addApp(Appointment *app){_appointment = app;};
+	
+	~Room(){
+		/*if (_appointment)
+		{
+			delete _appointment;
+		}*/
+	};
 };
 
 #endif
