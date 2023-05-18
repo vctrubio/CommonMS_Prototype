@@ -11,6 +11,9 @@ string Room::info()
     return os.str();
 };
 
+void	Room::check()
+{cout << "WE HAVE.. " << _appointment->getTime() << " and is " << _available << " tonight.\n";};
+
 // string Room::print()
 // {
 //     string rtn;

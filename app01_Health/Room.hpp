@@ -18,7 +18,8 @@ public:
 	int		nb(){return _nb;};
 	bool	available(){return _available;};
 	void	toggle(){_available = !_available;};
-	void	addApp(Appointment *app){_appointment = app; _available = false;};
+	void	check();
+	void	addApp(Appointment *app){_appointment = app; _available = false;check();};
 
 	string		info();
 	Appointment	*appointment(){return _appointment;};

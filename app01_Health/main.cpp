@@ -71,7 +71,7 @@ void		uiADoctor(Hospital *hospital)
 			catch(runtime_error &e)
 			{
 				cout << RED << "Sorry " << ENDC << e.what() << "\nIt appears you do NOT work here.\n Talk to admin if you believe there is a problem by typing ./healthcare admin request_to_work_here <your_name>" << endl;
-				return ;
+				exit(101);
 			}
 		}
 		cout << ">";
@@ -120,7 +120,19 @@ int main(int ac, char **av)
 	else if (input == DOCTOR)
 		uiADoctor(&hospital);
 	else if (input == ADMIN)
-		hospital.loop();
+	{
+		if (ac == 2)
+			hospital.loop();
+		else if (ac >= 3)
+		{
+			const char *msg = "request_to_work_here";
+			if (strcmp(*(++av), msg) == 0)
+			{
+				if (++av)
+					cout << GREEN << *av << ENDC << " Thank you for your interest in working with us.\n";
+			}
+		}
+	}
 
 	return 1;
 }

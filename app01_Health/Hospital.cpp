@@ -61,7 +61,6 @@ Hospital::Hospital()
 	if (!_doctors.empty())
 		_doctors.front()->updateDCount(_doctors.size());
 
-	//Create rooms
 	for (int i = 0; i < 40; i++)
 		_rooms[i] = new Room(i + 1);
 }
@@ -175,7 +174,8 @@ void	Hospital::uiApp(vector<string>::iterator it)
 			}
 			if (input == "show")
 			{
-				cout << "Nothing to show>";
+				printPatients();
+				printDoctors();
 				continue;
 			}
 			else if (input == "new")
@@ -188,7 +188,6 @@ void	Hospital::uiApp(vector<string>::iterator it)
 					return ;
 				try
 				{
-					cout << "trying to ...\n";
 					new Appointment(idDoctor(doctor), idPatient(patient), availableRoom());
 				}
 				catch(const std::exception& e)
@@ -207,6 +206,8 @@ void	Hospital::uiApp(vector<string>::iterator it)
 		{
 			Patient *p = idPatient(stoi(*it++));
 			Doctor	*d = idDoctor(stoi(*it++));
+			if (!p || !d)
+				throw runtime_error("ID's not valid.");
 			if (it == cmds.end())
 				appCreate(this, d, p);
 			else
@@ -222,7 +223,7 @@ void	Hospital::uiApp(vector<string>::iterator it)
 
 void	Hospital::runloop()
 {
-	for (auto it = cmds.begin(); it != cmds.end(); ++it)
+	for (auto it = cmds.begin(); it != cmds.end();)
 	{
 		if (*it == "exit" || *it == "0" || *it == "back")
 			return ;
@@ -294,14 +295,7 @@ void	Hospital::runloop()
 			for (auto it : _rooms)
 			{
 				cout << it->info();
-				// if (!(it->appointment()->empty()))
-				// {
-				// 	for (vector<Appointment*>::iterator ap = it->appointment()->begin(); ap != it->appointment()->end(); it++)
-				// 	{
-				// 		break;
-
-				// 	}
-				// }
+				//+ appointment info...
 				cout << "-----------------\n";
 
 			}
