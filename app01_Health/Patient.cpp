@@ -6,16 +6,17 @@ void uiPatient(Patient *ptr) //this should be a typedef<T> so its compatible wit
 {
     string input;
 
-    if (!ptr)
+    if (!ptr || ptr->isArchive())
         return;
+
     if (ptr->ingr())
         cout << RED;
     else
         cout << GREEN;
     cout << ptr->name() << ENDC << " |'archive', 'alta', 'baja', 'back'\n";
-    for (auto& appointment : ptr->appointments())
+    for (auto *appointment : ptr->appointments())
         cout << appointment << endl;
-    cout << "\n";
+    cout << "\n>";
 
     while (getline(cin, input))
     {
@@ -24,23 +25,20 @@ void uiPatient(Patient *ptr) //this should be a typedef<T> so its compatible wit
             if (input == "back")
                 break;
             else if (input == "archive")
+            {
                 ptr->archive();
+                break;
+            }
             else if (input == "alta")
                 ptr->alta();
             else if (input == "baja")
                 ptr->baja();
-            else if (input == "history")
-            {
-                int i = 0;
-                // for (auto i : ptr->appointments())
-                // {
-                //     cout << ++i << i->getTime();
-                //     //for now....
-                // }
-            }
         }
+        if (ptr->ingr())
+            cout << RED;
         else
-            cout << ptr->name() << "|>";
+            cout << GREEN;
+        cout << ptr->name() << ENDC << " |'archive', 'alta', 'baja', 'back'\n>";
     }
 }
 

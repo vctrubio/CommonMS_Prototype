@@ -3,7 +3,7 @@
 
 #include "../Headers.hpp"
 
-#include "Appointment.hpp"
+// #include "Appointment.hpp" this will screwe everything up.......
 
 class Appointment;
 
@@ -26,6 +26,7 @@ public:
 	string					name(){return _name;};
 	unsigned int			id(){return _id;};
 	bool					ingr(){return _ingr;};
+	bool					isArchive(){return _archived;};
 	string					rtnCsv();
 
 	void					archive(){_archived = true;};

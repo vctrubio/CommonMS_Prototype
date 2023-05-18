@@ -34,6 +34,11 @@ string	Appointment::csv()
 	return str;
 }
 
+void    Appointment::print()
+{
+    cout << *this;
+}
+
 Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(doctor), _patient(patient)
 {
     if (!doctor || !patient || !room)

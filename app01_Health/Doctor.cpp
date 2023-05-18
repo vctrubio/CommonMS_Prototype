@@ -7,11 +7,14 @@ void		uiADoctor(Doctor *ptr)
 {
    string input;
 
-    if (!ptr)
+ 	if (!ptr)
         return;
-    cout << ptr;
-    cout << "------------------------------------------n>";
-    cout << "CMDS: archive, unarchive, back\n>";
+
+    if (ptr->isArchive())
+        cout << RED;
+    else
+        cout << GREEN;
+    cout << ptr->name() << ENDC << " |'archive', 'unarchive', 'back'\n>";
 
     while (getline(cin, input))
     {
@@ -24,8 +27,13 @@ void		uiADoctor(Doctor *ptr)
             if (input == "unarchive")
 				ptr->uArchive();
         }
-        else
-            cout << ptr->name() << "|>";
+ 		if (ptr->isArchive())
+       		cout << RED;
+    	else
+       	 	cout << GREEN;
+   		cout << ptr->name() << ENDC << " |'archive', 'unarchive', 'back'\n>";
+
+  
     }
 }
 

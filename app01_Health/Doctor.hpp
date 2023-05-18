@@ -22,7 +22,6 @@ class Doctor
 	string					_name;
 	enum speciality			_spc;	
 	bool					_archive;
-	
 public:
 	Doctor(string name, Hospital *h);
 	Doctor(unsigned int id, string name, int spc, bool archived, Hospital *h);
@@ -31,11 +30,11 @@ public:
 	void					updateDCount(unsigned int i){s_count = i;};
 	void					archive(){_archive = true;};
 	void					uArchive(){_archive = false;};
-	
+	bool					isArchive(){return _archive;};
 	int						id(){return _id;};
 	string					name(){return _name;};
 	string					rtnCsv();
-	
+
 	void					loop(Hospital *h);
 
     friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor)

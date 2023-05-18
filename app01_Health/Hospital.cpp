@@ -557,6 +557,8 @@ void	Hospital::printPatients()
 	cout << "--------------------------------------\n";
 	for (std::map<int, Patient*>::iterator it = _patients.begin(); it != _patients.end(); ++it)
 	{
+		if (it->second->isArchive())
+			continue;
 		cout << *(it->second);
 		cout << "- - - - - - - - - - -\n";
 	} 
@@ -568,6 +570,8 @@ void	Hospital::printDoctors()
 	cout << "Doctors [" << GREEN << _doctors.size() << ENDC << "]\n";
 	for (auto i : _doctors)
 	{
+		if (i->isArchive())
+			continue;
 		cout << *i;
 		cout << "- - - - - - - - - - -\n";
 	}

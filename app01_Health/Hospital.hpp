@@ -5,12 +5,10 @@
 #include "Patient.hpp"
 #include "Doctor.hpp"
 #include "Room.hpp"
-#include "Appointment.hpp"
 
 class Doctor;
 class Patient;
 class Room;
-class Appoitment;
 
 class Hospital
 {
