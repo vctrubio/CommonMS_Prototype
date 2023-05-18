@@ -47,3 +47,8 @@ string Patient::rtnCsv()
     string str = to_string(_id) + "," + _name + "," + (_ingr ? "true" : "false") + "," + (_archived ? "true" : "false") + "\n";
     return str;
 }
+
+Patient::~Patient()
+{
+    cout << RED << "-1" << ENDC " Patient: " << _name << endl;
+}

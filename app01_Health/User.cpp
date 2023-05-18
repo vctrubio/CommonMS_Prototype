@@ -12,16 +12,16 @@ bool isNumeric(const string &str)
 
 void	User::uiUserPannel()
 {
-	bool in = ingr()? false : true;
+	bool in = ingr()? true : false;
 	if (!in)
 		cout << GREEN << "|" << ENDC;
 	else
 		cout << RED << "|" << ENDC;
-	cout << name() << " | ";
+	cout << name() << " |ID: " << id();
 	cout << "\n-----------------------------------\n";
 	cout << "|'view doctors'                   |\n";
 	cout << "|'new' for new appointment        |\n";
-	cout << "|'histoy' for appointment history |\n";
+	cout << "|'chat' to talk to AI             |\n";
 	cout << "- - - - - - - - - - - - - - - - - - \n";
 	cout << "[" << appointments().size() << "]  Appointments                  |\n";
 
@@ -35,11 +35,18 @@ void	User::uiUserPannel()
 	if (!ptr.empty())
 	{
 		cout << GREEN << "REMINDER: " << ENDC << "You have " << GREEN << ptr.size() << ENDC << " coming up.";
+		cout << "\n- - - - - - - - - - - - - \n";
 		for (auto i : ptr)
+		{
 			cout << *i;
+			cout << "\n- - - - - - - - - - - - - \n";
+		}
+		cout << "\n-----------------------------\n";
+		cout << "|'yes' to attend appointment   |\n";
 	}
-
-	cout << "\n-----------------------------------\n";
+	if (ingr())
+		cout << "|'solicitud' for checkup            |\n";
+	cout << "\n-----------------------------\n";
 }
 
 void	User::ui(Hospital *h, int start)
@@ -51,7 +58,7 @@ void	User::ui(Hospital *h, int start)
 	{
 		cout << RED << "'exit' || '0' for exit\n" << ENDC; 
 		cout << YELLOW << "'back' to go back\n" << ENDC; 
-		cout << YELLOW << "clear to clear the screen\n" << ENDC; 
+		cout << YELLOW << "'clear' to clear the screen\n" << ENDC; 
 		cout << "-----------------------------------\n"; 
 	}
 	uiUserPannel();
@@ -65,20 +72,45 @@ void	User::ui(Hospital *h, int start)
 		else if (input == "new")
 		{
 			h->appCreate(h, h->rtnDoctor(), this);
-			ui(h, 0);
-			return ;
+			continue;
 		}
-		else if (input == "history")
-			break ;
 		else if (input == "clear")
 		{
 			ui(h, 0);
 			return ;
 		}
-		
-		// if (input == "yes" || "no" || appointment)
-		else 
-			cout << ">";
+		else if (input == "yes" && !appointments().empty())
+		{
+			if (ingr())
+				cout << RED << "Sorry " << ENDC << " you are still not recovered from surgery.\n";
+			else
+			{
+				for (auto i : appointments())
+				{
+					if (!i->status())
+					{
+						i->complete();
+						break ;
+					}
+				}
+			}
+		}
+		else if (input == "solicitud" && ingr())
+		{
+			if (!surgeryPro())
+			{
+				alta();
+				cout << GREEN << "Congratulations " << ENDC << "our specialist have checked you out.\n"; // of room
+			}
+			else
+				cout << YELLOW << "Unfortunetly " << ENDC << "our medical staff still see you unfit.\n";
+		}
+		if (input == "chat")
+		{
+
+			return ;
+		}
+		cout << ">";
 	}
 }
 

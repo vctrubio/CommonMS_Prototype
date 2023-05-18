@@ -5,7 +5,7 @@ string Room::info()
     ostringstream os;
     os  << "Room Number: " << _nb << std::endl;
     os  << (_available ? "Available" : "Occupied") << std::endl;
-    if (_appointment) {
+    if (_appointment != nullptr) {
         os << "Appointment Details: " << *(_appointment) << std::endl;
     }
     return os.str();

@@ -3,8 +3,6 @@
 
 #include "../Headers.hpp"
 
-// #include "Appointment.hpp" this will screwe everything up.......
-
 class Appointment;
 
 class Patient
@@ -21,7 +19,7 @@ class Patient
 public:
 	Patient(string name):_id(s_count++),_name(name),_appointments(vector<Appointment*>()){_archived = false; _ingr = false; cout << GREEN << "+1" << ENDC " Patient: " << _name << endl;};
 	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr;};
-	virtual ~Patient(){cout << RED << "-1" << ENDC " Patient: " << _name << endl;};
+	virtual ~Patient();
 
 	string					name(){return _name;};
 	unsigned int			id(){return _id;};

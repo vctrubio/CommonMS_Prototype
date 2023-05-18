@@ -107,7 +107,6 @@ static void	uiAdmin()
 	cout << "|app #IDpatiant #IDdoctor'|\n";
 	cout << "|app for app Managment    |\n";
 	cout << "---------------------------\n";
-
 }
 
 int		Hospital::askID(int mode)
@@ -293,7 +292,19 @@ void	Hospital::runloop()
 		else if (*it == "rooms")
 		{
 			for (auto it : _rooms)
-				cout << it->info() << "-----------------\n";
+			{
+				cout << it->info();
+				// if (!(it->appointment()->empty()))
+				// {
+				// 	for (vector<Appointment*>::iterator ap = it->appointment()->begin(); ap != it->appointment()->end(); it++)
+				// 	{
+				// 		break;
+
+				// 	}
+				// }
+				cout << "-----------------\n";
+
+			}
 		}
 		else if (*it == "app")
 			uiApp(++it);
@@ -412,17 +423,20 @@ void	Hospital::uCreateDoctor()
 
 
 
-
-
-
-
-
-
-
-
-
-
 //DOCTOR MAN
+
+Doctor	*Hospital::rtnDoctor()
+{
+	if (_doctors.empty())
+		return nullptr;
+
+	auto tmp = _doctors;
+	std::random_device rd;
+	std::mt19937 gen(rd());	
+	shuffle(tmp.begin(), tmp.end(), gen);
+	return tmp.front();
+};
+
 Doctor	*Hospital::idDoctor(int id, string name)
 {
 	for (auto i : _doctors)

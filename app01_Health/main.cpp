@@ -1,5 +1,3 @@
-#include "TestingApiChatGpt.hpp"
-#include <curl/curl.h>
 
 #include "Hospital.hpp"
 #include "User.hpp"

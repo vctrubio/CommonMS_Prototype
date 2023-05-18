@@ -24,17 +24,7 @@ public:
 	Doctor	*idDoctor(int id, string name);
 	Doctor	*idDoctor(string name);
 	Patient	*idPatient(int id);
-	Doctor	*rtnDoctor(){
-		try
-		{
-			return _doctors.front();
-		}
-		catch(const std::exception& e)
-		{
-			cout << RED << "Error: " << ENDC << e.what() << endl;
-		}
-		return nullptr;
-	};
+	Doctor	*rtnDoctor();
 
 	bool	archivePatient(int id);
 	bool	archiveDoctor(int id);

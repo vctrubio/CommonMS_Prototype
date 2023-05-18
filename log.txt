@@ -55,3 +55,7 @@ Thursday monring, looking back at the code, things to/can improve but overall it
 -Need to implement the final touches of Appointment, Rooms and Patient/Doctor connection
 -End of day, if finished project, can look into Cmake
 -Friday/Saterday/sunday for last project.
+
+-end of the day almost, got quite long the code.... learned better for next time.
+-csv file does not update user, we can try to. going to try to implement openai chat now.
+

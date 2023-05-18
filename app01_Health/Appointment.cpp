@@ -39,7 +39,22 @@ void    Appointment::print()
     cout << *this;
 }
 
-Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(doctor), _patient(patient)
+void    Appointment::complete()
+{
+    _status = true;
+    if (surgeryPro())
+    {
+        cout << YELLOW << "Oops. " << ENDC << "DR. " << YELLOW << _doctor->name() << ENDC << " says " << _patient->name() << " needs surgery...\n";
+        _surgery = new Surgery(_patient);
+        _patient->baja();
+    }
+    else
+    {
+        cout << GREEN << " Appointment Completed\n" << ENDC ;
+    }
+}
+
+Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(doctor), _patient(patient), _surgery(nullptr)
 {
     if (!doctor || !patient || !room)
         return ;
@@ -57,10 +72,8 @@ Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(d
     _dateTime = times[choice - 1];
     dateTimeStr = dateToString(_dateTime);
     times.clear();
-
-    patient->addApp(this);
     room->addApp(this);
-	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : " << doctor->name() << " : " << dateTimeStr << endl;
+	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : DR." << doctor->name() << " : " << dateTimeStr << endl;
 }
 
 
@@ -70,4 +83,15 @@ std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
     os << "Time: " << appointment.getTime() << std::endl;
     os << "Status: " << (appointment.status() ? "Completed" : "Upcoming") << std::endl;
     return os;
+}
+
+
+bool surgeryPro() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(0.0, 1.0);
+    
+    double probability = 4.0 / 5.0; // 4 out of 5 times the result is true
+    
+    return dis(gen) < probability;
 }

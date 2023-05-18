@@ -11,6 +11,7 @@ class Surgery;
 class Doctor;
 class Patient;
 class Room;
+class Surgery;
 
 class Appointment
 {
@@ -24,9 +25,9 @@ class Appointment
 	Surgery	*_surgery;
 public:
 	Appointment(Doctor *doctor, Patient *patient, Room *room);
-	~Appointment(){};
+	~Appointment(){cout << "ANBOPDY SEE ME?: " << csv() << endl;};
 
-	void	complete(){_status = true;};
+	void	complete();
 	bool	status(){return _status;};
 
     Doctor	*getDoctor(){return _doctor;};
@@ -36,9 +37,7 @@ public:
 	string	csv();
 };
 
+bool surgeryPro();
 std::ostream& operator<<(std::ostream& os, Appointment& appointment);
 
-//there needs to be an inheritance of appointment 
-//- one for checkup- no dado de baja
-//- one for surgery- si dado de bajo
 #endif
