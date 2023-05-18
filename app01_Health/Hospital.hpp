@@ -69,7 +69,9 @@ public:
 	void	appCreate(Hospital *h, Doctor *d, Patient *p);
 	void	uiApp(vector<string>::iterator it);
 	
-	
+	int		askID(int mode);
+
+
 	void	appComplete(Appointment *app);
 
 };

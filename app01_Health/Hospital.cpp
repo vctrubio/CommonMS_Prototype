@@ -109,11 +109,63 @@ static void	uiAdmin()
 	cout << "---------------------------\n";
 
 }
+
+int		Hospital::askID(int mode)
+{
+	string	input;
+	int		rtn;
+
+	if (mode == 1)
+		cout << "What Patient #ID> ";
+	if (mode == 2)
+		cout << "What Doctor #ID> ";
+	while(getline(cin, input))
+	{
+		if (input.length() > 0)
+		{
+			if (input == "show")
+			{
+				if (mode == 1)
+				{
+					printPatients();
+					cout << "So. What Patient #ID> ";
+				}
+				if (mode == 2)
+				{
+					printDoctors();
+					cout << "So. What Doctor #ID> ";
+				}
+				continue;
+			}
+			if (input == "back" || input == "exit")
+			{
+				cout << "HEREEEE.\n";
+				return -1;
+			}
+			try
+			{
+				rtn = (stoi(input));
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
+			break;
+		}
+		if (mode == 1)
+			cout << "What Patient #ID> ";
+		if (mode == 2)
+			cout << "What Doctor #ID> ";
+	}
+	return rtn;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////
 void	Hospital::uiApp(vector<string>::iterator it)
 {
 	if (it == cmds.end())
 	{
+		system("clear");
 		string input;
 		cout << "--------------------------\n";
 		cout << "| 'back' | 'new' | 'show' |\n";
@@ -122,59 +174,29 @@ void	Hospital::uiApp(vector<string>::iterator it)
 		{
 			if (input == "back" || input == "exit")
 				return ;
+			if (input == "show")
+				cout << "Nothing to show>";
 			else if (input == "new")
 			{
-				Patient *patient;
-				Doctor 	*doctor;
-				cout << "What Patient #ID> ";
-				while(getline(cin, input))
+				int patient = askID(1);
+				if (patient < 0 )
+					return ;
+				int doctor = askID(2);
+				if (doctor < 0)
+					return ;
+				try
 				{
-					if (input.length() > 0)
-					{
-
-					cout << "OK......" << input << endl;
-					if (input == "show")
-					{
-						printPatients();
-						cout << "So. What Patient #ID> ";
-					}
-						if (input == "back" || "exit")
-							return ;
-					
-							cout << "i see.ºn .....\n";
-							// patient = idPatient(stoi(input));
-					
-					}
-					cout << "breaking.\n";
-					break;
+					cout << "trying to ...\n";
+					new Appointment(idDoctor(doctor), idPatient(patient), availableRoom());
 				}
-				cout << "What Doctor #ID> ";
-				while(getline(cin, input))
+				catch(const std::exception& e)
 				{
-					if (input == "show")
-					{
-						printDoctors();
-						cout << "So. What Doctor #ID> ";
-					}
-					else if (input == "back" || "exit")
-						return;
-					else
-					{
-						try
-						{
-							doctor = idDoctor(stoi(input));
-						}
-						catch(const std::exception& e)
-						{
-							std::cerr << e.what() << '\n';
-						}
-					}	
+					std::cerr << e.what() << '\n';
 				}
-				new Appointment(doctor, patient, availableRoom());
 				return ;
 			}
 			else
-				cout << "...>";
+				cout << ">";
 		}
 	}
 	else
@@ -282,7 +304,7 @@ void		Hospital::loop()
 
 	system("clear");
 	uiAdmin();
-	cout << ">";
+	cout << GREEN <<  "…" << ENDC ">";
 	while (getline(cin, input))
 	{
 		if (input == "break" || input == "exit" || input == "0")
@@ -301,7 +323,8 @@ void		Hospital::loop()
 			runloop();
 			cmds.clear();
 		}
-		cout << "oo>";
+
+		cout << GREEN <<  "…" << ENDC ">";
 	}
 
 }
