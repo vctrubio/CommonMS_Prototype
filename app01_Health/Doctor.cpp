@@ -38,11 +38,18 @@ void		uiADoctor(Doctor *ptr)
 
 void	Doctor::loop(Hospital *h)
 {
+	if (_archive)
+	{
+		cout << RED << "Sorry you don't have permision to be here.\n" << ENDC;
+		return ;
+	}
 	cout << "-------------------------------\n";
 	cout << "| Welcome Dct. " << _name << "\n";
-	cout << "| You have X pending request |\n";
+	cout << "| You have 0 pending request |\n";
+	cout << "| Please come back later     |\n";
 	cout << "------------------------------\n";
 	cout << "|'exit' to leave             |\n";
+	cout << "|'quit' to quit your job     |\n";
 	cout << "-----------------------------\n";
 
 	string input;
@@ -51,7 +58,11 @@ void	Doctor::loop(Hospital *h)
 	{   
 		if (input.length() > 0)
         {
-			cout << ".....kl\n";
+			if (input == "quit")
+			{
+				archive();
+				return ;
+			}
         }
         else
             cout << ">";

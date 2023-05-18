@@ -67,7 +67,7 @@ Hospital::Hospital()
 			while (getline(ss, data, ','))
 				tmp.push_back(data);
 			if (validateDoctor(tmp))
-			 	new Doctor((unsigned int)stoi(tmp[0]), tmp[1] , tmp[2][0], false, this); //OH FK
+			 	new Doctor((unsigned int)stoi(tmp[0]), tmp[1] , tmp[2][0], (tmp[3] == "false" ? false : true), this); //OH FK
 			tmp.clear();
 		}
 		fileD.close();
@@ -86,8 +86,8 @@ Hospital::Hospital()
 
 Hospital::~Hospital()
 {
-	cout << RED << "DECONGTRUCT: " << ENDC << "patient size = " << _patients.size() << endl;
-	cout << RED << "DECONGTRUCT: " << ENDC << "Doctor size = " << _doctors.size() << endl;
+	// cout << RED << "DECONGTRUCT: " << ENDC << "patient size = " << _patients.size() << endl;
+	// cout << RED << "DECONGTRUCT: " << ENDC << "Doctor size = " << _doctors.size() << endl;
 
 	const char *patientFile = "patients.csv";
 	const char *doctorFile = "doctors.csv";

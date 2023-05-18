@@ -1,5 +1,5 @@
 Id,Name,Spcs,Archived
-2,hi,53,false
-3,io,48,false
-40,kl,48,false
-41,mini,0,false
+2,hi,53,true
+3,io,53,true
+40,kl,53,false
+41,mini,53,false

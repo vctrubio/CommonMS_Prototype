@@ -91,6 +91,7 @@ int main(int ac, char **av)
 	}
 	else
 	{
+		system("clear");
 		input = init(++av);
 		if (input < 0)
 		{
