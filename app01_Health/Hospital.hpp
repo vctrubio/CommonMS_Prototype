@@ -57,7 +57,6 @@ public:
 	
 	int		askID(int mode);
 
-	void	appComplete(Appointment *app){app->complete();};
 };
 
 bool	validatePatient(vector<string> data);
