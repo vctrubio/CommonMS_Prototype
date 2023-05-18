@@ -40,10 +40,9 @@ public:
 		os << "Patient ID: " << patient._id << "\n";
 		os << "Name: " << patient._name << "\n";
 		os << "Ingress: " << (patient._ingr ? "Yes" : "No") << "\n";
-		os << "Archived: " << (patient._archived ? "Yes" : "No") << "\n";
+		// os << "Archived: "f << (patient._archived ? "Yes" : "No") << "\n";
 		return os;
 	}
-
 };
 
 	void			uiPatient(Patient *ptr);

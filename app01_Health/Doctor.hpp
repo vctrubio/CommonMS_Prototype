@@ -48,5 +48,5 @@ public:
 };
 
 void		uiADoctor(Doctor *ptr);
-
+bool		validateDoctor(vector<string> data);
 #endif

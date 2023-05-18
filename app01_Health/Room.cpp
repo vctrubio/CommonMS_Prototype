@@ -13,15 +13,3 @@ string Room::info()
 
 void	Room::check()
 {cout << "WE HAVE.. " << _appointment->getTime() << " and is " << _available << " tonight.\n";};
-
-// string Room::print()
-// {
-//     string rtn;
-
-//     rtn += "Room Number: " + to_string(_nb) + "\n";
-//     // os << "Availability: " << (_available ? "Available" : "Occupied") << std::endl;
-//     // if (!_appointment) {
-//     //     os << "Appointment Details: " << *(_appointment) << std::endl;
-//     // }
-//     return rtn;
-// };

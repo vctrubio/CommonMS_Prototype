@@ -1,7 +1,0 @@
-
-todo
--nc for talking with doctor, if sign in as doctor, open connection.
-
-
-
-if user/client open NC, dependencies must install using CMAKE.....

@@ -14,7 +14,7 @@ class Hospital
 {
 	map<int, Patient*>			_patients;
 	vector<Doctor*>				_doctors;
-	array<Room*, 40>			_rooms; //1-20 is for rest, 21-40 is for appointments
+	array<Room*, 40>			_rooms;
 	vector<string>				cmds;
 public:
 	Hospital();
@@ -61,7 +61,6 @@ public:
 
 
 	void	appComplete(Appointment *app);
-
 };
 
 bool	validatePatient(vector<string> data);

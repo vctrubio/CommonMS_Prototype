@@ -15,7 +15,7 @@ void uiPatient(Patient *ptr)
         cout << GREEN;
     cout << ptr->name() << ENDC << " |'archive', 'alta', 'baja', 'back'\n";
     for (auto *appointment : ptr->appointments())
-        cout << appointment << endl; //cannot dereference.
+        cout << appointment << endl; //cannot dereference. idk Y.
     cout << "\n>";
 
     while (getline(cin, input))

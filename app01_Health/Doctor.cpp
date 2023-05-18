@@ -87,3 +87,24 @@ string	Doctor::rtnCsv()
 	str += "\n";
 	return str;
 }
+
+bool	validateDoctor(vector<string> data)
+{
+	if (data.size() != 4)
+		return false;
+	for (auto c : data[0])
+	{
+		if (!isdigit(c))
+			return false;
+	}
+	for (auto c : data[1])
+	{
+		if (!isascii(c))
+			return false;
+	}
+	if (!isdigit(data[2][0])) //or not enum range
+		return false;
+	if (data[3] != "true" && data[3] != "false")
+	    return false;
+	return true;
+}

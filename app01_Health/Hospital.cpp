@@ -1,5 +1,18 @@
 #include "Hospital.hpp"
-#include "parseCsv.hpp"
+
+template<typename T>
+void	addtoCSV(string name,  T *ptr)
+{
+	if (!ptr)
+		return ;
+	ofstream	fileWrite(name, ios::app);
+	bool		check = filesystem::exists(name);
+	if (fileWrite.is_open())
+	{
+		fileWrite << ptr->rtnCsv();
+		fileWrite.close();
+	}
+}
 
 Hospital::Hospital()
 {
@@ -14,11 +27,14 @@ Hospital::Hospital()
 	if (fileP.is_open())
 	{
 		string line;
-		// int i = 0;
+		bool	firstLine = true;
 		while (getline(fileP, line))
 		{
-			// if (i++ == 0)
-			// 	continue;
+			if (firstLine)
+			{
+				firstLine = false;
+				continue;
+			}
 			vector<string>	tmp;
 			stringstream	ss(line);
 			string			data;
@@ -37,11 +53,14 @@ Hospital::Hospital()
 	if (fileD.is_open())
 	{
 		string line;
-		// int i = 0; //later for header CSV
+		bool	firstLine = true;
 		while (getline(fileD, line))
 		{
-			// if (i++ == 0)
-			// 	continue;
+			if (firstLine)
+			{
+				firstLine = false;
+				continue;
+			}
 			vector<string>	tmp;
 			stringstream	ss(line);
 			string			data;
@@ -69,21 +88,36 @@ Hospital::~Hospital()
 {
 	cout << RED << "DECONGTRUCT: " << ENDC << "patient size = " << _patients.size() << endl;
 	cout << RED << "DECONGTRUCT: " << ENDC << "Doctor size = " << _doctors.size() << endl;
+
+	const char *patientFile = "patients.csv";
+	const char *doctorFile = "doctors.csv";
+
+	ofstream fileWrite(patientFile);
+	if (fileWrite.is_open())
+	{
+		fileWrite << "Id,Name,Ingressed,Archived\n";
+		fileWrite.close();
+	}
 	for (auto it = _patients.begin(); it != _patients.end(); ++it)
 	{
-		addtoCSV(it->first, it->second);
+		addtoCSV<Patient>(patientFile, it->second);
 		delete it->second;
+	}
+	ofstream fileWrite2(doctorFile);
+	if (fileWrite2.is_open())
+	{
+		fileWrite2 << "Id,Name,Spcs,Archived\n";
+		fileWrite2.close();
 	}
 	for (auto i : _doctors)
 	{
-		addtoCSV(i->id(), i);
+		addtoCSV<Doctor>(doctorFile, i);
 		delete i;
 	}
 	for (auto i : _rooms)
 		delete i;
 	_patients.clear();
 	_doctors.clear();
-	//_rooms.clear();
 }
 
 static bool	strToBool(string b)
