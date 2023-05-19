@@ -6,9 +6,16 @@
 
 class Library
 {
+	bool	_on;
+
 public:
-	Library(){};
+	Library():_on(true){};
 	~Library(){};
+
+	bool	online(){return _on;};
+	void	exit(){_on = false;};
+	void	loop();
+	
 };
 
 

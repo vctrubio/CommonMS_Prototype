@@ -1,10 +1,10 @@
 #include "Library.hpp"
 
-void	welcome(Library *lib)
+void	welcome()
 {
     char    *str = strdup("");
 	string	mssg = GREEN;
-	mssg += " Connected\n"; //thread to api load
+	mssg += " Connected\n";
 	mssg += ENDC;
     mssg += "|IMPORTANT! Please provide a big enough screen to properly view the Library; This message should appear in a single line|"; //120 WIDTH
     mssg += "\n";
@@ -14,6 +14,7 @@ void	welcome(Library *lib)
 	putLeft("/back is back", mssg, 32);
 	putLeft("/filter [top][view]", mssg, 32);
 	putLeft("/help to view this message again", mssg, 32);
+	putLeft("/exit to safely eject", mssg, 32);
 	putLine(mssg, '-');
 	cout << mssg;	
 }
@@ -30,13 +31,31 @@ void		box(string header)
 	cout << buffer;
 }
 
+void		init(Library *lib)
+{
+	string	input;
+
+	cout << "Please type '/init' to begin the server.\n";
+	while(getline(cin, input) && lib->online())
+	{
+		if (input == "/exit")
+			lib->exit();
+		else if (input == "/init")
+		{
+			// fetchData
+			return ;
+		}
+		cout << "|";
+	}
+}
 
 int main()
 {
 	Library		lib;
 
     system("clear");
-    welcome(&lib);
-	// box("HELLO WORLD.");
-
+    welcome();
+	init(&lib);
+	//lib.loop();
+	return 1;
 }
