@@ -3,6 +3,8 @@
 
 #include "../Headers.hpp"
 
+void	welcome();
+void	box(string header);
 void	putLine(string &out, char c);
 void	putLeft(string in, string &out, char c);
 void	putUnderScore(string &out);

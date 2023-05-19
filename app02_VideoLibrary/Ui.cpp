@@ -1,5 +1,37 @@
 #include "Ui.hpp"
 
+void	welcome()
+{
+    char    *str = strdup("");
+	string	mssg = GREEN;
+	mssg += " Connected\n";
+	mssg += ENDC;
+    mssg += "|IMPORTANT! Please provide a big enough screen to properly view the Library; This message should appear in a single line|"; //120 WIDTH
+    mssg += "\n";
+	putUnderScore(mssg);
+	putLeft(" CMDS. They start with /CMD followed with options defined [option]", mssg, 32);
+	putLeft("/home is home", mssg, 32);
+	putLeft("/back is back", mssg, 32);
+	putLeft("/filter [top][view]", mssg, 32);
+	putLeft("/help to view this message again", mssg, 32);
+	putLeft("/exit to safely eject", mssg, 32);
+	putLine(mssg, '-');
+	cout << mssg;	
+}
+
+void		box(string header)
+{
+	string	buffer;
+
+	buffer += YELLOW;
+	putLeft(header, buffer, 32);
+	buffer += ENDC;
+	putLine(buffer, '-');
+	
+	cout << buffer;
+}
+
+
 void	putLine(string &out, char c)
 {
 	for (int size = 0; size < WIDTH + 1;) //topic
@@ -60,7 +92,7 @@ char        itStr(char **str)
 
     if (strlen(*str) > WIDTH)
     {
-        cout << RED << "ERROROROROROROROROR\n"; //need to trim.
+        cout << RED << "EREORR\n"; //need to trim.
         return 0;
     }
     if (*str)
