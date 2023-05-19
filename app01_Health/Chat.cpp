@@ -1,5 +1,6 @@
 #include "Chat.hpp"
 
+//NOT TESTED
 size_t WriteCallback(char *contents, size_t size, size_t nmemb, string *output)
 {
     size_t totalSize = size * nmemb;

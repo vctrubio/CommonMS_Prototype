@@ -48,6 +48,8 @@ public:
 	void	getFilter();
 	void	runSql(string &cmd);
 	void	sqlOperation(SqlOp op, vector<string> &cmd);
+
+	void	findID(string input);
 };
 
 Sort		getSort();

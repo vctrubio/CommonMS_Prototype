@@ -28,10 +28,7 @@ void    Library::loop()
 		if (input == "/all")
 			allFilter();
 		if (isId(input))
-		{
-			cout << "I see you like digits.\n";
-			//...
-		}
+			findId(input);
 		system("clear");
 		printConsole(flag);
         cout << "|";

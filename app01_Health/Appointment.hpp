@@ -36,7 +36,8 @@ public:
 	string	csv();
 };
 
-bool surgeryPro();
-std::ostream& operator<<(std::ostream& os, Appointment& appointment);
-
+bool 				surgeryPro();
+std::ostream&		operator<<(std::ostream& os, Appointment& appointment);
+vector<time_t>      generateRandomTimes();
+string    			dateToString(time_t date);
 #endif

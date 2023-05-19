@@ -2,7 +2,6 @@
 
 unsigned int User::s_counterId = 1;
 
-
 void	User::updateBsn(Business *bsn)
 {
 	if (_bsn == nullptr)

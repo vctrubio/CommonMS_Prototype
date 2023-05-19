@@ -10,6 +10,7 @@ class Doctor;
 class Patient;
 class Room;
 
+
 class Hospital
 {
 	map<int, Patient*>			_patients;
@@ -60,4 +61,6 @@ public:
 };
 
 bool	validatePatient(vector<string> data);
+bool	strToBool(string b);
+
 #endif

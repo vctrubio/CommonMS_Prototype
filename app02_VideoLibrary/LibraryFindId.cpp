@@ -22,3 +22,10 @@ int strCheck(string s1, string s2) {
     	return 1;
 	return 0;
 }
+
+
+
+void	Library::findID(string input)
+{
+	
+}
