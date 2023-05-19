@@ -9,13 +9,10 @@ void    Library::loop()
 	printConsole(flag);
 	flag = _mode;
     cout << "|";
-    while(_on && getline(cin, input))
+    while(getline(cin, input))
     {
         if (input == "/exit")
-		{
-            _on = false;
 			break;
-		}
 		if (input == "/help")
 		{
 			welcome();

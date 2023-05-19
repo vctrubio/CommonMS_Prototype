@@ -5,11 +5,9 @@ void		init(Library *lib)
 	string	input;
 
 	cout << " Please type '/init' to begin the server.\n|";
-	while(getline(cin, input) && lib->online())
+	while(getline(cin, input))
 	{
-		if (input == "/exit")
-			lib->exit();
-		else if (input == "/init")
+		if (input == "/init")
 		{
 			// fetchData || API
 			lib->parse("demo.csv");
@@ -26,7 +24,7 @@ int main()
 
     system("clear");
     welcome();
-	lib.parse("demo.csv"); // init(&lib);
+	init(&lib);
 	lib.loop();
 	return 1;
 }

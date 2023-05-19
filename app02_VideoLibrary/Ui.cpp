@@ -15,7 +15,6 @@ void	welcome()
 	putLeft("/all to !filter ", mssg, 32);
 	putLeft("/ID to view ", mssg, 32);
 	
-
 	putLeft("/help to view this message again", mssg, 32);
 	putLeft("/back to go back", mssg, 32);
 	putLeft("/exit to safely eject", mssg, 32);

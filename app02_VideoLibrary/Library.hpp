@@ -27,16 +27,13 @@ enum SqlOp
 
 class Library
 {
-	bool														_on;
 	vector<Game*>												_games;
 	vector<array<variant<string, Genre, tuple<int,string>>, 3>>	_filtered;
 	Sort														_mode;
 public:
-	Library():_on(true){};
+	Library(){};
 	~Library(){};
 
-	bool	online(){return _on;};
-	void	exit(){_on = false;};
 	void	loop();
 	void	parse(string filename);
 	void	addG(vector<string> &args);
