@@ -38,15 +38,14 @@ vector<tuple<int, string>> Game::strVector()
 	for (int i = 0; i < 4; i++)
 	{
 		if (i == 0)
-			rtn.push_back(make_tuple(60,_name));
+			rtn.push_back(make_tuple(70,_name));
 		if (i == 1)
-			rtn.push_back(make_tuple(25,genreToStr(_genre)));
+			rtn.push_back(make_tuple(20,genreToStr(_genre)));
 		if (i == 2 )
-			rtn.push_back(make_tuple(10,to_string(get<0>(_topScore))));
+			rtn.push_back(make_tuple(5,to_string(get<0>(_topScore))));
 		if (i == 3)
 			rtn.push_back(make_tuple(25,get<1>(_topScore)));
 	}
 
 	return rtn;
 }
-

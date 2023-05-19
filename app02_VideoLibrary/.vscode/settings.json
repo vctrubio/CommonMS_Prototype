@@ -7,6 +7,8 @@
         "istream": "cpp",
         "tuple": "cpp",
         "array": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "filesystem": "cpp",
+        "typeinfo": "cpp"
     }
 }

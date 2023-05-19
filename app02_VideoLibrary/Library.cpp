@@ -3,23 +3,139 @@
 void    Library::loop()
 {
     string  input;
+	Sort	flag;
 
 	system("clear");
-	printConsole();
-    cout << ".|";
+	printConsole(flag);
+	flag = _mode;
+    cout << "|";
     while(_on && getline(cin, input))
     {
-		printConsole();
         if (input == "/exit")
 		{
             _on = false;
 			break;
 		}
+		if (input == "/help")
+		{
+			welcome();
+			continue;
+		}
+		if (input == "/sort")
+			flag = getSort();
+		system("clear");
+		printConsole(flag);
         cout << "|";
+		flag = _mode;
     }
 };
 
-bool	validateHeader(string line)
+void	Library::addG(vector<string> &args)
+{
+	if (args.empty())
+		return ;
+	try
+	{
+		string				paramOne;
+		Genre				paramTwo;
+		tuple<int, string>	paramThree;
+		
+		if (!args[0].empty())
+			paramOne = args[0];
+		else
+			throw runtime_error("Adding to Games.\n");
+		if (!args[1].empty())
+			paramTwo = strToGenre(args[1]);
+		else
+			paramTwo = OTHER;
+		if (!args[2].empty() && !args[3].empty())
+		{
+			get<0>(paramThree) = stoi(args[2]);
+			get<1>(paramThree) = args[3];
+		}
+		else
+		{
+			get<0>(paramThree) = 0;
+			get<1>(paramThree) = "0";
+		}
+		_games.push_back(new Game(paramOne, paramTwo, paramThree));
+	}
+	catch (const std::exception& e)
+	{
+		cerr << e.what() << endl;	
+	}
+}
+
+void	Library::print()
+{
+
+	for (auto g : _games)
+		cout << g->inf() << endl;
+}
+
+string	Library::sortToStr(Sort mode)
+{
+	if (mode == AN)
+		return "Ascending Title";
+	if (mode == DN)
+		return "Descending Title";
+	if (mode == AS)
+		return "Ascending Top Score";
+	if (mode == DS)
+		return "Descending Top Score";
+	if (mode == GG)
+		return "Ascending Genres";
+	return "Common Managment Solutions";
+}
+
+void	Library::printConsole(Sort flag)
+{
+	string buffer;
+
+	buffer += YELLOW;	
+	putLeft(sortToStr(flag), buffer, 32);
+	buffer += ENDC;
+	putLine(buffer, '-');
+	cout << buffer;
+
+	if (flag != _mode)
+	{
+		if (flag == AN)
+		{
+			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
+        		return game1->name() > game2->name();});
+		}
+		if (flag == DN)
+		{
+			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
+        		return game1->name() < game2->name();});
+		}
+		if (flag == AS)
+		{
+			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
+        		return game1->score() > game2->score();});
+		}
+		if (flag == DS)
+		{
+			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
+        		return game1->score() < game2->score();});
+		}
+		if (flag == GG)
+		{
+			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
+        		return game1->strGenre() < game2->strGenre();});
+		}
+		// sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
+        // 	return game1->score() > game2->score();});
+	}
+	for (auto game : _games)
+		box(game->strVector());
+}
+
+
+
+///VALIDATION INITSs///////////////////////////////
+static bool	validateHeader(string line)
 {
 	int 	count = 0;
 	string	tmp;
@@ -49,7 +165,7 @@ bool	validateHeader(string line)
 
 }
 
-bool	ftvalidate(ifstream &file, vector<string> &cpy)
+static bool	ftvalidate(ifstream &file, vector<string> &cpy)
 {
 	string 	line;
 	bool	firstline = true;
@@ -94,63 +210,34 @@ void	Library::parse(string filename)
 	file.close();
 }
 
-void	Library::addG(vector<string> &args)
+
+
+//////////////////Circular depenciens............. Should be in UI.
+Sort		getSort()
 {
-	//cout << "SIZE of VECT. " << args.size() << endl;
-	if (args.empty())
-		return ;
-	try
-	{
-		string				paramOne;
-		Genre				paramTwo;
-		tuple<int, string>	paramThree;
-		
-		if (!args[0].empty())
-			paramOne = args[0];
-		else
-			throw runtime_error("Adding to Games.\n");
-		if (!args[1].empty())
-			paramTwo = strToGenre(args[1]);
-		else
-			paramTwo = OTHER;
-		if (!args[2].empty() && !args[3].empty())
-		{
-			get<0>(paramThree) = stoi(args[2]);
-			get<1>(paramThree) = args[3];
-		}
-		else
-		{
-			get<0>(paramThree) = 0;
-			get<1>(paramThree) = "0";
-		}
-		_games.push_back(new Game(paramOne, paramTwo, paramThree));
-	}
-	catch (const std::exception& e)
-	{
-		cerr << e.what() << endl;	
-	}
-}
+	string	input;
+	string	output;
 
-void	Library::print()
-{
+	putLine(output, '-');
+	putLeft("|OPTIONS| 'AN' 'DN' on Name | 'AS' 'DS' on Score | 'GG' on Genre", output, 32);
+	putLine(output, '-');
+	cout << output << "|";
 
-	for (auto g : _games)
-		cout << g->inf() << endl;
-}
-
-
-void	Library::printConsole()
-{
-	string buffer;
-
-	buffer += YELLOW;
-	putLeft("All Games", buffer, 32);
-	buffer += ENDC;
-	putLine(buffer, '-');
-
-	cout << buffer;
-	
-	for (auto game : _games)
-		box(game->strVector());
-
+	while(getline(cin, input))
+    {
+        if (input == "/back")
+			break;
+		if (input == "AN")
+			return AN;
+		if (input == "DN")
+			return DN;
+		if (input == "AS")
+			return AS;
+		if (input == "DS")
+			return DS;
+		if (input == "GG")
+			return GG;
+		cout << "|";
+    }
+	return NM;
 }

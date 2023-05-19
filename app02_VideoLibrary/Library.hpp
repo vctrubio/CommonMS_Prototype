@@ -7,14 +7,14 @@
 
 class Game;
 
-enum Filter
+enum Sort
 {
 	NM, //Normal
 	AN, //ASC NAME
 	DN,
 	AS,	//ASC SCORE
 	DS,
-	G	//GENRE
+	GG	//GENRE
 };
 
 class Library
@@ -22,7 +22,7 @@ class Library
 	bool														_on;
 	vector<Game*>												_games;
 	vector<array<variant<string, Genre, tuple<int,string>>, 3>>	_filtered;
-	Filter														_mode;
+	Sort														_mode;
 public:
 	Library():_on(true){};
 	~Library(){};
@@ -33,10 +33,11 @@ public:
 	void	parse(string filename);
 	void	addG(vector<string> &args);
 	void	print();
-	void	printConsole();
+	void	printConsole(Sort flag);
+	string	sortToStr(Sort mode);
 };
 
-
+Sort	getSort();
 
 
 

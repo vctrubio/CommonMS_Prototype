@@ -12,6 +12,10 @@ void	welcome()
 	putLeft(" CMDS. They start with /CMD followed with options defined [option]", mssg, 32);
 	putLeft("/home is home", mssg, 32);
 	putLeft("/back is back", mssg, 32);
+	putLeft("/sort to sort", mssg, 32);
+
+
+
 	putLeft("/filter [top][view]", mssg, 32);
 	putLeft("/help to view this message again", mssg, 32);
 	putLeft("/exit to safely eject", mssg, 32);
@@ -22,10 +26,8 @@ void	welcome()
 void		box(vector<tuple<int, string>> obj)
 {
 	string	buffer;
-
-	//|60|25|10|25|//
-	
 	int count = 0;
+	
 	for (auto it : obj)
 	{
 		tuple<int,string> 		ptr = it;
@@ -43,11 +45,9 @@ void		box(vector<tuple<int, string>> obj)
 				buffer += 32;
 		}
 	}
-
 	buffer += "\n";
 	putUnderScore(buffer);
 	cout << buffer;
-
 }
 
 
@@ -109,11 +109,8 @@ char        itStr(const char **str, int limit)
 {
     char    c;
 
-    if (strlen(*str) > limit || !*str)
-    {
-        cout << RED << "EREORR\n"; //need to trim.
+    if (strlen(*str) > limit || !*str) //need to trim
         return 0;
-    }
     if (*str)
         c = *(*str)++;
     return c;

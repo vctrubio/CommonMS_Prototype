@@ -16,6 +16,9 @@ enum Genre
 	OTHER = 4
 };
 
+string	genreToStr(Genre gen);
+Genre	strToGenre(string str);
+
 class Game
 {
 	string				_name;
@@ -29,12 +32,16 @@ public:
 	~Game(){};
 
 	void						addGame(GamePlay *g){_games.push_back(g);}; //& not ptr..
+	
+	string						name(){return _name;};
+	// Genre						genre(){return _genre;};
+	string						strGenre(){return genreToStr(_genre);};
+	int							score(){return get<0>(_topScore);};
+	
 	string						inf();
 	vector<tuple<int,string>>	strVector();
 };
 
-Genre	strToGenre(string str);
-bool	validateHeader(string line);
-bool	ftvalidate(ifstream file);
+
 
 #endif

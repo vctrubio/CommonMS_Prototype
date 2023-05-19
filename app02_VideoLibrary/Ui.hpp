@@ -2,6 +2,7 @@
 #define UI_HPP
 
 #include "../Headers.hpp"
+#include "Library.hpp"
 
 void	welcome();
 void	box(vector<tuple<int, string>> obj);
