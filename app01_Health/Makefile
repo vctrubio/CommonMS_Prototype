@@ -1,5 +1,5 @@
 NAME		=	healthcare
-SRCS		=	$(wildcard *.cpp)
+SRCS		=	$(wildcard srcs/*.cpp)
 OBJS		=	$(SRCS:.c=.o)
 
 all: 

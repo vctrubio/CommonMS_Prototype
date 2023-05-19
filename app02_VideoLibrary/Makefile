@@ -1,5 +1,5 @@
 NAME		=	videoLib
-SRCS		=	$(wildcard *.cpp)
+SRCS		=	$(wildcard srcs/*.cpp)
 OBJS		=	$(SRCS:.c=.o)
 
 all: 
