@@ -4,14 +4,18 @@ void    Library::loop()
 {
     string  input;
 
-    system("clear");
-    cout << "|";
+	system("clear");
+	printConsole();
+    cout << ".|";
     while(_on && getline(cin, input))
     {
-		print();
-        cout << "|";
+		printConsole();
         if (input == "/exit")
+		{
             _on = false;
+			break;
+		}
+        cout << "|";
     }
 };
 
@@ -41,12 +45,11 @@ bool	validateHeader(string line)
 			return false;
 		count++;
 	}
-	cout << "TRUEEEEE.\n";
 	return true;
 
 }
 
-bool	ftvalidate(ifstream &file)
+bool	ftvalidate(ifstream &file, vector<string> &cpy)
 {
 	string 	line;
 	bool	firstline = true;
@@ -61,62 +64,76 @@ bool	ftvalidate(ifstream &file)
 			cout << RED << "Error in CSV Headers." << ENDC << endl;
 			return false;
 		}
+		cpy.push_back(line);
 	}
 	return true;
 }
 
 void	Library::parse(string filename)
 {
-	ifstream	file(filename);
+	ifstream		file(filename);
+	vector<string>	line;
 
 	if (file.is_open())
 	{
-		if (ftvalidate(file))
+		if (ftvalidate(file, line))
 		{
-			string line;
-
-			bool	firstLine = true;
-			while (getline(file, line))
+			for (auto it : line)
 			{
-				if (firstLine)
-				{
-					firstLine = false;
-					continue;
-				}
-				vector<string>	tmp;
-				stringstream	ss(line);
+				vector<string> tmp;
+				stringstream	ss(it);
 				string			data;
 				while (getline(ss, data, ','))
 					tmp.push_back(data);
 				addG(tmp);
 			}
 		}
-		else
-			cout << RED << "Error in parsing CSV2." << ENDC << endl;
-		file.close();
 	}
 	else
-		cout << RED << "Error in parsing CSV1." << ENDC << endl;
+		cout << RED << "Error in parsing CSV2." << ENDC << endl;
+	file.close();
 }
 
 void	Library::addG(vector<string> &args)
 {
+	//cout << "SIZE of VECT. " << args.size() << endl;
 	if (args.empty())
 		return ;
-	//if (args.size() == 1)
-		_games.push_back(new Game(args.front()));		
-	cout << "SIZE of VECT. " << args.size() << endl;
-	/*
-	if (args.size() == 2)
-		_games.push_back(new Game(args[0], strToGenre(args[1])));
-	if (args.size() == 4)
-		_games.push_back(new Game(args[0], strToGenre(args[1]), tuple<int,string> tmp(stoi ));
-		  //; //we have a top score info
-*/
+	try
+	{
+		string				paramOne;
+		Genre				paramTwo;
+		tuple<int, string>	paramThree;
+		
+		if (!args[0].empty())
+			paramOne = args[0];
+		else
+			throw runtime_error("Adding to Games.\n");
+		if (!args[1].empty())
+			paramTwo = strToGenre(args[1]);
+		else
+			paramTwo = OTHER;
+		if (!args[2].empty() && !args[3].empty())
+		{
+			get<0>(paramThree) = stoi(args[2]);
+			get<1>(paramThree) = args[3];
+		}
+		else
+		{
+			get<0>(paramThree) = 0;
+			get<1>(paramThree) = "0";
+		}
+		_games.push_back(new Game(paramOne, paramTwo, paramThree));
+	}
+	catch (const std::exception& e)
+	{
+		cerr << e.what() << endl;	
+	}
 }
 
 void	Library::print()
 {
+
 	for (auto g : _games)
 		cout << g->inf() << endl;
 }
@@ -124,5 +141,16 @@ void	Library::print()
 
 void	Library::printConsole()
 {
+	string buffer;
+
+	buffer += YELLOW;
+	putLeft("All Games", buffer, 32);
+	buffer += ENDC;
+	putLine(buffer, '-');
+
+	cout << buffer;
+	
+	for (auto game : _games)
+		box(game->strVector());
 
 }

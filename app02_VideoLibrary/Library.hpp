@@ -7,10 +7,22 @@
 
 class Game;
 
+enum Filter
+{
+	NM, //Normal
+	AN, //ASC NAME
+	DN,
+	AS,	//ASC SCORE
+	DS,
+	G	//GENRE
+};
+
 class Library
 {
-	bool			_on;
-	vector<Game*>	_games;
+	bool														_on;
+	vector<Game*>												_games;
+	vector<array<variant<string, Genre, tuple<int,string>>, 3>>	_filtered;
+	Filter														_mode;
 public:
 	Library():_on(true){};
 	~Library(){};

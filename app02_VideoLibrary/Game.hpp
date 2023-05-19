@@ -25,14 +25,16 @@ class Game
 public:
 	Game(string name):_name(name){_genre = OTHER;};
 	Game(string name, Genre gen):_name(name),_genre(gen){};
+	Game(string name, Genre gen, tuple<int,string> t):_name(name),_genre(gen),_topScore(t){};
 	~Game(){};
 
-	void	addGame(GamePlay *g){_games.push_back(g);};
-	string	inf();
+	void						addGame(GamePlay *g){_games.push_back(g);}; //& not ptr..
+	string						inf();
+	vector<tuple<int,string>>	strVector();
 };
 
 Genre	strToGenre(string str);
 bool	validateHeader(string line);
-bool	validate(ifstream file);
+bool	ftvalidate(ifstream file);
 
 #endif

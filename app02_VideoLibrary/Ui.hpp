@@ -4,10 +4,10 @@
 #include "../Headers.hpp"
 
 void	welcome();
-void	box(string header);
+void	box(vector<tuple<int, string>> obj);
 void	putLine(string &out, char c);
 void	putLeft(string in, string &out, char c);
 void	putUnderScore(string &out);
-char	itStr(char **str);
+char	itStr(const char **str, int limit);
 
 #endif

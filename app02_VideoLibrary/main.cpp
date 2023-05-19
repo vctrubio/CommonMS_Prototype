@@ -15,7 +15,8 @@ void		init(Library *lib)
 			lib->parse("demo.csv");
 			return ;
 		}
-		cout << "|";
+		else
+			cout << "|";
 	}
 }
 
@@ -25,7 +26,7 @@ int main()
 
     system("clear");
     welcome();
-	init(&lib);
+	lib.parse("demo.csv"); // init(&lib);
 	lib.loop();
 	return 1;
 }

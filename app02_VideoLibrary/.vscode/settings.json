@@ -4,6 +4,9 @@
         "string": "cpp",
         "iosfwd": "cpp",
         "iostream": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "tuple": "cpp",
+        "array": "cpp",
+        "variant": "cpp"
     }
 }

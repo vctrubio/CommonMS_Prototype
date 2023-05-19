@@ -19,16 +19,35 @@ void	welcome()
 	cout << mssg;	
 }
 
-void		box(string header)
+void		box(vector<tuple<int, string>> obj)
 {
 	string	buffer;
 
-	buffer += YELLOW;
-	putLeft(header, buffer, 32);
-	buffer += ENDC;
-	putLine(buffer, '-');
+	//|60|25|10|25|//
 	
+	int count = 0;
+	for (auto it : obj)
+	{
+		tuple<int,string> 		ptr = it;
+		const char				*tmp = (get<1>(ptr)).c_str();
+		for (int i = 0; i <= get<0>(ptr); i ++)
+		{
+			if (i == 0 || i == get<0>(ptr) && count < 1)
+			{
+				buffer += "|";
+				count++;
+			}
+			else if (*tmp)
+				buffer += itStr(&tmp, 26);
+			else
+				buffer += 32;
+		}
+	}
+
+	buffer += "\n";
+	putUnderScore(buffer);
 	cout << buffer;
+
 }
 
 
@@ -86,11 +105,11 @@ void	putUnderScore(string &out)
 	out += "\n";
 }
 
-char        itStr(char **str)
+char        itStr(const char **str, int limit)
 {
     char    c;
 
-    if (strlen(*str) > WIDTH)
+    if (strlen(*str) > limit || !*str)
     {
         cout << RED << "EREORR\n"; //need to trim.
         return 0;

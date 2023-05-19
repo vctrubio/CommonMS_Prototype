@@ -64,4 +64,5 @@ Thursday monring, looking back at the code, things to/can improve but overall it
 
 19.May
 -Starting videojuejos. Planning
-
+-not a front end ui, but man im i piicky.
+-i want to set up filter usage & ui before defining the game.
