@@ -38,6 +38,8 @@ void    Library::loop()
 		}
 		if (input == "/sort")
 			flag = getSort();
+		if (input == "/sort")
+			flag = getSort();
 		if (isId(input))
 		{
 			cout << "I see you like digits.\n";

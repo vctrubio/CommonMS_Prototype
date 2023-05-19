@@ -21,6 +21,7 @@ Genre	strToGenre(string str);
 
 class Game
 {
+	bool				_show = true;
 	string				_name;
 	tuple<int,string>	_topScore;
 	list<GamePlay*>		_games;
