@@ -33,7 +33,7 @@ public:
 	~Game(){};
 
 	void						addGame(GamePlay *g){_games.push_back(g);}; //& not ptr..
-	
+	bool						show(){return _show;};
 	string						name(){return _name;};
 	// Genre						genre(){return _genre;};
 	string						strGenre(){return genreToStr(_genre);};

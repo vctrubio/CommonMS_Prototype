@@ -9,6 +9,7 @@
         "array": "cpp",
         "variant": "cpp",
         "filesystem": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "chrono": "cpp"
     }
 }

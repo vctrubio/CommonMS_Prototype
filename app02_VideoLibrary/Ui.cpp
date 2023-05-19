@@ -1,5 +1,13 @@
 #include "Ui.hpp"
 
+int strCheck(string s1, string s2) {
+	transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+	transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
+	if(s1.compare(s2) == 0)
+    	return 1;
+	return 0;
+}
+
 void	welcome()
 {
     char    *str = strdup("");
@@ -9,14 +17,15 @@ void	welcome()
     mssg += "|IMPORTANT! Please provide a big enough screen to properly view the Library; This message should appear in a single line|"; //120 WIDTH
     mssg += "\n";
 	putUnderScore(mssg);
-	putLeft(" CMDS. They start with /CMD followed with options defined [option]", mssg, 32);
-	putLeft("/home is home", mssg, 32);
+	putLeft(" CMDS. They start with /CMD or /ID to view single.", mssg, 32);
+	// putLeft("/home is home", mssg, 32);
 	putLeft("/back is back", mssg, 32);
 	putLeft("/sort to sort", mssg, 32);
+	putLeft("/filter to filter with sql ", mssg, 32);
+	// putLeft("/join to join with sql ", mssg, 32);
+	putLeft("/all to !filter ", mssg, 32);
 
 
-
-	putLeft("/filter [top][view]", mssg, 32);
 	putLeft("/help to view this message again", mssg, 32);
 	putLeft("/exit to safely eject", mssg, 32);
 	putLine(mssg, '-');

@@ -17,6 +17,14 @@ enum Sort
 	GG	//GENRE
 };
 
+enum SqlOp
+{
+	GENRE,
+	NAME,
+	SCORE,
+	ID
+};
+
 class Library
 {
 	bool														_on;
@@ -35,9 +43,13 @@ public:
 	void	print();
 	void	printConsole(Sort flag);
 	string	sortToStr(Sort mode);
+
+	void	getFilter();
+	void	runSql(string &cmd);
+	void	sqlOperation(SqlOp op, vector<string> &cmd);
 };
 
-Sort	getSort();
+Sort		getSort();
 
 
 

@@ -15,6 +15,54 @@ static bool	isId(string input)
 	return false;
 }
 
+void	Library::sqlOperation(SqlOp op, vector<string> &cmd)
+{
+	auto it = _games;
+
+	if (op == GENRE)
+	{
+		
+	}
+}
+
+void	Library::runSql(string &cmd)
+{
+	vector<string> 	cmds;
+	istringstream	ss(cmd);
+	string			ptr;
+	
+	while (getline(ss, ptr, ' '))
+		cmds.push_back(ptr);
+	
+	if (strCheck(cmds[0], "GENRE"))
+		sqlOperation(GENRE, cmds);
+	else if (strCheck(cmds[0], "NAME"))
+		sqlOperation(NAME, cmds);
+	else if (strCheck(cmds[0], "SCORE"))
+		sqlOperation(SCORE, cmds);
+	else if (strCheck(cmds[0], "ID"))
+		sqlOperation(ID, cmds);
+	else
+	{
+		cout << RED << "Invalid:" << ENDC " SELECT * FROM Library WHERE " << cmd <<  endl;
+    	this_thread::sleep_for(std::chrono::seconds(1));
+	}
+}
+
+void	Library::getFilter()
+{
+	string	msg;
+	string input;
+
+	cout << BLUE;
+	putLeft("SELECT * FROM Library WHERE [GENRE/NAME/SCORE/ID] [=/>/<] ", msg, '.');
+	cout << msg;
+	cout << ENDC;
+
+	cin >> input;
+	runSql(input);
+}
+
 void    Library::loop()
 {
     string  input;
@@ -38,8 +86,10 @@ void    Library::loop()
 		}
 		if (input == "/sort")
 			flag = getSort();
-		if (input == "/sort")
-			flag = getSort();
+		if (input == "/filter")
+			getFilter();
+		// if (input == "/join")
+		// 	getFilter();
 		if (isId(input))
 		{
 			cout << "I see you like digits.\n";
@@ -153,7 +203,10 @@ void	Library::printConsole(Sort flag)
 	}
 	int count = 1;
 	for (auto game : _games)
-		box(game->strVector(), count);
+	{
+		if (game->show())
+			box(game->strVector(), count);
+	}
 }
 
 

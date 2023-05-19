@@ -10,5 +10,5 @@ void	putLine(string &out, char c);
 void	putLeft(string in, string &out, char c);
 void	putUnderScore(string &out);
 char	itStr(const char **str, int limit);
-
+int     strCheck(string s1, string s2);
 #endif
