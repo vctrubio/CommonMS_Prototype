@@ -23,20 +23,29 @@ void	welcome()
 	cout << mssg;	
 }
 
-void		box(vector<tuple<int, string>> obj)
+void		box(vector<tuple<int, string>> obj, int &index)
 {
 	string	buffer;
 	int count = 0;
 	
+	int flagIndex = true;
 	for (auto it : obj)
 	{
 		tuple<int,string> 		ptr = it;
 		const char				*tmp = (get<1>(ptr)).c_str();
 		for (int i = 0; i <= get<0>(ptr); i ++)
 		{
-			if (i == 0 || i == get<0>(ptr) && count < 1)
+			if (i <= 1 || i == get<0>(ptr) && count < 1)
 			{
-				buffer += "|";
+				if (i == 0)
+					buffer += "|";
+				else if (i == 1 && flagIndex)
+				{
+					buffer += to_string(index);
+					buffer += "|";
+					i += to_string(index).length();
+					flagIndex = false;
+				}
 				count++;
 			}
 			else if (*tmp)
@@ -45,6 +54,7 @@ void		box(vector<tuple<int, string>> obj)
 				buffer += 32;
 		}
 	}
+	index++;
 	buffer += "\n";
 	putUnderScore(buffer);
 	cout << buffer;

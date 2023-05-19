@@ -1,5 +1,20 @@
 #include "Library.hpp"
 
+static bool	isId(string input)
+{
+	if (input[0] == '/')
+	{
+		for (int i = 1; i < input.length(); i++)
+		{
+			if (input[i] < '0' || input[i] > '9')
+				return false;
+		}
+		if (input[1])
+			return true;
+	}
+	return false;
+}
+
 void    Library::loop()
 {
     string  input;
@@ -23,6 +38,12 @@ void    Library::loop()
 		}
 		if (input == "/sort")
 			flag = getSort();
+		if (isId(input))
+		{
+			cout << "I see you like digits.\n";
+		}
+		// if (input == "/filter")
+		// 	flag = getSort();
 		system("clear");
 		printConsole(flag);
         cout << "|";
@@ -128,8 +149,9 @@ void	Library::printConsole(Sort flag)
 		// sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
         // 	return game1->score() > game2->score();});
 	}
+	int count = 1;
 	for (auto game : _games)
-		box(game->strVector());
+		box(game->strVector(), count);
 }
 
 
