@@ -49,6 +49,10 @@
 # define WHITE	"\033[0;37m"
 # define ENDC	"\033[0m"
 
+#define WIDTH 120
+#define HEIGHT 160
+
+
 using namespace std;
 
 
