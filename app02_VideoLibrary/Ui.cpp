@@ -14,10 +14,10 @@ void	welcome()
 	putLeft("/filter to filter with sql ", mssg, 32);
 	putLeft("/all to !filter ", mssg, 32);
 	putLeft("/ID to view ", mssg, 32);
-
-	//play -- ID , get good score, leave a review.
+	
 
 	putLeft("/help to view this message again", mssg, 32);
+	putLeft("/back to go back", mssg, 32);
 	putLeft("/exit to safely eject", mssg, 32);
 	putLine(mssg, '-');
 	cout << mssg;	

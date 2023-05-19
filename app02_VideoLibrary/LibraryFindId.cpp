@@ -23,9 +23,26 @@ int strCheck(string s1, string s2) {
 	return 0;
 }
 
-
-
-void	Library::findID(string input)
+void	Library::findId(string input)
 {
-	
+	int	id = stoi(input.substr(1));
+	if (id == 0)
+		return ;
+
+	int count = 1;
+	for (vector<Game*>::iterator i = _games.begin(); i != _games.end(); i++)
+	{
+		if (count == id)
+		{
+        	if (!((*i)->showGame()))
+			{
+				iter_swap(i, _games.end() - 1);
+				Game	*ptr = _games.back();
+				_games.pop_back();
+				delete ptr;
+				break;
+			}
+		}
+		count++;
+	}
 }

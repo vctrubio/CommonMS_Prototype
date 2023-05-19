@@ -49,11 +49,12 @@ public:
 	void	runSql(string &cmd);
 	void	sqlOperation(SqlOp op, vector<string> &cmd);
 
-	void	findID(string input);
+	void	findId(string input);
 };
 
 Sort		getSort();
 bool		isId(string input);
 int 		strCheck(string s1, string s2);
+void		findId(string input);
 
 #endif
