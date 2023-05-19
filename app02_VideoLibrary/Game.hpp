@@ -34,11 +34,16 @@ public:
 
 	void						addGame(GamePlay *g){_games.push_back(g);}; //& not ptr..
 	bool						show(){return _show;};
+	void						off(){_show = false;};
+	void						on(){_show = true;};
+
 	string						name(){return _name;};
 	// Genre						genre(){return _genre;};
 	string						strGenre(){return genreToStr(_genre);};
 	int							score(){return get<0>(_topScore);};
 	
+
+
 	string						inf();
 	vector<tuple<int,string>>	strVector();
 };

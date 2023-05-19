@@ -1,68 +1,5 @@
 #include "Library.hpp"
 
-static bool	isId(string input)
-{
-	if (input[0] == '/')
-	{
-		for (int i = 1; i < input.length(); i++)
-		{
-			if (input[i] < '0' || input[i] > '9')
-				return false;
-		}
-		if (input[1])
-			return true;
-	}
-	return false;
-}
-
-void	Library::sqlOperation(SqlOp op, vector<string> &cmd)
-{
-	auto it = _games;
-
-	if (op == GENRE)
-	{
-		
-	}
-}
-
-void	Library::runSql(string &cmd)
-{
-	vector<string> 	cmds;
-	istringstream	ss(cmd);
-	string			ptr;
-	
-	while (getline(ss, ptr, ' '))
-		cmds.push_back(ptr);
-	
-	if (strCheck(cmds[0], "GENRE"))
-		sqlOperation(GENRE, cmds);
-	else if (strCheck(cmds[0], "NAME"))
-		sqlOperation(NAME, cmds);
-	else if (strCheck(cmds[0], "SCORE"))
-		sqlOperation(SCORE, cmds);
-	else if (strCheck(cmds[0], "ID"))
-		sqlOperation(ID, cmds);
-	else
-	{
-		cout << RED << "Invalid:" << ENDC " SELECT * FROM Library WHERE " << cmd <<  endl;
-    	this_thread::sleep_for(std::chrono::seconds(1));
-	}
-}
-
-void	Library::getFilter()
-{
-	string	msg;
-	string input;
-
-	cout << BLUE;
-	putLeft("SELECT * FROM Library WHERE [GENRE/NAME/SCORE/ID] [=/>/<] ", msg, '.');
-	cout << msg;
-	cout << ENDC;
-
-	cin >> input;
-	runSql(input);
-}
-
 void    Library::loop()
 {
     string  input;
@@ -88,14 +25,13 @@ void    Library::loop()
 			flag = getSort();
 		if (input == "/filter")
 			getFilter();
-		// if (input == "/join")
-		// 	getFilter();
+		if (input == "/all")
+			allFilter();
 		if (isId(input))
 		{
 			cout << "I see you like digits.\n";
+			//...
 		}
-		// if (input == "/filter")
-		// 	flag = getSort();
 		system("clear");
 		printConsole(flag);
         cout << "|";
@@ -139,28 +75,6 @@ void	Library::addG(vector<string> &args)
 	}
 }
 
-void	Library::print()
-{
-
-	for (auto g : _games)
-		cout << g->inf() << endl;
-}
-
-string	Library::sortToStr(Sort mode)
-{
-	if (mode == AN)
-		return "Ascending Title";
-	if (mode == DN)
-		return "Descending Title";
-	if (mode == AS)
-		return "Ascending Top Score";
-	if (mode == DS)
-		return "Descending Top Score";
-	if (mode == GG)
-		return "Ascending Genres";
-	return "Common Managment Solutions";
-}
-
 void	Library::printConsole(Sort flag)
 {
 	string buffer;
@@ -198,8 +112,6 @@ void	Library::printConsole(Sort flag)
 			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
         		return game1->strGenre() < game2->strGenre();});
 		}
-		// sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
-        // 	return game1->score() > game2->score();});
 	}
 	int count = 1;
 	for (auto game : _games)
@@ -207,114 +119,4 @@ void	Library::printConsole(Sort flag)
 		if (game->show())
 			box(game->strVector(), count);
 	}
-}
-
-
-
-///VALIDATION INITSs///////////////////////////////
-static bool	validateHeader(string line)
-{
-	int 	count = 0;
-	string	tmp;
-
-	for (int i = 0; i < line.length(); i++)
-	{
-		if (line[i] == ',')
-			count++;
-	}
-	if (count != 3)
-		return false;
-	count = 1;
-	istringstream ss(line);
-	while(getline(ss, tmp, ','))
-	{
-		if (count == 1 && tmp != "Name")
-			return false;
-		if (count == 2 && tmp != "Category")
-			return false;
-		if (count == 3 && tmp != "Top Score")
-			return false;
-		if (count == 4 && tmp != "User")
-			return false;
-		count++;
-	}
-	return true;
-
-}
-
-static bool	ftvalidate(ifstream &file, vector<string> &cpy)
-{
-	string 	line;
-	bool	firstline = true;
-
-	while (getline(file, line))
-	{
-		if (firstline)
-		{
-			firstline = false;
-			if (validateHeader(line))
-				continue;
-			cout << RED << "Error in CSV Headers." << ENDC << endl;
-			return false;
-		}
-		cpy.push_back(line);
-	}
-	return true;
-}
-
-void	Library::parse(string filename)
-{
-	ifstream		file(filename);
-	vector<string>	line;
-
-	if (file.is_open())
-	{
-		if (ftvalidate(file, line))
-		{
-			for (auto it : line)
-			{
-				vector<string> tmp;
-				stringstream	ss(it);
-				string			data;
-				while (getline(ss, data, ','))
-					tmp.push_back(data);
-				addG(tmp);
-			}
-		}
-	}
-	else
-		cout << RED << "Error in parsing CSV2." << ENDC << endl;
-	file.close();
-}
-
-
-
-//////////////////Circular depenciens............. Should be in UI.
-Sort		getSort()
-{
-	string	input;
-	string	output;
-
-	putLine(output, '-');
-	putLeft("|OPTIONS| 'AN' 'DN' on Name | 'AS' 'DS' on Score | 'GG' on Genre", output, 32);
-	putLine(output, '-');
-	cout << output << "|";
-
-	while(getline(cin, input))
-    {
-        if (input == "/back")
-			break;
-		if (input == "AN")
-			return AN;
-		if (input == "DN")
-			return DN;
-		if (input == "AS")
-			return AS;
-		if (input == "DS")
-			return DS;
-		if (input == "GG")
-			return GG;
-		cout << "|";
-    }
-	return NM;
 }

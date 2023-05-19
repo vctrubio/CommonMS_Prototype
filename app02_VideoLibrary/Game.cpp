@@ -27,7 +27,6 @@ string	Game::inf()
 	string	rtn;
 
 	rtn = _name + "," + genreToStr(_genre) + "," + to_string(get<0>(_topScore)) + "," + get<1>(_topScore);
-
 	return rtn;
 }
 

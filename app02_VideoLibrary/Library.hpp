@@ -40,17 +40,18 @@ public:
 	void	loop();
 	void	parse(string filename);
 	void	addG(vector<string> &args);
-	void	print();
+	void	print(){for (auto g : _games) cout << g->inf() << endl;};
 	void	printConsole(Sort flag);
 	string	sortToStr(Sort mode);
 
+	void	allFilter(){for (auto i : _games){i->on();};};
 	void	getFilter();
 	void	runSql(string &cmd);
 	void	sqlOperation(SqlOp op, vector<string> &cmd);
 };
 
 Sort		getSort();
-
-
+bool		isId(string input);
+int 		strCheck(string s1, string s2);
 
 #endif
