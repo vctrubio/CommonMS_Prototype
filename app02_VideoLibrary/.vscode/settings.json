@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "time.h": "c",
+        "fstream": "c",
+        "locale": "c",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "__tree": "c",
+        "map": "c",
+        "header.h": "c"
+    }
+}

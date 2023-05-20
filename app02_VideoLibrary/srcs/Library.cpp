@@ -26,6 +26,10 @@ void    Library::loop()
 			allFilter();
 		if (isId(input))
 			findId(input);
+		if (input == "/checkout")
+		{
+			system("./cube hernesto");
+		}
 		system("clear");
 		printConsole(flag);
         cout << "|";

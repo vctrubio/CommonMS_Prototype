@@ -9,7 +9,7 @@ void		init(Library *lib)
 	{
 		if (input == "/init")
 		{
-			// fetchData || API
+			mkdir("maps", 0744);
 			lib->parse("demo.csv");
 			return ;
 		}

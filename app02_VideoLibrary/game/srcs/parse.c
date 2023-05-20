@@ -3,18 +3,22 @@
 void	parse_map(char *file)
 {
 	int		fd;
+	int		fdTmp;
 	char	*line;
+	char	path[100];
 	t_list	*lst;
 
 	lst = NULL;
-	fd = open("./maps/map.ber", O_RDONLY);
+	strcpy(path, "./maps/");
+	strcat(path, file);
+	fd = open(path, O_RDONLY);
 	if (fd < 0)
+		return ;
+	else
 	{
-		printf("no map found\n");
-		exit(1);
+		while (get_next_line(fd, &line))
+			ft_lstadd_back(&lst, ft_lstnew((void *)ft_strdup(line)));
+		close(fd);
 	}
-	while (get_next_line(fd, &line))
-		ft_lstadd_back(&lst, ft_lstnew((void *)ft_strdup(line)));
-	close(fd);
 	return (init_map(lst));
 }

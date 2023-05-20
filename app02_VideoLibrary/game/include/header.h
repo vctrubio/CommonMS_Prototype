@@ -12,6 +12,7 @@
 # include <stdbool.h>
 # include <stdarg.h>
 # include <time.h>
+# include <string.h>
 
 
 # define WHEIGHT 600
@@ -89,6 +90,8 @@ void		draw_gridline(void);
 //map
 void		my_map_init(void);
 void		my_map_loop(void);
+//mapCreation
+void		createMap(int rows, int columns, int difficulty, char *filename);
 //move
 void		update_map_pos(int x, int y);
 void		move_player(int y, int x);
@@ -123,5 +126,4 @@ int		get_next_line(int fd, char **line);
 void	print_map(void);
 //utilCONVERT
 int		unit_nb(int x);
-
 #endif
