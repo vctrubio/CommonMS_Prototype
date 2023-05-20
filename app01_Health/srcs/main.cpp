@@ -76,7 +76,8 @@ void		uiADoctor(Hospital *hospital)
 		}
 		cout << ">";
 	}
-	doctor->loop(hospital);
+	if (doctor)
+		doctor->loop(hospital);
 }
 
 int main(int ac, char **av)
