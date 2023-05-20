@@ -61,6 +61,7 @@ public:
 Sort		getSort();
 bool		isId(string input);
 int 		strCheck(string s1, string s2);
+int			strExist(string s1, string s2);
 void		findId(string input);
 string     	randDiff();
 #endif

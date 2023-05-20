@@ -84,7 +84,7 @@ void	Library::sqlOperation(SqlOp op, vector<string> &cmd)
 		{
 			if (cmd[1] == "=")
 			{
-				if (!strCheck(i->name(), cmd[2]))
+				if (!strExist(i->name(), cmd[2]))
 					i->off();
 			}
 			if (cmd[1] == "!=")

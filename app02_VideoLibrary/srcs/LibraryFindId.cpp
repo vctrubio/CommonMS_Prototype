@@ -15,11 +15,23 @@ bool	isId(string input)
 	return false;
 }
 
-int strCheck(string s1, string s2) {
+int strCheck(string s1, string s2)
+{
 	transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
 	transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
+	
 	if(s1.compare(s2) == 0)
     	return 1;
+	return 0;
+}
+
+int	strExist(string s1, string s2)
+{
+	transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+	transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
+    
+	if (s1.find(s2) != string::npos)
+        return 1;
 	return 0;
 }
 
