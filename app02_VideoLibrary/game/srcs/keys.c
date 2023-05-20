@@ -20,6 +20,6 @@ void	key_listener(void)
 	t_game	*g;
 
 	g = _game();
-	mlx_hook(g->w->window, 2, 0, test_key_code, NULL); //key_down
-	mlx_hook(g->w->window, 3, 0, test_key_code, NULL); //key_realesed
+	mlx_hook(g->w->window, 2, 0, test_key_code, NULL);
+	mlx_hook(g->w->window, 3, 0, test_key_code, NULL);
 }

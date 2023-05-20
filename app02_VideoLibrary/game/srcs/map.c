@@ -27,7 +27,6 @@ void	my_map_loop(void)
 	}
 }
 
-
 void	my_map_init(void)
 {
 	t_map	*map;
@@ -59,4 +58,3 @@ void	my_map_init(void)
 	}
 	draw_gridline();
 }
-

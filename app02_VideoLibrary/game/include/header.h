@@ -11,14 +11,15 @@
 # include <unistd.h>
 # include <stdbool.h>
 # include <stdarg.h>
+# include <time.h>
 
-# define WHEIGHT 600 //WINDOW_HEIGHT
+
+# define WHEIGHT 600
 # define WWIDTH 900
-
-# define SDHEIGHT 5 //STANDARD_HEIGHT
+# define SDHEIGHT 5
 # define SDWIDTH 5
 # define BUFFER_SIZE 1
-# define UNIT 24  //MAP_UNIT- change it if you want, will resize the game
+# define UNIT 24 
 
 typedef struct	s_list
 {
@@ -54,8 +55,8 @@ typedef struct	s_img
 
 typedef struct	s_game
 {
-	t_window	*w; //window/mlx
-	t_img		*img; //imaginePlayer
+	t_window	*w;
+	t_img		*img;
 	double		pos_x;
 	double		pos_y;
 }				t_game;
@@ -63,6 +64,7 @@ typedef struct	s_game
 typedef struct	s_info
 {
 	int			count;
+	clock_t		s_time;
 }				t_info;
 
 //static AKA GLOBAL_fts
@@ -75,10 +77,7 @@ t_info		*_info(void);
 t_window	*rtn_window(void);
 t_game		*rtn_game(void);
 t_img		*rtn_img(int x, int y);
-t_img		*rtn_img2(int x, int y, t_window *w);
-
 //parse PROGRAM
-void		parse_map_to_img(void);
 void		parse_map(char *file);
 //pixelManipulation
 void		mpp(t_img *img, int x, int y, int color);
@@ -124,6 +123,5 @@ int		get_next_line(int fd, char **line);
 void	print_map(void);
 //utilCONVERT
 int		unit_nb(int x);
-//XTRA
-void wnl_1(void); //test
+
 #endif

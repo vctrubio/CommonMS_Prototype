@@ -1,22 +1,23 @@
 #include "../include/header.h"
-/* V3
-create map from X
-parse image
-put image
-move image
-*/
 
-int	gameloop(void) //infinite gameloop (always running)
+int	gameloop(void)
 {
 	t_game	*game;
 
 	game = _game();
-	draw_game();
 	if (_info()->count <= 0)
-		exit (12);
+	{
+		time_t 	now = clock();
+		double 	exec = (double)(now - _info()->s_time) / CLOCKS_PER_SEC * 60;
+		int		rtnScore = 200 - (int)(exec);
+		if (rtnScore < 0)
+			rtnScore = 1;
+		printf("Execution time: %d \n", rtnScore);
+		exit (rtnScore);
+	}
+	draw_game();
 	return (0);
 }
-
 
 int	main(int ac, char **av)
 {
@@ -27,6 +28,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 		return -1;
+	_info()->s_time = clock();
 	w = rtn_window();
 	parse_map(NULL);
 	game_img_map = rtn_img(_map()->max_x, _map()->max_y);
