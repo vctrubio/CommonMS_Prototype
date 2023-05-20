@@ -12,6 +12,7 @@ static void	uiAdmin()
 	cout << "|'rooms' to see all       |\n";
 	cout << "|app #IDpatiant #IDdoctor'|\n";
 	cout << "|app for app Managment    |\n";
+	cout << "|'clear' to see me again  |\n";
 	cout << "---------------------------\n";
 }
 
@@ -123,7 +124,7 @@ void		Hospital::loop()
 			runloop();
 			cmds.clear();
 		}
-			cout << GREEN <<  "…" << ENDC ">";
+		cout << GREEN <<  "…" << ENDC ">";
 	}
 }
 
@@ -138,37 +139,41 @@ void	Hospital::uiApp(vector<string>::iterator it)
 		cout << "--------------------------\n>";
 		while (getline(cin, input))
 		{
-			if (input == "back" || input == "exit")
+			if (input.length() > 0)
 			{
-				loop();
-				return;
-			}
-			if (input == "show")
-			{
-				printPatients();
-				printDoctors();
-				continue;
-			}
-			else if (input == "new")
-			{
-				int patient = askID(1);
-				if (patient < 0 )
-					return ;
-				int doctor = askID(2);
-				if (doctor < 0)
-					return ;
-				try
+				if (input == "back" || input == "exit")
 				{
-					new Appointment(idDoctor(doctor), idPatient(patient), availableRoom());
+					loop();
+					return;
 				}
-				catch(const std::exception& e)
+				else if (input == "show")
 				{
-					std::cerr << e.what() << '\n';
+					printPatients();
+					printDoctors();
+					continue;
 				}
-				return ;
+				else if (input == "new")
+				{
+					int patient = askID(1);
+					if (patient < 0 )
+						return ;
+					int doctor = askID(2);
+					if (doctor < 0)
+						return ;
+					try
+					{
+						new Appointment(idDoctor(doctor), idPatient(patient), availableRoom());
+					}
+					catch(const std::exception& e)
+					{
+						std::cerr << e.what() << '\n';
+					}
+					return ;
+				}
 			}
 			else
-				cout << ">";
+				break;
+			cout << ">";
 		}
 	}
 	else

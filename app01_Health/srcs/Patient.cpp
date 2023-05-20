@@ -50,5 +50,5 @@ string Patient::rtnCsv()
 
 Patient::~Patient()
 {
-    cout << RED << "-1" << ENDC " Patient: " << _name << endl;
+    // cout << RED << "-1" << ENDC " Patient: " << _name << endl;
 }
