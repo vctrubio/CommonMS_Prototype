@@ -20,7 +20,7 @@
 # define SDHEIGHT 5
 # define SDWIDTH 5
 # define BUFFER_SIZE 1
-# define UNIT 24 
+# define UNIT 40
 
 typedef struct	s_list
 {
@@ -92,6 +92,7 @@ void		my_map_init(void);
 void		my_map_loop(void);
 //mapCreation
 void		createMap(int rows, int columns, int difficulty, char *filename);
+bool		map_exist(int difficulty, char *name);
 //move
 void		update_map_pos(int x, int y);
 void		move_player(int y, int x);

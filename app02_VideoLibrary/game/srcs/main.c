@@ -19,24 +19,6 @@ int	gameloop(void)
 	return (0);
 }
 
-bool	map_exist(int difficulty, char *name)
-{
-	int fd;
-	char path[255];
-
-	strcpy(path, "./maps/");
-	strcat(path, name);
-	fd = open(path, O_RDONLY);
-	if ((fd = open(path, O_RDONLY)) < 0)
-	{
-		printf("creating file - %s\n" ,path);
-		createMap(9, 9, difficulty, path);
-	}
-	close(fd);
-	return true;
-}
-
-
 // ./cube NAME DIFF MAP
 int	main(int ac, char **av)
 {
