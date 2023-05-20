@@ -91,6 +91,11 @@ void	Hospital::runloop()
 			{
 				cout << it->info();
 				cout << "-----------------\n";
+				cout << "testing";
+				if (it->valid())
+					cout << it->app()->csv();
+				else
+				cout << " OK";
 			}
 		}
 		else if (*it == "app")

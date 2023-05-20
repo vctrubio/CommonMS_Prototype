@@ -1,4 +1,4 @@
 Id,Name,Ingressed,Archived
-1,maria,false,true
+1,maria,true,true
 2,delta,false,true
 3,newbie,false,false

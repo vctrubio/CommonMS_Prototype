@@ -19,11 +19,13 @@ void	User::uiUserPannel()
 		cout << RED << "|" << ENDC;
 	cout << name() << " |ID: " << id();
 	cout << "\n-----------------------------------\n";
-	cout << "|'view doctors'                   |\n";
-	cout << "|'new' for new appointment        |\n";
-	cout << "|'chat' to talk to AI             |\n";
+	cout << "|'view doctors'                     |\n";
+	cout << "|'new' for new appointment          |\n";
+	cout << "|'clear' make sure to check         |\n";
+	cout << "|'back'||'exit'                     |\n";
+	// cout << "|'chat' to talk to AI             |\n";
 	cout << "- - - - - - - - - - - - - - - - - - \n";
-	cout << "[" << appointments().size() << "]  Appointments                  |\n";
+	cout << "[" << appointments().size() << "]  Appointments                  \n";
 
 	int count = 0;
 	vector<Appointment*> ptr;
@@ -35,17 +37,17 @@ void	User::uiUserPannel()
 	if (!ptr.empty())
 	{
 		cout << GREEN << "REMINDER: " << ENDC << "You have " << GREEN << ptr.size() << ENDC << " coming up.";
-		cout << "\n- - - - - - - - - - - - - \n";
+		cout << "\n- - - - - - - - - - - - - - - - - - \n";
 		for (auto i : ptr)
 		{
 			cout << *i;
-			cout << "\n- - - - - - - - - - - - - \n";
+			cout << "\n- - - - - - - - - - - - - - - - - - \n";
 		}
 		cout << "\n-----------------------------\n";
-		cout << "|'yes' to attend appointment   |\n";
+		cout << "|'yes' to attend appointment   \n";
 	}
 	if (ingr())
-		cout << "|'solicitud' for checkup            |\n";
+		cout << "|'solicitud' || '1' for checkup            \n";
 	cout << "\n-----------------------------\n";
 }
 
@@ -54,13 +56,6 @@ void	User::ui(Hospital *h, int start)
 	string input;
 
 	system("clear");
-	if (start)
-	{
-		cout << RED << "'exit' || '0' for exit\n" << ENDC; 
-		cout << YELLOW << "'back' to go back\n" << ENDC; 
-		cout << YELLOW << "'clear' to clear the screen\n" << ENDC; 
-		cout << "-----------------------------------\n"; 
-	}
 	uiUserPannel();
 	cout << ">";
 	while(getline(cin, input))
@@ -95,7 +90,7 @@ void	User::ui(Hospital *h, int start)
 				}
 			}
 		}
-		else if (input == "solicitud" && ingr())
+		else if ((input == "solicitud" || input == "1") && ingr())
 		{
 			if (!surgeryPro())
 			{
@@ -105,11 +100,7 @@ void	User::ui(Hospital *h, int start)
 			else
 				cout << YELLOW << "Unfortunetly " << ENDC << "our medical staff still see you unfit.\n";
 		}
-		if (input == "chat")
-		{
-
-			return ;
-		}
+		// if (input == "chat")
 		cout << ">";
 	}
 }

@@ -90,50 +90,43 @@ Hospital::~Hospital()
 	const char *doctorFile = "doctors.csv";
 	const char *appFile = "appointments.csv";
 
-	ofstream fileWrite(patientFile);
-	if (fileWrite.is_open())
+	ofstream fileApp(appFile, ios::app);
+	if (fileApp.is_open())
 	{
-		fileWrite << "Id,Name,Ingressed,Archived\n";
-		fileWrite.close();
+		if (fileApp.tellp() == 0)
+			fileApp << "Patient,Doctor,Date,Completed,Surgery?\n";
+		for (auto i : _rooms)
+		{
+			if (i->valid())
+				fileApp << i->app()->csv();
+		}
+		fileApp.close();
+	}
+
+	ofstream fileP(patientFile);
+	if (fileP.is_open())
+	{
+		fileP << "Id,Name,Ingressed,Archived\n";
+		fileP.close();
 	}
 	for (auto it = _patients.begin(); it != _patients.end(); ++it)
 	{
 		addtoCSV<Patient>(patientFile, it->second);
 		delete it->second;
 	}
-	ofstream fileWrite2(doctorFile);
-	if (fileWrite2.is_open())
+
+	ofstream fileD(doctorFile);
+	if (fileD.is_open())
 	{
-		fileWrite2 << "Id,Name,Spcs,Archived\n";
-		fileWrite2.close();
+		fileD << "Id,Name,Spcs,Archived\n";
+		fileD.close();
 	}
 	for (auto i : _doctors)
 	{
 		addtoCSV<Doctor>(doctorFile, i);
 		delete i;
 	}
-	
-	ofstream fileWrite3(appFile, ios::app);
-	if (fileWrite3.is_open())
-	{
-		if (fileWrite3.tellp() == 0)
-			fileWrite3 << "Patient, Doctor, Date, Completed, Surgery?\n";
-		for (auto i : _rooms)
-		{
-			try
-			{
-				Appointment	*app = i->app();
-				fileWrite3 << app->csv();
-				delete app;
-				delete i;
-			}
-			catch(const std::exception& e)
-			{
-				std::cerr << e.what() << '\n';
-			}
-		}
-		fileWrite3.close();
-	}
+
 	_patients.clear();
 	_doctors.clear();
 }

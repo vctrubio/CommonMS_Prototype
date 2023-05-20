@@ -33,13 +33,12 @@ std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
 
 string	Appointment::csv()
 {
-    string str = getPatient()->name() + "," + "," + getDoctor()->name() + "," + getTime() + "," + (status() ? "Completed" : "Upcoming");
+    string str = getPatient()->name() + "," + getDoctor()->name() + "," + getTime() + "," + (status() ? "Completed" : "Upcoming");
     
     if (_surgery)
-    {
-        str += ",[Patient underwent surgery, ";
-        str += (_surgery->complete()? "Recovered swiftly]" : "Still hospitalized]");
-    }
+        str += ",Yes";
+    else
+        str +=",No";
     str += "\n";
 	return str;
 }
