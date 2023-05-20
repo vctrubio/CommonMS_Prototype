@@ -8,12 +8,14 @@ static int generate_difficulty(int difficulty)
 
 void	createMap(int rows, int columns, int difficulty, char *filename)
 {
-
-	//validate difficulty from 1-9 and filename must end with .ber
-
     char** map = (char**)malloc(rows * sizeof(char*));
     for (int i = 0; i < rows; i++)
         map[i] = (char*)malloc(columns * sizeof(char));
+
+    if (difficulty >= 10)
+        difficulty = 9;
+    if (difficulty <= 0)
+        difficulty = 2;
 
 	srand(time(NULL));
     for (int i = 0; i < rows; i++)
@@ -34,7 +36,7 @@ void	createMap(int rows, int columns, int difficulty, char *filename)
         }
     }
 
-	int file = open(filename, O_RDWR | O_CREAT , 0744); 
+	int file = open(filename, O_RDWR | O_CREAT , 0711); 
 	if (file < 0)
 	{
         printf("ERROR:: Failed to create the file.\n");
