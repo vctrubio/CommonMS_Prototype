@@ -3,9 +3,6 @@
 
 #include "../../Headers.hpp"
 #include "GamePlay.hpp"
-// #include "Ui.hpp"
-
-class GamePlay;
 
 enum Genre
 {
@@ -18,12 +15,14 @@ enum Genre
 string	genreToStr(Genre gen);
 Genre	strToGenre(string str);
 
+class GamePlay;
+
 class Game
 {
 	bool				_show = true;
 	string				_name;
 	tuple<int,string>	_topScore;
-	list<GamePlay*>		_games;
+	list<GamePlay*>		_play;
 	Genre				_genre;
 public:
 	Game(string name):_name(name){_genre = OTHER;};
@@ -31,7 +30,7 @@ public:
 	Game(string name, Genre gen, tuple<int,string> t):_name(name),_genre(gen),_topScore(t){};
 	~Game(){};
 
-	void						addGame(GamePlay *g){_games.push_back(g);}; //& not ptr..
+	void						addGame(string username, int score);
 	bool						show(){return _show;};
 	void						off(){_show = false;};
 	void						on(){_show = true;};
@@ -39,7 +38,6 @@ public:
 	string						name(){return _name;};
 	void						cName(string name){_name = name;};
 	void						cGenre(int i);
-	// Genre						genre(){return _genre;};
 	string						strGenre(){return genreToStr(_genre);};
 	int							score(){return get<0>(_topScore);};
 	
@@ -47,7 +45,6 @@ public:
 	string						inf();
 	vector<tuple<int,string>>	strVector();
 };
-
-
+	Genre						iGenre(int i);
 
 #endif

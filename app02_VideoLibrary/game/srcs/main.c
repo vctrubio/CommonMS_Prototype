@@ -19,7 +19,7 @@ int	gameloop(void)
 	return (0);
 }
 
-// ./cube MAP DIFF
+// ./cube DIFF MAP 
 int	main(int ac, char **av)
 {
 	t_img		*game_img_map;
@@ -27,19 +27,24 @@ int	main(int ac, char **av)
 	t_game		*game;
 	t_info		*info;
 
-	if (ac != 3)
+	if (ac < 3)
 		return -1;
-	_info()->s_time = clock();
-	w = rtn_window();
 
-	map_exist(av[2][0] - 48, av[1]);
-	parse_map(av[1]);
+	char	mapName[250];
+	int 	i = 1;
+	while (av[++i])
+		strcat(mapName, av[i]);
+
+	w = rtn_window();
+	_info()->s_time = clock();
+	map_exist(av[1][0] - 48, mapName);
+	parse_map(mapName);
 
 	game_img_map = rtn_img(_map()->max_x, _map()->max_y);
 	game = _game();
 	game->img = game_img_map;
 	game->w = w;
-	w->window = mlx_new_window(w->mlx, game_img_map->width, game_img_map->height, av[1]);
+	w->window = mlx_new_window(w->mlx, game_img_map->width, game_img_map->height, mapName);
 
 	my_map_init();
 	mlx_loop_hook(game->w->mlx, &gameloop, NULL);

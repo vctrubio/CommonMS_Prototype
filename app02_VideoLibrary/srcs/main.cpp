@@ -11,7 +11,7 @@ void		init(Library *lib)
 		if (input == "/init")
 		{
 			mkdir("maps", 0744);
-			lib->parse("demo.csv");
+			lib->parse("data.csv");
 			system("clear");
 			cout << GREEN << " Connected." << ENDC << "\n Give us your name to save your high score.\n|";
 			while (getline(cin, name))

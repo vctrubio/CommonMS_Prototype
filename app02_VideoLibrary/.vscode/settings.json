@@ -13,6 +13,13 @@
         "thread": "cpp",
         "random": "cpp",
         "chrono": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "filesystem": "cpp",
+        "stdexcept": "cpp",
+        "vector": "cpp"
     }
 }

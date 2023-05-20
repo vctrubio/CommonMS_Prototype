@@ -3,14 +3,12 @@
 
 #include "../../Headers.hpp"
 
-// class User;
-
 class GamePlay
 {
 	int		_score;
-	// User*	_user;
+	string	_name;
 public:
-	GamePlay():_score(0){};
+	GamePlay(string name, int score):_name(name), _score(score){};
 	~GamePlay(){};
 
 	void	uScore(int score){_score = score;};

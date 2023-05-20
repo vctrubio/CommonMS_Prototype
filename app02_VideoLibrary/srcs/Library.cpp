@@ -27,9 +27,9 @@ void    Library::loop()
 		if (isId(input))
 			findId(input);
 		if (input == "/arcade")
-		{
 			arcade();
-		}
+		if (input == "/new")
+			newGame();
 		system("clear");
 		printConsole(flag);
         cout << "|";

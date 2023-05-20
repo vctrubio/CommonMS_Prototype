@@ -71,6 +71,9 @@ void	Library::parse(string filename)
 		}
 	}
 	else
-		cout << RED << "Error in parsing CSV2." << ENDC << endl;
+	{
+		cout << RED << "Error in parsing CSV:" << ENDC << " Loading Empty Data: " << filename <<  endl;
+		this_thread::sleep_for(chrono::seconds(2));
+	}
 	file.close();
 }

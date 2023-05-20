@@ -36,7 +36,7 @@ void	createMap(int rows, int columns, int difficulty, char *filename)
         }
     }
 
-	int file = open(filename, O_RDWR | O_CREAT , 0711); 
+	int file = open(filename, O_RDWR | O_CREAT , 0747); 
 	if (file < 0)
 	{
         printf("ERROR:: Failed to create the file.\n");
@@ -54,7 +54,6 @@ void	createMap(int rows, int columns, int difficulty, char *filename)
     free(map);
 }
 
-
 bool	map_exist(int difficulty, char *name)
 {
 	int fd;
@@ -65,7 +64,7 @@ bool	map_exist(int difficulty, char *name)
 	fd = open(path, O_RDONLY);
 	if ((fd = open(path, O_RDONLY)) < 0)
 	{
-		printf("creating file - %s\n" ,path);
+		printf("creating NEW file - %s\n" ,path);
 		createMap(9, 9, difficulty, path);
 	}
 	close(fd);

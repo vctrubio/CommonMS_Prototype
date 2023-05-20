@@ -49,6 +49,8 @@ public:
 
 	void	findId(string input);
 	void	arcade();
+	void	newGame();
+	void	userAddGame(string name, int index){_games.push_back(new Game(name, iGenre(index)));};
 };
 
 Sort		getSort();

@@ -16,8 +16,18 @@ void        Library::arcade()
         this_thread::sleep_for(chrono::milliseconds(600));
     }
 
-    cout << GREEN << "What ID do you want to play?\n" << ENDC;
-    cout << "**********************************|\n";
+    if (filesystem::exists("cube"))
+    {
+        cout << GREEN << "What ID do you want to play?\n" << ENDC;
+        cout << "**********************************|\n";
+    }
+    else
+    {
+        cout << RED << "ERROR: "<< ENDC << " ./cube executable game not found.\n";
+        this_thread::sleep_for(chrono::seconds(1));
+        return ;
+    }    
+    
     while (getline(cin, input))
     {
         if (input.size() > 0)
@@ -30,8 +40,9 @@ void        Library::arcade()
                 {
                     if (id == count)
                     {
-                        string  cmd = "./cube " + i->name() + " " + randDiff();
-                        cout << system(cmd.c_str());
+                        string  cmd = "./cube " + randDiff() + " " + i->name();
+                        int     score = system(cmd.c_str());
+                        i->addGame(_userName, score);
                     }
                     count++;
                 }
@@ -39,15 +50,12 @@ void        Library::arcade()
             catch(const std::exception& e)
             {
                 std::cerr << e.what() << '\n';
+                this_thread::sleep_for(chrono::seconds(1));
             }
             break;
         }
         cout << "|";
     }
-    
-    
-    // cout << system("./cube miguel 4");
-
 }
 
 

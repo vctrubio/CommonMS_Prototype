@@ -39,9 +39,9 @@ vector<tuple<int, string>> Game::strVector()
 		if (i == 0)
 			rtn.push_back(make_tuple(70,_name));
 		if (i == 1)
-			rtn.push_back(make_tuple(20,genreToStr(_genre)));
+			rtn.push_back(make_tuple(15,genreToStr(_genre)));
 		if (i == 2 )
-			rtn.push_back(make_tuple(5,to_string(get<0>(_topScore))));
+			rtn.push_back(make_tuple(10,to_string(get<0>(_topScore))));
 		if (i == 3)
 			rtn.push_back(make_tuple(25,get<1>(_topScore)));
 	}
@@ -104,7 +104,6 @@ int		Game::showGame()
 
 void	Game::cGenre(int i)
 {
-	cout << "i is " << i << endl;
 	if (i == 1)
 		_genre = EDUCATIONAL;
 	if (i == 2)
@@ -113,4 +112,15 @@ void	Game::cGenre(int i)
 		_genre = MYSTERIOUS;
 	if (i == 4)
 		_genre = OTHER;
+}
+
+Genre	iGenre(int i)
+{
+	if (i == 1)
+		return EDUCATIONAL;
+	if (i == 2)
+		return VIOLENT;
+	if (i == 3)
+		return MYSTERIOUS;
+	return OTHER;
 }
