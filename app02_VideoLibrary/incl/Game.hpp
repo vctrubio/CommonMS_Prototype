@@ -31,14 +31,14 @@ public:
 	~Game(){};
 
 	void						addGame(string username, int score);
-	bool						show(){return _show;};
+	bool						show() const {return _show;};
 	void						off(){_show = false;};
 	void						on(){_show = true;};
 
-	string						name(){return _name;};
+	string						name() const {return _name;};
 	void						cName(string name){_name = name;};
 	void						cGenre(int i);
-	string						strGenre(){return genreToStr(_genre);};
+	string						strGenre()const {return genreToStr(_genre);};
 	int							score(){return get<0>(_topScore);};
 	
 	int							showGame();

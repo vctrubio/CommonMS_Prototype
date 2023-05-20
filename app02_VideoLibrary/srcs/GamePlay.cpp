@@ -10,5 +10,4 @@ void    Game::addGame(string username, int score)
         get<1>(_topScore) = username;
     }
     _play.push_back(g);
-    cout << RED << "....." << username << "....." << score << endl;
 }

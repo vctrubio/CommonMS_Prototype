@@ -32,7 +32,7 @@ class Library
 	Sort			_mode;
 public:
 	Library(){};
-	~Library(){};
+	~Library();
 
 	void	loop();
 	void	parse(string filename);
@@ -51,6 +51,11 @@ public:
 	void	arcade();
 	void	newGame();
 	void	userAddGame(string name, int index){_games.push_back(new Game(name, iGenre(index)));};
+
+	vector<Game*>	rGames(){vector<Game*> g; for (auto i : _games){
+		if (i->show())
+		 g.push_back(i)
+		 ;} return g;};
 };
 
 Sort		getSort();

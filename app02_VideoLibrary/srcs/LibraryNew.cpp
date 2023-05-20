@@ -1,6 +1,4 @@
-
 #include "../incl/Library.hpp"
-
 
 void    Library::newGame()
 {

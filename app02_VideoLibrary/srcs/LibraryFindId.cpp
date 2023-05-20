@@ -30,13 +30,14 @@ void	Library::findId(string input)
 		return ;
 
 	int count = 1;
-	for (vector<Game*>::iterator i = _games.begin(); i != _games.end(); i++)
+
+	for (auto i : rGames())
 	{
 		if (count == id)
 		{
-        	if (!((*i)->showGame()))
+        	if (i->showGame())
 			{
-				iter_swap(i, _games.end() - 1);
+				iter_swap(&i, _games.end() - 1);
 				Game	*ptr = _games.back();
 				_games.pop_back();
 				delete ptr;

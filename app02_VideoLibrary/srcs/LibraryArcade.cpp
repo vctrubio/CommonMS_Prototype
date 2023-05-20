@@ -36,7 +36,7 @@ void        Library::arcade()
             {
                 int id = stoi(input);
                 int count = 1;
-                for (auto i : _games)
+                for (auto i : rGames())
                 {
                     if (id == count)
                     {
