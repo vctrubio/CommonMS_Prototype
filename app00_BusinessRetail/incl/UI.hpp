@@ -76,6 +76,8 @@ void	uiQueue(Business *bsn, int flag)
 	displayBarQueue();
 	if (flag == 1)
 		cout << "|-----------CHECKED-OUT√-----------|\n";
+	if (flag == 2)
+		cout << "|-----------CLOSED-XXX-------------|\n";
 	cout << GREEN << bsn->getName() << ENDC << endl;
 	cout << "Queue size: " << bsn->queue().size() << endl;
 
@@ -105,7 +107,13 @@ void	uiQueue(Business *bsn, int flag)
 		uiBsn(bsn, 0);
 		return ;
 	}
-	uiQueue(bsn, 1);
+	else if (input == "close")
+	{
+		bsn->clearQueue();
+	    uiQueue(bsn, 2);
+        return ;
+	}
+	uiQueue(bsn, 0);
 }
 
 void	uiBsn(Business *bsn, int flag)
@@ -140,9 +148,7 @@ void	uiBsn(Business *bsn, int flag)
 	if (input == "0" || input == "exit")
 		return ;
 	else if (input == "new")
-	{
 		bsn->createProduct();
-	}
 	else if (input == "open")
 	{
 		std::unique_lock<std::mutex> lock(mtx);

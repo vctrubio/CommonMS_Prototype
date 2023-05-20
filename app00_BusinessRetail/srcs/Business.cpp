@@ -56,7 +56,7 @@ void	Business::threading()
 
 	if (stock() != 0)
 	{
-		while (true) //Fetch ... todo-api
+		while (true)
 		{
 			Client 	*ptr = new Client("Maria" + to_string(s_int++));
 			Product	*prd = rtnRandomProduct();
@@ -157,4 +157,9 @@ int		Business::stock()
 			count++;
 	}
 	return count;
+}
+
+void	Business::clearQueue()
+{
+	_queue.clear();
 }

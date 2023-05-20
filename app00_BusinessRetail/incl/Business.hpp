@@ -39,6 +39,7 @@ public:
 	void					threading();
 	void					addInvoice(Client *client);
 	Product					*rtnRandomProduct();
+	void					clearQueue();
 };
 
 #endif
