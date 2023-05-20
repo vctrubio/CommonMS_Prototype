@@ -19,7 +19,7 @@ int	gameloop(void)
 	return (0);
 }
 
-// ./cube NAME DIFF MAP
+// ./cube MAP DIFF
 int	main(int ac, char **av)
 {
 	t_img		*game_img_map;
@@ -27,13 +27,13 @@ int	main(int ac, char **av)
 	t_game		*game;
 	t_info		*info;
 
-	if (ac != 4)
+	if (ac != 3)
 		return -1;
 	_info()->s_time = clock();
 	w = rtn_window();
 
-	map_exist(av[2][0] - 48, av[3]);
-	parse_map(av[3]);
+	map_exist(av[2][0] - 48, av[1]);
+	parse_map(av[1]);
 
 	game_img_map = rtn_img(_map()->max_x, _map()->max_y);
 	game = _game();
