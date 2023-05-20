@@ -24,7 +24,7 @@ class Appointment
 	Surgery	*_surgery;
 public:
 	Appointment(Doctor *doctor, Patient *patient, Room *room);
-	~Appointment(){cout << "ANBOPDY SEE ME?: " << csv() << endl;};
+	~Appointment();
 
 	void	complete();
 	bool	status(){return _status;};

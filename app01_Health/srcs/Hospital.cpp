@@ -88,6 +88,7 @@ Hospital::~Hospital()
 {
 	const char *patientFile = "patients.csv";
 	const char *doctorFile = "doctors.csv";
+	const char *appFile = "appointments.csv";
 
 	ofstream fileWrite(patientFile);
 	if (fileWrite.is_open())
@@ -111,8 +112,28 @@ Hospital::~Hospital()
 		addtoCSV<Doctor>(doctorFile, i);
 		delete i;
 	}
-	for (auto i : _rooms)
-		delete i;
+	
+	ofstream fileWrite3(appFile, ios::app);
+	if (fileWrite3.is_open())
+	{
+		if (fileWrite3.tellp() == 0)
+			fileWrite3 << "Patient, Doctor, Date, Completed, Surgery?\n";
+		for (auto i : _rooms)
+		{
+			try
+			{
+				Appointment	*app = i->app();
+				fileWrite3 << app->csv();
+				delete app;
+				delete i;
+			}
+			catch(const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
+		}
+		fileWrite3.close();
+	}
 	_patients.clear();
 	_doctors.clear();
 }

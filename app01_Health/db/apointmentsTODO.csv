@@ -1,1 +1,1 @@
-idpatient, iddoctor, date, room, completed?
+Patient, Doctor, Date, Completed, Surgery?

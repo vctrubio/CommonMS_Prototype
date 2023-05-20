@@ -18,10 +18,10 @@ public:
 	bool	available(){return _available;};
 	void	toggle(){_available = !_available;};
 	void	check();
-	void	addApp(Appointment *app){_appointment = app; _available = false;check();};
+	void	addApp(Appointment *app){_appointment = app; _available = false;};
 
 	string		info();
-	Appointment	*appointment(){return _appointment;};
+	Appointment	*app(){return _appointment;};
 	~Room(){};
 };
 

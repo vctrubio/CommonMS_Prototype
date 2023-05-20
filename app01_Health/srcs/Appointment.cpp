@@ -19,7 +19,8 @@ Appointment::Appointment(Doctor *doctor, Patient *patient, Room *room):_doctor(d
     dateTimeStr = dateToString(_dateTime);
     times.clear();
     room->addApp(this);
-	cout << GREEN << "Appointment @ " << room->nb() << " => " << ENDC << patient->name() << " : DR." << doctor->name() << " : " << dateTimeStr << endl;
+	cout << GREEN << "Appointment Confirmed: " ENDC << "Doctor " << doctor->name() << " to see Patien " << patient->name() << " on " << dateTimeStr << " [ROOM " << room->nb() << "]" << endl;
+
 }
 
 std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
@@ -32,7 +33,14 @@ std::ostream& operator<<(std::ostream& os, Appointment& appointment) {
 
 string	Appointment::csv()
 {
-	string str = to_string(_patient->id()) + "," + to_string(_doctor->id());
+    string str = getPatient()->name() + "," + "," + getDoctor()->name() + "," + getTime() + "," + (status() ? "Completed" : "Upcoming");
+    
+    if (_surgery)
+    {
+        str += ",[Patient underwent surgery, ";
+        str += (_surgery->complete()? "Recovered swiftly]" : "Still hospitalized]");
+    }
+    str += "\n";
 	return str;
 }
 
@@ -54,4 +62,9 @@ void    Appointment::complete()
 void    Appointment::print()
 {
     cout << *this;
+}
+
+Appointment::~Appointment()
+{
+    
 }
