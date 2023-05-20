@@ -27,9 +27,9 @@ enum SqlOp
 
 class Library
 {
-	vector<Game*>												_games;
-	vector<array<variant<string, Genre, tuple<int,string>>, 3>>	_filtered;
-	Sort														_mode;
+	string			_userName;
+	vector<Game*>	_games;
+	Sort			_mode;
 public:
 	Library(){};
 	~Library(){};
@@ -40,6 +40,7 @@ public:
 	void	print(){for (auto g : _games) cout << g->inf() << endl;};
 	void	printConsole(Sort flag);
 	string	sortToStr(Sort mode);
+	void	setUser(string name){_userName = name;};
 
 	void	allFilter(){for (auto i : _games){i->on();};};
 	void	getFilter();
@@ -47,11 +48,12 @@ public:
 	void	sqlOperation(SqlOp op, vector<string> &cmd);
 
 	void	findId(string input);
+	void	arcade();
 };
 
 Sort		getSort();
 bool		isId(string input);
 int 		strCheck(string s1, string s2);
 void		findId(string input);
-
+string     	randDiff();
 #endif

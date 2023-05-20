@@ -26,9 +26,9 @@ void    Library::loop()
 			allFilter();
 		if (isId(input))
 			findId(input);
-		if (input == "/checkout")
+		if (input == "/arcade")
 		{
-			system("./cube hernesto");
+			arcade();
 		}
 		system("clear");
 		printConsole(flag);

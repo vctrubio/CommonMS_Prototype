@@ -4,7 +4,7 @@ void	welcome()
 {
     char    *str = strdup("");
 	string	mssg = GREEN;
-	mssg += " Connected\n";
+	mssg += " Welcome\n";
 	mssg += ENDC;
     mssg += "|IMPORTANT! Please provide a big enough screen to properly view the Library; This message should appear in a single line|"; //120 WIDTH
     mssg += "\n";
@@ -14,7 +14,7 @@ void	welcome()
 	putLeft("/filter to filter with sql ", mssg, 32);
 	putLeft("/all to !filter ", mssg, 32);
 	putLeft("/ID to view ", mssg, 32);
-	
+	putLeft("/arcade to play any game in our library ", mssg, 32);
 	putLeft("/help to view this message again", mssg, 32);
 	putLeft("/back to go back", mssg, 32);
 	putLeft("/exit to safely eject", mssg, 32);

@@ -7,6 +7,12 @@
         "istream": "cpp",
         "__tree": "c",
         "map": "c",
-        "header.h": "c"
+        "header.h": "c",
+        "ctime": "c",
+        "iostream": "cpp",
+        "thread": "cpp",
+        "random": "cpp",
+        "chrono": "cpp",
+        "ostream": "cpp"
     }
 }

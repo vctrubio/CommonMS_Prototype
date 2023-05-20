@@ -68,3 +68,8 @@ Thursday monring, looking back at the code, things to/can improve but overall it
 -i want to set up filter usage & ui before defining the game.
 -filter good, ui good, good setup overall. did not overcomplicated. learned from previous app00 & app01
 -tomorrow init gameplay
+
+
+20.May
+-Started by implementing the executable for cube.
+-nnow need to add teh correct header to link it with cpp, User and score.

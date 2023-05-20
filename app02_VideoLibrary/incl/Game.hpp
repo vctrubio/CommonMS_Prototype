@@ -3,11 +3,9 @@
 
 #include "../../Headers.hpp"
 #include "GamePlay.hpp"
-#include "User.hpp"
 // #include "Ui.hpp"
 
 class GamePlay;
-class User;
 
 enum Genre
 {

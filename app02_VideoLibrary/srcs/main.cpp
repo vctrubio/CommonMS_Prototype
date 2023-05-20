@@ -3,6 +3,7 @@
 void		init(Library *lib)
 {
 	string	input;
+	string	name;
 
 	cout << " Please type '/init' to begin the server.\n|";
 	while(getline(cin, input))
@@ -11,10 +12,20 @@ void		init(Library *lib)
 		{
 			mkdir("maps", 0744);
 			lib->parse("demo.csv");
-			return ;
+			system("clear");
+			cout << GREEN << " Connected." << ENDC << "\n Give us your name to save your high score.\n|";
+			while (getline(cin, name))
+			{
+				if (name.length() > 0)
+				{
+					lib->setUser(name);
+					return ;
+				}
+				cout << RED <<  "|" << ENDC;
+			}
 		}
 		else
-			cout << "|";
+			cout << RED <<  "|" << ENDC;
 	}
 }
 
