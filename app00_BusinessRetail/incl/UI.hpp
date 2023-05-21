@@ -19,6 +19,7 @@ void	uiProduct(Product *prd)
 
 	if (prd->archive())
 		cout << RED << "DELETED/REMOVED from Stock\n" << ENDC;
+debugger
 
 	if (prd->trans().size() > 0)
 		cout << "--------------------TRANSACTIONS-------------------\n";

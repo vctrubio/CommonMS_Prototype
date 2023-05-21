@@ -37,8 +37,6 @@ Product::~Product()
 	int count = 0;
 	if (!_transactions.empty())
 	{
-		bool directoryChanged = changeDirectoryOnce();
-
 		string filename = "CSV_LOG FOR Business: " + _belongs_to->getName() + " => Product: " + _name;
 		ofstream file(filename);
 		if (!file)
