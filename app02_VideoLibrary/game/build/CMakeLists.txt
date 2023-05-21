@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.13.4)
-project(cube)
 
-file(GLOB SRCS srcs/*.c)
-file(GLOB HEADERS include/*.h)
+set(PROJECT_NAME "cube")
+
+project(${PROJECT_NAME})
+
+file(GLOB SRCS ../srcs/*.c)
+file(GLOB HEADERS ../include/*.h)
 
 add_executable(${PROJECT_NAME} ${SRCS} ${HEADERS})
 
