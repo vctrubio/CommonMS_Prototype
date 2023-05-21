@@ -74,3 +74,6 @@ Thursday monring, looking back at the code, things to/can improve but overall it
 -Started by implementing the executable for cube.
 -nnow need to add teh correct header to link it with cpp, User and score.
 -Pretty much complete. But does it compile!?
+
+21 May
+-Cmake config + adding compilation flags

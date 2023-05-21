@@ -1,0 +1,3 @@
+/Users/trtp/github/CommonMS_Prototype/Cmake2/build/CMakeFiles/bank.dir
+/Users/trtp/github/CommonMS_Prototype/Cmake2/build/CMakeFiles/edit_cache.dir
+/Users/trtp/github/CommonMS_Prototype/Cmake2/build/CMakeFiles/rebuild_cache.dir

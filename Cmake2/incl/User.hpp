@@ -2,25 +2,28 @@
 #define USER_HPP
 
 #include "../../Headers.hpp"
-#include "Business.hpp"
 
-class Business;
+#include "Patient.hpp"
+#include "Hospital.hpp"
 
-class User
+#include "Appointment.hpp"
+
+class Patient;
+class Hospital;
+class Appointment;
+
+class User : public Patient
 {
-	static unsigned int s_counterId;
-
-	string				_name;
-	unsigned int		_id;
-
-	Business*			_bsn;
 public:
-	User(string name):_name(name), _id(s_counterId++), _bsn(nullptr){};
+	User(string name):Patient(name){};
 	~User(){};
 
-	string		getName(){return _name;};
-	string		getBsn();
-	void		updateBsn(Business *bsn);
-};
+	void	ui(Hospital *h);
 
+void		uiUserPannel();
+};
+User		*initUser();
+User		*initUser(string av, Hospital *h);
+
+bool 		isNumeric(const string &str);
 #endif
