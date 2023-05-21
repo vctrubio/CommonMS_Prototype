@@ -1,4 +1,4 @@
-# Install script for directory: /Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/game
+# Install script for directory: /Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/game/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

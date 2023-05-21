@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/cube"
-  "/Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/cube.pdb"
+  "/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/cube"
+  "/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/cube.pdb"
   "CMakeFiles/cube.dir/srcs/calloc.c.o"
   "CMakeFiles/cube.dir/srcs/calloc.c.o.d"
   "CMakeFiles/cube.dir/srcs/draw.c.o"

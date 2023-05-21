@@ -1,8 +1,8 @@
 CMakeFiles/cube.dir/srcs/util_str.c.o: \
-  /Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/game/srcs/util_str.c \
-  /Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/game/srcs/../include/header.h \
-  /Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/game/srcs/../include/../lmlx/mlx.h \
-  /Users/trtp/github/CommonMS_Prototype/app02_VideoLibrary/game/srcs/../include/keys.h \
+  /Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/srcs/util_str.c \
+  /Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/srcs/../include/header.h \
+  /Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/srcs/../include/../lmlx/mlx.h \
+  /Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/srcs/../include/keys.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/fcntl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/fcntl.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types.h \
