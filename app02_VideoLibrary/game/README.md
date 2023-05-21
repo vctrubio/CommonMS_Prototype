@@ -5,5 +5,4 @@ I have modified it to make it compatible, but the structure/game was there befor
 
 
 #This is called inside build from the root dir
-run cmake -S . -B build 
-to create dir build and then the 'cube' game is set to create (into the root dir) (needed for the game to run)
+before make >sudo apt-get install gcc make xorg libxext-dev libbsd-dev 
