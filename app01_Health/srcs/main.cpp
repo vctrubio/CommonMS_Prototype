@@ -77,7 +77,7 @@ void		uiADoctor(Hospital *hospital)
 		cout << ">";
 	}
 	if (doctor)
-		doctor->loop(hospital);
+		doctor->loop();
 }
 
 int main(int ac, char **av)
@@ -109,7 +109,7 @@ int main(int ac, char **av)
 		if (user)
 		{
 			hospital.addPatient(user);
-			user->ui(&hospital, 1);
+			user->ui(&hospital);
 		}
 	}
 	else if (input == IDPATIENT)
@@ -117,7 +117,7 @@ int main(int ac, char **av)
 		user = initUser(av[1], &hospital);
 		if (!user)
 			return -1;
-		user->ui(&hospital, 1);
+		user->ui(&hospital);
 	}
 	else if (input == DOCTOR)
 		uiADoctor(&hospital);

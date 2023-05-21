@@ -83,7 +83,7 @@ void	putLeft(string in, string &out, char c)
 	{
 		if (size == 0 || size == WIDTH + 1)
 			out += "|";
-		else if (size <= in.length() - 1)
+		else if ((size_t)size <= in.length() - 1)
 		{
 			out += in;
 			size += in.length();
@@ -119,7 +119,7 @@ char        itStr(const char **str, int limit)
 {
     char    c;
 
-    if (strlen(*str) > limit || !*str) //need to trim
+    if ((int)strlen(*str) > limit || !*str) //need to trim
         return 0;
     if (*str)
         c = *(*str)++;

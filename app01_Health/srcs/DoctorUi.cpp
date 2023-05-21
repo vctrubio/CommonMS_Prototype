@@ -1,6 +1,6 @@
 #include "../incl/Doctor.hpp"
 
-void	Doctor::loop(Hospital *h)
+void	Doctor::loop()
 {
 	if (_archive)
 	{
@@ -27,6 +27,8 @@ void	Doctor::loop(Hospital *h)
 				archive();
 				return ;
 			}
+			if (input == "exit")
+				return ;
         }
         else
             cout << ">";

@@ -112,7 +112,7 @@ bool	Hospital::archivePatient(int id)
 	return false;
 }
 
-void	Hospital::appCreate(Hospital *h, Doctor *d, Patient *p)
+void	Hospital::appCreate(Doctor *d, Patient *p)
 {
 	p->addApp(new Appointment(d, p, availableRoom()));
 }

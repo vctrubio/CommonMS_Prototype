@@ -129,6 +129,126 @@ bank/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/build
 .PHONY : bank/fast
 
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.o: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.o
+
+# target to build an object file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.i: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.i
+
+# target to preprocess a source file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.s: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.s
+
+# target to generate assembly for a file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.o: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.o
+
+# target to build an object file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.i: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.i
+
+# target to preprocess a source file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.s: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.s
+
+# target to generate assembly for a file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.o: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.o
+
+# target to build an object file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.i: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.i
+
+# target to preprocess a source file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.s: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.s
+
+# target to generate assembly for a file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.o: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.o
+
+# target to build an object file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.i: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.i
+
+# target to preprocess a source file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.s: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.s
+
+# target to generate assembly for a file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.o: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.o
+
+# target to build an object file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.i: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.i
+
+# target to preprocess a source file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i
+
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.s: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.s
+
+# target to generate assembly for a file
+Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/bank.dir/build.make CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s
+.PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s
+
 Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.o: Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o
 .PHONY : Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.o
 
@@ -162,6 +282,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... bank"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.o"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.i"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.s"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.o"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.i"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.s"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.o"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.i"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.s"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.o"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.i"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.s"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.o"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.i"
+	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.s"
 	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.o"
 	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.i"
 	@echo "... Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.s"

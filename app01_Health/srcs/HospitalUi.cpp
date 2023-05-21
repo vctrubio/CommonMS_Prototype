@@ -190,7 +190,7 @@ void	Hospital::uiApp(vector<string>::iterator it)
 			if (!p || !d)
 				throw runtime_error("ID's not valid.");
 			if (it == cmds.end())
-				appCreate(this, d, p);
+				appCreate(d, p);
 			else
 				cout << RED << "SORRY" << ENDC << " too many cmds.\n";
 		}

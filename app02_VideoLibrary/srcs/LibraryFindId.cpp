@@ -4,7 +4,7 @@ bool	isId(string input)
 {
 	if (input[0] == '/')
 	{
-		for (int i = 1; i < input.length(); i++)
+		for (int i = 1; i < (int)input.length(); i++)
 		{
 			if (input[i] < '0' || input[i] > '9')
 				return false;

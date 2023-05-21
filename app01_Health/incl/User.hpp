@@ -18,7 +18,7 @@ public:
 	User(string name):Patient(name){};
 	~User(){};
 
-	void	ui(Hospital *h, int start);
+	void	ui(Hospital *h);
 
 void		uiUserPannel();
 };

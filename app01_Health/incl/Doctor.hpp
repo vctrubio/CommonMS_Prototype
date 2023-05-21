@@ -36,7 +36,7 @@ public:
 	string					name(){return _name;};
 	string					rtnCsv();
 
-	void					loop(Hospital *h);
+	void					loop();
 
     friend std::ostream& operator<<(std::ostream& os, const Doctor& doctor)
     {

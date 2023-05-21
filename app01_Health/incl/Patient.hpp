@@ -17,8 +17,7 @@ class Patient
 
 	vector<Appointment*>	_appointments;
 public:
-	// FOR DEBUGGING COUT // Patient(string name):_id(s_count++),_name(name),_appointments(vector<Appointment*>()){_archived = false; _ingr = false; cout << GREEN << "+1" << ENDC " Patient: " << _name << endl;};
-	Patient(string name):_id(s_count++),_name(name), _archived(false), _appointments(vector<Appointment*>()){};
+	Patient(string name):_id(s_count++),_name(name),_appointments(vector<Appointment*>()){_archived = false; _ingr = false; cout << GREEN << "+1" << ENDC " Patient: " << _name << endl;};
 	Patient(unsigned int id, string name, bool ingr, bool archived):_id(id), _name(name){_archived = archived; _ingr = ingr;};
 	virtual ~Patient();
 

@@ -53,7 +53,7 @@ public:
 	void	uCreateDoctor();
 	
 	Room	*availableRoom();
-	void	appCreate(Hospital *h, Doctor *d, Patient *p);
+	void	appCreate(Doctor *d, Patient *p);
 	void	uiApp(vector<string>::iterator it);
 	
 	int		askID(int mode);

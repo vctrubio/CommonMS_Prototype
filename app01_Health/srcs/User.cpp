@@ -51,7 +51,7 @@ void	User::uiUserPannel()
 	cout << "\n-----------------------------\n";
 }
 
-void	User::ui(Hospital *h, int start)
+void	User::ui(Hospital *h)
 {
 	string input;
 
@@ -66,12 +66,12 @@ void	User::ui(Hospital *h, int start)
 			h->printDoctors();
 		else if (input == "new")
 		{
-			h->appCreate(h, h->rtnDoctor(), this);
+			h->appCreate(h->rtnDoctor(), this);
 			continue;
 		}
 		else if (input == "clear")
 		{
-			ui(h, 0);
+			ui(h);
 			return ;
 		}
 		else if (input == "yes" && !appointments().empty())
@@ -100,7 +100,6 @@ void	User::ui(Hospital *h, int start)
 			else
 				cout << YELLOW << "Unfortunetly " << ENDC << "our medical staff still see you unfit.\n";
 		}
-		// if (input == "chat")
 		cout << ">";
 	}
 }

@@ -5,7 +5,7 @@ static bool	validateHeader(string line)
 	int 	count = 0;
 	string	tmp;
 
-	for (int i = 0; i < line.length(); i++)
+	for (int i = 0; i < (int)line.length(); i++)
 	{
 		if (line[i] == ',')
 			count++;

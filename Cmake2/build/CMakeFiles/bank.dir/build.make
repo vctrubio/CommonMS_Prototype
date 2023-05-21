@@ -69,10 +69,80 @@ include CMakeFiles/bank.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/bank.dir/flags.make
 
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o: CMakeFiles/bank.dir/flags.make
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o: /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o: CMakeFiles/bank.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o -MF CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o.d -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o -c /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp > CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.i
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.s
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o: CMakeFiles/bank.dir/flags.make
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o: /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o: CMakeFiles/bank.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o -MF CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o.d -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o -c /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp > CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.i
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.s
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o: CMakeFiles/bank.dir/flags.make
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o: /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o: CMakeFiles/bank.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o -MF CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o.d -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o -c /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp > CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.i
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.s
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o: CMakeFiles/bank.dir/flags.make
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o: /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o: CMakeFiles/bank.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o -MF CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o.d -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o -c /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp > CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.i
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.s
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o: CMakeFiles/bank.dir/flags.make
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o: /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o: CMakeFiles/bank.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o -MF CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o.d -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o -c /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp > CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.i
+
+CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.s
+
 CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o: CMakeFiles/bank.dir/flags.make
 CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o: /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp
 CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o: CMakeFiles/bank.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o -MF CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o.d -o CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o -c /Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp
 
 CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.i: cmake_force
@@ -85,15 +155,25 @@ CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.s:
 
 # Object files for target bank
 bank_OBJECTS = \
+"CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o" \
+"CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o" \
+"CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o" \
+"CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o" \
+"CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o" \
 "CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o"
 
 # External object files for target bank
 bank_EXTERNAL_OBJECTS =
 
+bank: CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Business.cpp.o
+bank: CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Client.cpp.o
+bank: CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Product.cpp.o
+bank: CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/Transaction.cpp.o
+bank: CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/User.cpp.o
 bank: CMakeFiles/bank.dir/Users/trtp/github/CommonMS_Prototype/cmake2/srcs/main.cpp.o
 bank: CMakeFiles/bank.dir/build.make
 bank: CMakeFiles/bank.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable bank"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/trtp/github/CommonMS_Prototype/cmake2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bank"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/bank.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
