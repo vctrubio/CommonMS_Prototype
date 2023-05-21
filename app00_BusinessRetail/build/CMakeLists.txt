@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.19.2)
 
-set(PROJECT_NAME "bank")
+set(PROJECT_NAME "xxx")
 
 project(${PROJECT_NAME})
 

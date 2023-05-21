@@ -1,9 +1,0 @@
-Patient, Doctor, Date, Completed, Surgery?
-delta,jorge,2023-05-23 02:11:32,Completed,No
-delta,jaime,2023-05-20 16:53:00,Upcoming,No
-maria,jorge,2023-05-23 02:24:03,Completed,No
-maria,juanko,2023-05-20 17:05:25,Completed,Yes
-maria,jorge,2023-05-21 20:59:21,Completed,Yes
-maria,enrique,2023-05-23 12:09:45,Completed,Yes
-maria,enrique,2023-05-22 05:15:26,Upcoming,No
-hernes,jorge,2023-05-23 20:33:44,Completed,Yes
