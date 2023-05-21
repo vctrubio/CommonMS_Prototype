@@ -1,3 +1,0 @@
-/Users/trtp/github/CommonMS_Prototype/app00_BusinessRetail/build/CMakeFiles/bank.dir
-/Users/trtp/github/CommonMS_Prototype/app00_BusinessRetail/build/CMakeFiles/edit_cache.dir
-/Users/trtp/github/CommonMS_Prototype/app00_BusinessRetail/build/CMakeFiles/rebuild_cache.dir

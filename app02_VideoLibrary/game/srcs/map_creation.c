@@ -54,7 +54,7 @@ void	createMap(int rows, int columns, int difficulty, char *filename)
     free(map);
 }
 
-bool	map_exist(int difficulty, char *name)
+void	map_exist(int difficulty, char *name)
 {
 	int fd;
 	char path[255];
@@ -68,5 +68,4 @@ bool	map_exist(int difficulty, char *name)
 		createMap(9, 9, difficulty, path);
 	}
 	close(fd);
-	return true;
 }

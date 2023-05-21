@@ -92,7 +92,7 @@ void		my_map_init(void);
 void		my_map_loop(void);
 //mapCreation
 void		createMap(int rows, int columns, int difficulty, char *filename);
-bool		map_exist(int difficulty, char *name);
+void		map_exist(int difficulty, char *name);
 //move
 void		update_map_pos(int x, int y);
 void		move_player(int y, int x);

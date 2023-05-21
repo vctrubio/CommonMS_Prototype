@@ -1,3 +1,0 @@
-/Users/trtp/github/CommonMS_Prototype/app01_Health/build/CMakeFiles/health.dir
-/Users/trtp/github/CommonMS_Prototype/app01_Health/build/CMakeFiles/edit_cache.dir
-/Users/trtp/github/CommonMS_Prototype/app01_Health/build/CMakeFiles/rebuild_cache.dir
