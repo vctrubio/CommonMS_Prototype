@@ -6,8 +6,8 @@ void    Library::loop()
 	Sort	flag;
 
 	system("clear");
-	printConsole(flag);
 	flag = _mode;
+	printConsole(flag);
     cout << "|";
     while(getline(cin, input))
     {

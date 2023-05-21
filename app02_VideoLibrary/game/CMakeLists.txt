@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19.2)
+cmake_minimum_required(VERSION 3.13.4)
 project(cube)
 
 file(GLOB SRCS srcs/*.c)
