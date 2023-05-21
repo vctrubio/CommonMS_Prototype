@@ -59,12 +59,12 @@ void	Library::printConsole(Sort flag)
 		if (flag == AN)
 		{
 			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
-        		return game1->name() > game2->name();});
+        		return game1->name() < game2->name();});
 		}
 		if (flag == DN)
 		{
 			sort(_games.begin(), _games.end(), [](Game* game1, Game* game2) {
-        		return game1->name() < game2->name();});
+        		return game1->name() > game2->name();});
 		}
 		if (flag == AS)
 		{
