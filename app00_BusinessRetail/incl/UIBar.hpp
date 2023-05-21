@@ -20,9 +20,9 @@ void    displayBarBsnHelp()
 
 void    displayBarBsn()
 {
-    cout << " ------------------------------------------" << endl;
-    cout << "| ID# | open | queue | new | help | 0/exit |" << endl;
-    cout << " ------------------------------------------" << endl;
+    cout << " ------------------------------------" << endl;
+    cout << "| ID# | open | queue | new | 0/exit |" << endl;
+    cout << " ------------------------------------" << endl;
 }
 
 void	displayBarProductHelp()

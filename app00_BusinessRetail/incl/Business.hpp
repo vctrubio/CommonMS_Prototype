@@ -39,7 +39,7 @@ public:
 	void					threading();
 	void					addInvoice(Client *client);
 	Product					*rtnRandomProduct();
-	void					clearQueue();
+	void					clearQueue(){_queue.clear();};
 };
 
 #endif

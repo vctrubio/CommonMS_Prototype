@@ -15,8 +15,8 @@ class Transaction
 	static unsigned int s_counterId;
 
 	unsigned int	_id;
-	// Business		*_belongs_to;
-	// Product		*_product;
+	Business		*_belongs_to;
+	Product		*_product;
 	Client			*_client;
 	string			_log;
 	string			_date;

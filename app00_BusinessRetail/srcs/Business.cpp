@@ -13,7 +13,11 @@ Business::Business(User *user, string name):_belongs_to(user), _name(name), _rev
 Business::~Business()
 {
 	vector<Client*>			clients;
+	string					logsCsv = "logsCSV";
 
+	if (!filesystem::exists(logsCsv))
+		filesystem::create_directory(logsCsv);
+	filesystem::current_path(logsCsv);
 	for (auto product : _products)
 		delete product;
 	if (_allClients.size() > 0)
@@ -41,12 +45,21 @@ Product	*Business::rtnRandomProduct()
 {
 	if (_products.empty())
 		return nullptr; 
+
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<size_t> dist(0, _products.size() - 1);
 	size_t randomIndex = dist(gen);
 
-	return _products[randomIndex];
+	vector<Product*>	available;
+	copy_if(_products.begin(), _products.end(), std::back_inserter(available), [](const auto& product) {
+		return !product->archive();
+	});
+
+	if (available.empty())
+   		return nullptr;
+	
+	return available[randomIndex % available.size()];
 }
 
 void	Business::threading()
@@ -132,7 +145,7 @@ void	Business::addInvoice(Client *client)
 	{
 		if (product->getPrice() > client->getPrice())
 		{
-			cout << "Not enough in " << RED << client->getName() << ENDC << " wallet.\n";
+			cout << RED << "-" << ENDC << client->getName() << " !check-out: " << product->getName() << " | " << product->getPrice() << " > " << client->getPrice() << " | ";
 			cout << "Transaction not accepted... Removing _cart\n";
 			client->products().clear();
 			return ; 
@@ -157,9 +170,4 @@ int		Business::stock()
 			count++;
 	}
 	return count;
-}
-
-void	Business::clearQueue()
-{
-	_queue.clear();
 }
