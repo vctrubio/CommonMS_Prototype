@@ -57,10 +57,10 @@ RM = /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/trtp/github/tmp2/app02_VideoLibrary/game/build
+CMAKE_SOURCE_DIR = /Users/trtp/github/tmp/app02_VideoLibrary/game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/trtp/github/tmp2/app02_VideoLibrary/game/build
+CMAKE_BINARY_DIR = /Users/trtp/github/tmp/app02_VideoLibrary/game/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trtp/github/tmp2/app02_VideoLibrary/game/build/CMakeFiles /Users/trtp/github/tmp2/app02_VideoLibrary/game/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trtp/github/tmp/app02_VideoLibrary/game/build/CMakeFiles /Users/trtp/github/tmp/app02_VideoLibrary/game/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trtp/github/tmp2/app02_VideoLibrary/game/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/trtp/github/tmp/app02_VideoLibrary/game/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,413 +129,413 @@ cube/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/build
 .PHONY : cube/fast
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.o
+srcs/calloc.o: srcs/calloc.c.o
+.PHONY : srcs/calloc.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.o
+srcs/calloc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/calloc.c.o
+.PHONY : srcs/calloc.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.i
+srcs/calloc.i: srcs/calloc.c.i
+.PHONY : srcs/calloc.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.i
+srcs/calloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/calloc.c.i
+.PHONY : srcs/calloc.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.s
+srcs/calloc.s: srcs/calloc.c.s
+.PHONY : srcs/calloc.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.s
+srcs/calloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/calloc.c.s
+.PHONY : srcs/calloc.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.o
+srcs/draw.o: srcs/draw.c.o
+.PHONY : srcs/draw.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.o
+srcs/draw.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/draw.c.o
+.PHONY : srcs/draw.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.i
+srcs/draw.i: srcs/draw.c.i
+.PHONY : srcs/draw.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.i
+srcs/draw.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/draw.c.i
+.PHONY : srcs/draw.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.s
+srcs/draw.s: srcs/draw.c.s
+.PHONY : srcs/draw.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.s
+srcs/draw.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/draw.c.s
+.PHONY : srcs/draw.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.o
+srcs/inits.o: srcs/inits.c.o
+.PHONY : srcs/inits.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.o
+srcs/inits.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/inits.c.o
+.PHONY : srcs/inits.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.i
+srcs/inits.i: srcs/inits.c.i
+.PHONY : srcs/inits.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.i
+srcs/inits.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/inits.c.i
+.PHONY : srcs/inits.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.s
+srcs/inits.s: srcs/inits.c.s
+.PHONY : srcs/inits.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.s
+srcs/inits.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/inits.c.s
+.PHONY : srcs/inits.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.o
+srcs/keys.o: srcs/keys.c.o
+.PHONY : srcs/keys.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.o
+srcs/keys.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/keys.c.o
+.PHONY : srcs/keys.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.i
+srcs/keys.i: srcs/keys.c.i
+.PHONY : srcs/keys.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.i
+srcs/keys.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/keys.c.i
+.PHONY : srcs/keys.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.s
+srcs/keys.s: srcs/keys.c.s
+.PHONY : srcs/keys.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.s
+srcs/keys.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/keys.c.s
+.PHONY : srcs/keys.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.o
+srcs/main.o: srcs/main.c.o
+.PHONY : srcs/main.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.o
+srcs/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/main.c.o
+.PHONY : srcs/main.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.i
+srcs/main.i: srcs/main.c.i
+.PHONY : srcs/main.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.i
+srcs/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/main.c.i
+.PHONY : srcs/main.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.s
+srcs/main.s: srcs/main.c.s
+.PHONY : srcs/main.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.s
+srcs/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/main.c.s
+.PHONY : srcs/main.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.o
+srcs/map.o: srcs/map.c.o
+.PHONY : srcs/map.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.o
+srcs/map.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/map.c.o
+.PHONY : srcs/map.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.i
+srcs/map.i: srcs/map.c.i
+.PHONY : srcs/map.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.i
+srcs/map.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/map.c.i
+.PHONY : srcs/map.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.s
+srcs/map.s: srcs/map.c.s
+.PHONY : srcs/map.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.s
+srcs/map.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/map.c.s
+.PHONY : srcs/map.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.o
+srcs/map_creation.o: srcs/map_creation.c.o
+.PHONY : srcs/map_creation.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.o
+srcs/map_creation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/map_creation.c.o
+.PHONY : srcs/map_creation.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.i
+srcs/map_creation.i: srcs/map_creation.c.i
+.PHONY : srcs/map_creation.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.i
+srcs/map_creation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/map_creation.c.i
+.PHONY : srcs/map_creation.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.s
+srcs/map_creation.s: srcs/map_creation.c.s
+.PHONY : srcs/map_creation.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.s
+srcs/map_creation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/map_creation.c.s
+.PHONY : srcs/map_creation.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.o
+srcs/move.o: srcs/move.c.o
+.PHONY : srcs/move.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.o
+srcs/move.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/move.c.o
+.PHONY : srcs/move.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.i
+srcs/move.i: srcs/move.c.i
+.PHONY : srcs/move.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.i
+srcs/move.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/move.c.i
+.PHONY : srcs/move.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.s
+srcs/move.s: srcs/move.c.s
+.PHONY : srcs/move.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.s
+srcs/move.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/move.c.s
+.PHONY : srcs/move.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.o
+srcs/parse.o: srcs/parse.c.o
+.PHONY : srcs/parse.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.o
+srcs/parse.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/parse.c.o
+.PHONY : srcs/parse.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.i
+srcs/parse.i: srcs/parse.c.i
+.PHONY : srcs/parse.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.i
+srcs/parse.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/parse.c.i
+.PHONY : srcs/parse.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.s
+srcs/parse.s: srcs/parse.c.s
+.PHONY : srcs/parse.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.s
+srcs/parse.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/parse.c.s
+.PHONY : srcs/parse.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.o
+srcs/pixel_manipulation.o: srcs/pixel_manipulation.c.o
+.PHONY : srcs/pixel_manipulation.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.o
+srcs/pixel_manipulation.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/pixel_manipulation.c.o
+.PHONY : srcs/pixel_manipulation.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.i
+srcs/pixel_manipulation.i: srcs/pixel_manipulation.c.i
+.PHONY : srcs/pixel_manipulation.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.i
+srcs/pixel_manipulation.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/pixel_manipulation.c.i
+.PHONY : srcs/pixel_manipulation.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.s
+srcs/pixel_manipulation.s: srcs/pixel_manipulation.c.s
+.PHONY : srcs/pixel_manipulation.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.s
+srcs/pixel_manipulation.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/pixel_manipulation.c.s
+.PHONY : srcs/pixel_manipulation.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.o
+srcs/static.o: srcs/static.c.o
+.PHONY : srcs/static.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.o
+srcs/static.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/static.c.o
+.PHONY : srcs/static.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.i
+srcs/static.i: srcs/static.c.i
+.PHONY : srcs/static.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.i
+srcs/static.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/static.c.i
+.PHONY : srcs/static.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.s
+srcs/static.s: srcs/static.c.s
+.PHONY : srcs/static.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.s
+srcs/static.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/static.c.s
+.PHONY : srcs/static.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.o
+srcs/static_rtn.o: srcs/static_rtn.c.o
+.PHONY : srcs/static_rtn.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.o
+srcs/static_rtn.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/static_rtn.c.o
+.PHONY : srcs/static_rtn.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.i
+srcs/static_rtn.i: srcs/static_rtn.c.i
+.PHONY : srcs/static_rtn.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.i
+srcs/static_rtn.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/static_rtn.c.i
+.PHONY : srcs/static_rtn.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.s
+srcs/static_rtn.s: srcs/static_rtn.c.s
+.PHONY : srcs/static_rtn.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.s
+srcs/static_rtn.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/static_rtn.c.s
+.PHONY : srcs/static_rtn.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.o
+srcs/util_convert.o: srcs/util_convert.c.o
+.PHONY : srcs/util_convert.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.o
+srcs/util_convert.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_convert.c.o
+.PHONY : srcs/util_convert.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.i
+srcs/util_convert.i: srcs/util_convert.c.i
+.PHONY : srcs/util_convert.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.i
+srcs/util_convert.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_convert.c.i
+.PHONY : srcs/util_convert.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.s
+srcs/util_convert.s: srcs/util_convert.c.s
+.PHONY : srcs/util_convert.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.s
+srcs/util_convert.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_convert.c.s
+.PHONY : srcs/util_convert.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.o
+srcs/util_gnl.o: srcs/util_gnl.c.o
+.PHONY : srcs/util_gnl.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.o
+srcs/util_gnl.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_gnl.c.o
+.PHONY : srcs/util_gnl.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.i
+srcs/util_gnl.i: srcs/util_gnl.c.i
+.PHONY : srcs/util_gnl.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.i
+srcs/util_gnl.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_gnl.c.i
+.PHONY : srcs/util_gnl.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.s
+srcs/util_gnl.s: srcs/util_gnl.c.s
+.PHONY : srcs/util_gnl.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.s
+srcs/util_gnl.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_gnl.c.s
+.PHONY : srcs/util_gnl.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.o
+srcs/util_list.o: srcs/util_list.c.o
+.PHONY : srcs/util_list.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.o
+srcs/util_list.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_list.c.o
+.PHONY : srcs/util_list.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.i
+srcs/util_list.i: srcs/util_list.c.i
+.PHONY : srcs/util_list.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.i
+srcs/util_list.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_list.c.i
+.PHONY : srcs/util_list.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.s
+srcs/util_list.s: srcs/util_list.c.s
+.PHONY : srcs/util_list.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.s
+srcs/util_list.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_list.c.s
+.PHONY : srcs/util_list.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.o
+srcs/util_print.o: srcs/util_print.c.o
+.PHONY : srcs/util_print.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.o
+srcs/util_print.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_print.c.o
+.PHONY : srcs/util_print.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.i
+srcs/util_print.i: srcs/util_print.c.i
+.PHONY : srcs/util_print.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.i
+srcs/util_print.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_print.c.i
+.PHONY : srcs/util_print.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.s
+srcs/util_print.s: srcs/util_print.c.s
+.PHONY : srcs/util_print.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.s
+srcs/util_print.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_print.c.s
+.PHONY : srcs/util_print.c.s
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.o: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.o
+srcs/util_str.o: srcs/util_str.c.o
+.PHONY : srcs/util_str.o
 
 # target to build an object file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.o
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.o
+srcs/util_str.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_str.c.o
+.PHONY : srcs/util_str.c.o
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.i: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.i
+srcs/util_str.i: srcs/util_str.c.i
+.PHONY : srcs/util_str.i
 
 # target to preprocess a source file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.i
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.i
+srcs/util_str.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_str.c.i
+.PHONY : srcs/util_str.c.i
 
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.s: Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.s
+srcs/util_str.s: srcs/util_str.c.s
+.PHONY : srcs/util_str.s
 
 # target to generate assembly for a file
-Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.s
-.PHONY : Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.s
+srcs/util_str.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cube.dir/build.make CMakeFiles/cube.dir/srcs/util_str.c.s
+.PHONY : srcs/util_str.c.s
 
 # Help Target
 help:
@@ -546,57 +546,57 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... cube"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.s"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.o"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.i"
-	@echo "... Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.s"
+	@echo "... srcs/calloc.o"
+	@echo "... srcs/calloc.i"
+	@echo "... srcs/calloc.s"
+	@echo "... srcs/draw.o"
+	@echo "... srcs/draw.i"
+	@echo "... srcs/draw.s"
+	@echo "... srcs/inits.o"
+	@echo "... srcs/inits.i"
+	@echo "... srcs/inits.s"
+	@echo "... srcs/keys.o"
+	@echo "... srcs/keys.i"
+	@echo "... srcs/keys.s"
+	@echo "... srcs/main.o"
+	@echo "... srcs/main.i"
+	@echo "... srcs/main.s"
+	@echo "... srcs/map.o"
+	@echo "... srcs/map.i"
+	@echo "... srcs/map.s"
+	@echo "... srcs/map_creation.o"
+	@echo "... srcs/map_creation.i"
+	@echo "... srcs/map_creation.s"
+	@echo "... srcs/move.o"
+	@echo "... srcs/move.i"
+	@echo "... srcs/move.s"
+	@echo "... srcs/parse.o"
+	@echo "... srcs/parse.i"
+	@echo "... srcs/parse.s"
+	@echo "... srcs/pixel_manipulation.o"
+	@echo "... srcs/pixel_manipulation.i"
+	@echo "... srcs/pixel_manipulation.s"
+	@echo "... srcs/static.o"
+	@echo "... srcs/static.i"
+	@echo "... srcs/static.s"
+	@echo "... srcs/static_rtn.o"
+	@echo "... srcs/static_rtn.i"
+	@echo "... srcs/static_rtn.s"
+	@echo "... srcs/util_convert.o"
+	@echo "... srcs/util_convert.i"
+	@echo "... srcs/util_convert.s"
+	@echo "... srcs/util_gnl.o"
+	@echo "... srcs/util_gnl.i"
+	@echo "... srcs/util_gnl.s"
+	@echo "... srcs/util_list.o"
+	@echo "... srcs/util_list.i"
+	@echo "... srcs/util_list.s"
+	@echo "... srcs/util_print.o"
+	@echo "... srcs/util_print.i"
+	@echo "... srcs/util_print.s"
+	@echo "... srcs/util_str.o"
+	@echo "... srcs/util_str.i"
+	@echo "... srcs/util_str.s"
 .PHONY : help
 
 
