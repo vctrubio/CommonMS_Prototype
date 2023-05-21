@@ -2,7 +2,7 @@
 
 unsigned int Transaction::s_counterId = 1;
 
-Transaction::Transaction(Business *bsn, Product *product, Client *client):_belongs_to(bsn), _product(product), _client(client), _id(s_counterId++)
+Transaction::Transaction(Business *bsn, Product *product, Client *client):_id(s_counterId++), _belongs_to(bsn), _product(product), _client(client)
 {
 	std::chrono::system_clock::time_point refTime = std::chrono::system_clock::now();
 

@@ -17,13 +17,12 @@ void	User::uiUserPannel()
 		cout << GREEN << "|" << ENDC;
 	else
 		cout << RED << "|" << ENDC;
-	cout << name() << " |ID: " << id();
+	cout << name() << "                      |ID: " << id();
 	cout << "\n-----------------------------------\n";
 	cout << "|'view doctors'                     |\n";
 	cout << "|'new' for new appointment          |\n";
-	cout << "|'clear' make sure to check         |\n";
+	cout << "|'refresh' for screen               |\n";
 	cout << "|'back'||'exit'                     |\n";
-	// cout << "|'chat' to talk to AI             |\n";
 	cout << "- - - - - - - - - - - - - - - - - - \n";
 	cout << "[" << appointments().size() << "]  Appointments                  \n";
 
@@ -48,7 +47,7 @@ void	User::uiUserPannel()
 	}
 	if (ingr())
 		cout << "|'solicitud' || '1' for checkup            \n";
-	cout << "\n-----------------------------\n";
+	cout << "\n-------------------------------------\n";
 }
 
 void	User::ui(Hospital *h)
@@ -69,7 +68,7 @@ void	User::ui(Hospital *h)
 			h->appCreate(h->rtnDoctor(), this);
 			continue;
 		}
-		else if (input == "clear")
+		else if (input == "refresh")
 		{
 			ui(h);
 			return ;
@@ -95,7 +94,7 @@ void	User::ui(Hospital *h)
 			if (!surgeryPro())
 			{
 				alta();
-				cout << GREEN << "Congratulations " << ENDC << "our specialist have checked you out.\n"; // of room
+				cout << GREEN << "Congratulations " << ENDC << "our specialist have checked you out.\n";
 			}
 			else
 				cout << YELLOW << "Unfortunetly " << ENDC << "our medical staff still see you unfit.\n";
