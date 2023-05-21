@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "/Users/trtp/github/tmp2/app02_VideoLibrary/cube"
+  "/Users/trtp/github/tmp2/app02_VideoLibrary/cube.pdb"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/calloc.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/draw.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/inits.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/keys.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/main.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/map_creation.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/move.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/parse.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/pixel_manipulation.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/static_rtn.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_convert.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_gnl.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_list.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_print.c.o.d"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.o"
+  "CMakeFiles/cube.dir/Users/trtp/github/tmp2/app02_VideoLibrary/game/srcs/util_str.c.o.d"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/cube.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
