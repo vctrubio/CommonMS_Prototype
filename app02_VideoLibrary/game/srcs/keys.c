@@ -2,15 +2,15 @@
 
 int	test_key_code(int keycode)
 {
-	if (keycode == K_ESC || keycode ==  KEY_ESC)
+	if (keycode == K_ESC)
 		exit(1);
-	if (keycode == K_D || keycode == KEY_RIGHT)
+	if (keycode == K_D)
 		move_player(0, 1);
-	if (keycode == (K_A || keycode == KEY_LEFT))
+	if (keycode == (K_A))
 		move_player(0, -1);
-	if (keycode == (K_S || keycode == KEY_DOWN)) 
+	if (keycode == (K_S))
 		move_player(1, 0);
-	if (keycode == (K_W || keycode == KEY_UP))
+	if (keycode == (K_W))
 		move_player(-1, 0);
 	return (keycode);
 }
