@@ -28,7 +28,10 @@ int	main(int ac, char **av)
 	t_info		*info;
 
 	if (ac < 3)
+	{
+		printf("needs 2 arguments. 1: the difficulty of the map 2: the map name\n");
 		return -1;
+	}
 
 	char	mapName[250];
 	int 	i = 1;
