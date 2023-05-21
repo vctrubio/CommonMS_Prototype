@@ -47,7 +47,7 @@ Very Happy, very fun to do the last one. Probably because I was a week better pr
 
 
 
-TO RUN: sh init.sh
+TO RUN$ sh init.sh
 ------------------------------
 No help was recieved, chatGPT to solve some doubts or make silly-easy-tedious code
 Overall I am happy from my experience of the last 9 days. Learned where I can improve, just wish for the opportunity to do so.

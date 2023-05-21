@@ -200,7 +200,7 @@ void	Hospital::printPatients()
 
 void	Hospital::printDoctors()
 {
-	cout << "Doctors [" << GREEN << _doctors.size() << ENDC << "]\n";
+	cout << "Doctors [" << GREEN << dSize() << ENDC << "]\n";
 	for (auto i : _doctors)
 	{
 		if (i->isArchive())
@@ -218,6 +218,19 @@ int		Hospital::pSize()
 	for (auto i : _patients)
 	{
 		if (i.second->isArchive())
+			continue;
+		size++;
+	}
+	return size;
+}
+
+int		Hospital::dSize()
+{
+	int size = 0;
+
+	for (auto i : _doctors)
+	{
+		if (i->isArchive())
 			continue;
 		size++;
 	}

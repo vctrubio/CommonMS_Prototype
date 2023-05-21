@@ -58,6 +58,7 @@ public:
 	
 	int		askID(int mode);
 	int		pSize();
+	int		dSize();
 };
 
 bool	validatePatient(vector<string> data);

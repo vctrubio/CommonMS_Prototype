@@ -4,11 +4,6 @@
 #include "../incl/UIMsg.hpp"
 #include "../incl/Appointment.hpp"
 
-
-//if av = patient, init patient
-//admin = hospital (password under git ignore.GNL to recieve PASSWORD="underground"
-//doctor = Name && ID
-
 enum ModeUI {
 	ERROR = -1,
 	ADMIN = 1,
