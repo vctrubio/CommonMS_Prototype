@@ -11,10 +11,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE "-framework OpenGL")
 target_link_libraries(${PROJECT_NAME} PRIVATE "-framework AppKit")
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/.."
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../.."
 )
 
 execute_process(
   COMMAND make re
-  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/lmlx"
+  WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/../lmlx"
 )

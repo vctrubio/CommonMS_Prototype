@@ -21,6 +21,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 execute_process(
-    COMMAND cmake --build build
-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/../game"
+    COMMAND cmake --build .
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/../game/build"
 )
