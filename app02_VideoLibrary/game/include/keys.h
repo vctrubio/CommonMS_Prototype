@@ -12,6 +12,7 @@
 #  define KEY_LEFT	123
 #  define KEY_RIGHT 124
 #  define KEY_ESC	53
+
 # else
 # define K_W 13
 # define K_A 0
