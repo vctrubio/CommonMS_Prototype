@@ -1,3 +1,0 @@
-/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/build/CMakeFiles/cube.dir
-/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/build/CMakeFiles/edit_cache.dir
-/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/game/build/CMakeFiles/rebuild_cache.dir
