@@ -70,7 +70,6 @@ void		uiADoctor(Hospital *hospital)
 			}
 			catch(runtime_error &e)
 			{
-				cout << RED << "Sorry " << ENDC << e.what() << "\nIt appears you do NOT work here.\n Talk to admin if you believe there is a problem by typing ./healthcare admin request_to_work_here <your_name>" << endl;
 				exit(101);
 			}
 		}

@@ -47,7 +47,7 @@ void	Library::findId(string input)
 	{
 		if (count == id)
 		{
-        	if (i->showGame())
+        	if (!(i->showGame()))
 			{
 				iter_swap(&i, _games.end() - 1);
 				Game	*ptr = _games.back();

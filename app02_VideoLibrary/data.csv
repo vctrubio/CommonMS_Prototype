@@ -5,7 +5,7 @@ Inception,EDUCATIONAL,95,Alice
 James Park,EDUCATIONAL,14336,willy
 Mind Bender,EDUCATIONAL,105,Scarlett
 The Avengers,EDUCATIONAL,97,Alexander
-Jurassic Park,MYSTERIOUS,91,Emily
+Jurassic Park,MYSTERIOUS,27136,titorrit
 Lord of Rings,MYSTERIOUS,36352,willy
 The Chronicles of Mystoria,MYSTERIOUS,112,Elijah
 The Enigma Files,MYSTERIOUS,98,Maximus
@@ -21,6 +21,4 @@ The Dark Knight,VIOLENT,98,John
 The Midnight Assassin,VIOLENT,256,helloworld
 The Nexus Code,VIOLENT,123,Oliver
 The Shadow Syndicate,VIOLENT,120,Victoria
-The Shawshank Redemption,VIOLENT,99,David
-Whispers in the Dark,VIOLENT,118,Grace
-titleMaker,OTHER,0,0
+The Shawshank Redemption,EDUCATIONAL,99,David
