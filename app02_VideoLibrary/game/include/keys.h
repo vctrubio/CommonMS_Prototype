@@ -1,8 +1,6 @@
 #ifndef KEYS_H
 #define KEYS_H
 
-
-//KEYCODE
 # define K_W 13
 # define K_A 0
 # define K_S 1
@@ -12,8 +10,6 @@
 # define K_R 15
 # define K_G 5
 
-
-//COLORCODE RBG
 # define MYRED 0x00820010
 # define MYREDISH 0x81102299
 # define MYGREEN 0x0000F900
