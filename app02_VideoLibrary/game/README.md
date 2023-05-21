@@ -5,4 +5,4 @@ I have modified it to make it compatible, but the structure/game was there befor
 
 
 #This is called inside build from the root dir
-before make >sudo 
+before make >sudo apt-get install gcc make xorg libxext-dev libbsd-dev 

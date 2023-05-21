@@ -11,7 +11,6 @@ all:
 
 else
 all:
-	apt-get install gcc make xorg libxext-dev libbsd-dev 
 	cd mlx_linux && make
 	gcc $(SRCS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o ../$(name)
 endif
