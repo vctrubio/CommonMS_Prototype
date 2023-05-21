@@ -6,7 +6,7 @@
 #  define K_S	1
 #  define K_D 2
 #  define K_W	13
-#  define KEY_ESC	53
+#  define K_ESC	53
 #else
 
 # define K_W 13
