@@ -4,13 +4,13 @@ int	test_key_code(int keycode)
 {
 	if (keycode == K_ESC)
 		exit(1);
-	if (keycode == K_D)
+	if (keycode == K_D || KEY_RIGHT)
 		move_player(0, 1);
-	if (keycode == K_A)
+	if (keycode == K_A || KEY_LEFT)
 		move_player(0, -1);
-	if (keycode == K_S)
+	if (keycode == K_S || KEY_DOWN) 
 		move_player(1, 0);
-	if (keycode == K_W)
+	if (keycode == K_W || KEY_UP)
 		move_player(-1, 0);
 	return (keycode);
 }
