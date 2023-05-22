@@ -1,0 +1,3 @@
+/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/build/CMakeFiles/library.dir
+/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/build/CMakeFiles/edit_cache.dir
+/Users/trtp/github/CommonInterviewGitPUll/app02_VideoLibrary/build/CMakeFiles/rebuild_cache.dir
